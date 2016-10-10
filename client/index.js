@@ -21,7 +21,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-class App extends Component {
+class Quiz extends Component {
   constructor(props) {
     super(props);
 
@@ -30,12 +30,12 @@ class App extends Component {
 
   render() {
     return (
-      <p>TK React app TK</p>
+      <p>TK Quiz app TK</p>
     );
   }
 }
 
 ReactDOM.render(
-  <App />,
+  <Quiz />,
   document.querySelector('#react-container')
 );
