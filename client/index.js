@@ -18,11 +18,22 @@
 
 */
 
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-const App = () =>
-  <p>TK React app TK</p>;
+class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {};
+  }
+
+  render() {
+    return (
+      <p>TK React app TK</p>
+    );
+  }
+}
 
 ReactDOM.render(
   <App />,
