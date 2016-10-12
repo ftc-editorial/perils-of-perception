@@ -22,6 +22,8 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import QuizQuestion from './components/quiz-question';
 
+const data = JSON.parse(document.getElementById('data').textContent);
+
 class Quiz extends Component {
   constructor(props) {
     super(props);
@@ -33,6 +35,7 @@ class Quiz extends Component {
     return (
       <div>
         <h1>Quiz app</h1>
+        <p>This quiz has { data.length } questions</p>
         <QuizQuestion />
       </div>
     );
