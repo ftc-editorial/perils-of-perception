@@ -20,6 +20,7 @@
 
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import QuizQuestion from './components/quiz-question';
 
 class Quiz extends Component {
   constructor(props) {
@@ -30,7 +31,10 @@ class Quiz extends Component {
 
   render() {
     return (
-      <p>TK Quiz app TK</p>
+      <div>
+        <h1>Quiz app</h1>
+        <QuizQuestion />
+      </div>
     );
   }
 }
