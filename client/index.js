@@ -22,7 +22,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import QuizQuestion from './components/quiz-question';
 
-class Quiz extends Component {
+class App extends Component {
   constructor(props) {
     super(props);
 
@@ -33,6 +33,10 @@ class Quiz extends Component {
     const quizQuestions = this.state.questions.map(question =>
       <QuizQuestion key={question.id} question={question.question} />
     );
+
+    // if (!quizQuestions) {
+    //   return <div>Loading…</div>;
+    // }
 
     return (
       <div>
@@ -45,6 +49,6 @@ class Quiz extends Component {
 }
 
 ReactDOM.render(
-  <Quiz />,
+  <App />,
   document.querySelector('#react-container')
 );
