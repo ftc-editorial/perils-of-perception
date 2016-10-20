@@ -1,5 +1,6 @@
 import React from 'react';
-import MultipleChoice from '../quiz-inputs/multiple-choice'
+import MultipleChoice from '../quiz-inputs/multiple-choice';
+import Range from '../quiz-inputs/range';
 
 // This will need to be a class-based component with state (answered, correct etc.)
 const QuizQuestion = ({ questionNumber, questionText }) =>
@@ -7,6 +8,7 @@ const QuizQuestion = ({ questionNumber, questionText }) =>
     <h2>Question {questionNumber}</h2>
     <p>{questionText}</p>
     <MultipleChoice />
+    <Range />
   </div>;
 
 QuizQuestion.propTypes = {
