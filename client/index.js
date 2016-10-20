@@ -22,21 +22,23 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import QuizQuestion from './components/quiz-question';
 
-const data = JSON.parse(document.getElementById('data').textContent);
-
 class Quiz extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = { questions: JSON.parse(document.getElementById('data').textContent) };
   }
 
   render() {
+    const quizQuestions = this.state.questions.map(question =>
+      <QuizQuestion key={question.id} question={question.question} />
+    );
+
     return (
       <div>
         <h1>Quiz app</h1>
-        <p>This quiz has { data.length } questions</p>
-        <QuizQuestion />
+        <p>This quiz has {quizQuestions.length} questions.</p>
+        {quizQuestions}
       </div>
     );
   }
