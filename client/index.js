@@ -28,6 +28,7 @@ class App extends Component {
         <h1>Quiz app</h1>
 
         <p>This quiz has {quizQuestions.length} questions.</p>
+
         {quizQuestions}
       </div>
     );
