@@ -35,7 +35,4 @@ class App extends Component {
   }
 }
 
-ReactDOM.render(
-  <App />,
-  document.querySelector('#react-container')
-);
+ReactDOM.render(<App />, document.querySelector('#react-container'));
