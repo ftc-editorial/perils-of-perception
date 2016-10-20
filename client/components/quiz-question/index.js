@@ -1,15 +1,16 @@
 import React from 'react';
 
 // This will need to be a class-based component with state (answered, correct etc.)
-const QuizQuestion = ({ question, questionNumber }) =>
+const QuizQuestion = ({ questionNumber, questionText }) =>
   <div>
     <h2>Question {questionNumber}</h2>
-    <p>{question}</p>
+    <p>{questionText}</p>
     <p>[Answer input]</p>
   </div>;
 
 QuizQuestion.propTypes = {
-  question: React.PropTypes.string,
+  questionNumber: React.PropTypes.number,
+  questionText: React.PropTypes.string,
 };
 
 export default QuizQuestion;

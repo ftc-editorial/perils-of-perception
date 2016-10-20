@@ -31,7 +31,7 @@ class App extends Component {
 
   render() {
     const quizQuestions = this.state.questions.map((question, i) =>
-      <QuizQuestion key={question.id} questionNumber={i + 1} question={question.question} />
+      <QuizQuestion key={question.id} questionNumber={i + 1} questionText={question.question} />
     );
 
     // if (!quizQuestions) {
