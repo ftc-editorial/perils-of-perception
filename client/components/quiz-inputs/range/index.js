@@ -42,7 +42,6 @@ class Range extends Component {
 Range.propTypes = {
   min: React.PropTypes.number,
   max: React.PropTypes.number,
-  isAnswered: React.PropTypes.boolean,
 };
 
 export default Range;
