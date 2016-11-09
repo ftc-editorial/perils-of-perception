@@ -4,7 +4,9 @@ import Range from '../quiz-inputs/range';
 
 // This will need to be a class-based component with state (answered, correct etc.)
 const QuizQuestion = ({ questionNumber, questionText, questionType, options }) => {
-  const input = questionType === 'range' ? <Range rangeMin={options[0]} rangeMax={options[1]} />
+  const rangeMin = options[0];
+  const rangeMax = options[1];
+  const input = questionType === 'range' ? <Range min={rangeMin} max={rangeMax} />
     : <MultipleChoice />;
 
   return (
@@ -12,8 +14,6 @@ const QuizQuestion = ({ questionNumber, questionText, questionType, options }) =
       <h2>Question {questionNumber}</h2>
 
       <p>{questionText}</p>
-
-      <p>{questionType}</p>
 
       {input}
     </div>
