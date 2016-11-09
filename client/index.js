@@ -16,6 +16,13 @@ class App extends Component {
         questionNumber={i + 1}
         questionText={question.question}
         questionType={question.type}
+        options={Object.keys(question.options).map(option => {
+          if (question.options[option] !== null) {
+            return question.options[option];
+          }
+
+          return null;
+        }).filter(option => option !== null)}
       />
     );
 
