@@ -4,13 +4,7 @@ import Range from '../quiz-inputs/range';
 
 // This will need to be a class-based component with state (answered, correct etc.)
 const QuizQuestion = ({ questionNumber, questionText, questionType }) => {
-  let input = null;
-
-  if (questionType === 'range') {
-    input = <Range />;
-  } else {
-    input = <MultipleChoice />;
-  }
+  const input = questionType === 'range' ? <Range /> : <MultipleChoice />;
 
   return (
     <div>
