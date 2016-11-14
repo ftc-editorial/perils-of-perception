@@ -8,6 +8,7 @@ class QuizQuestion extends Component {
 
     this.state = {
       isAnswered: false,
+      score: 0,
     };
   }
 
