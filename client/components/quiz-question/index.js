@@ -2,6 +2,16 @@ import React, { Component } from 'react';
 import MultipleChoice from '../quiz-inputs/multiple-choice';
 import Range from '../quiz-inputs/range';
 
+function markQuestion(value, answer) {
+  const correct = value === answer;
+
+  if (correct) {
+    console.log('Correct');
+  } else {
+    console.log('Wrong');
+  }
+}
+
 class QuizQuestion extends Component {
   constructor(props) {
     super(props);
@@ -12,12 +22,23 @@ class QuizQuestion extends Component {
     };
   }
 
+  handleSubmit(event, value, answer) {
+    event.preventDefault();
+
+    markQuestion(value, answer);
+  }
+
   render() {
     const rangeMin = this.props.options[0];
     const rangeMax = this.props.options[1];
     const answer = this.props.answer;
     const input = this.props.questionType === 'range'
-      ? <Range min={rangeMin} max={rangeMax} answer={answer} />
+      ? <Range
+        min={rangeMin}
+        max={rangeMax}
+        answer={answer}
+        onSubmit={this.handleSubmit}
+      />
       : <MultipleChoice />;
 
     return (

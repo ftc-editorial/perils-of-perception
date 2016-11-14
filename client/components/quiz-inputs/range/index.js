@@ -7,32 +7,26 @@ class Range extends Component {
     this.state = {
       value: this.props.max / 2,
     };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(event) {
-    this.setState({ value: event.target.value });
-  }
-
-  handleSubmit(event) {
-    event.preventDefault();
-
-    console.log(this.state.value);
+  handleChange(value) {
+    this.setState({ value: parseInt(value, 10) });
   }
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={event => this.props.onSubmit(event, this.state.value, this.props.answer)}>
         <input
           type="range"
           min={this.props.min}
           max={this.props.max}
           value={this.state.value}
-          onChange={this.handleChange}
+          onChange={event => this.handleChange(event.target.value)}
           className="quiz-slider"
         />
+
         {this.state.value}
+
         <input type="submit" value="submit" />
       </form>
     );
@@ -40,6 +34,8 @@ class Range extends Component {
 }
 
 Range.propTypes = {
+  onSubmit: React.PropTypes.func,
+  answer: React.PropTypes.number,
   min: React.PropTypes.number,
   max: React.PropTypes.number,
 };
