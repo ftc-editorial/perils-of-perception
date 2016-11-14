@@ -6,7 +6,9 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { questions: JSON.parse(document.getElementById('data').textContent) };
+    this.state = {
+      questions: JSON.parse(document.getElementById('data').textContent),
+    };
   }
 
   render() {
@@ -14,7 +16,7 @@ class App extends Component {
       <QuizQuestion
         key={question.id}
         questionNumber={i + 1}
-        questionText={question.question}
+        questionText={question.questiontext}
         questionType={question.type}
         options={Object.keys(question.options).map(option => {
           if (question.options[option] !== null) {
@@ -23,6 +25,7 @@ class App extends Component {
 
           return null;
         }).filter(option => option !== null)}
+        answer={question.answer}
       />
     );
 

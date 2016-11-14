@@ -14,8 +14,9 @@ class QuizQuestion extends Component {
   render() {
     const rangeMin = this.props.options[0];
     const rangeMax = this.props.options[1];
+    const answer = this.props.answer;
     const input = this.props.questionType === 'range'
-      ? <Range min={rangeMin} max={rangeMax} />
+      ? <Range min={rangeMin} max={rangeMax} answer={answer} />
       : <MultipleChoice />;
 
     return (
@@ -32,6 +33,7 @@ class QuizQuestion extends Component {
 
 QuizQuestion.propTypes = {
   options: React.PropTypes.array,
+  answer: React.PropTypes.any,
   questionType: React.PropTypes.string,
   questionNumber: React.PropTypes.number,
   questionText: React.PropTypes.string,
