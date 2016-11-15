@@ -21,9 +21,10 @@ class QuizQuestion extends Component {
     this.setState({ isAnswered: true });
 
     if (correct) {
+      this.setState({ score: 1 });
       console.log('Correct');
     } else {
-      console.log('Wrong');
+      console.log('Incorrect');
     }
   }
 
