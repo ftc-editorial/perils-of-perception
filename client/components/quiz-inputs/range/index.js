@@ -15,7 +15,7 @@ class Range extends Component {
 
   render() {
     return (
-      <form onSubmit={event => this.props.onSubmit(event, this.state.value, this.props.answer)}>
+      <form onSubmit={event => this.props.onSubmit(event, this.state.value)}>
         <input
           type="range"
           min={this.props.min}
@@ -35,7 +35,6 @@ class Range extends Component {
 
 Range.propTypes = {
   onSubmit: React.PropTypes.func,
-  answer: React.PropTypes.number,
   min: React.PropTypes.number,
   max: React.PropTypes.number,
 };
