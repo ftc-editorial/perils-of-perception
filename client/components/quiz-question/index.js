@@ -27,7 +27,7 @@ class QuizQuestion extends Component {
       console.log('Incorrect');
     }
 
-    this.props.updateActiveQuestion()
+    this.props.updateActiveQuestion();
   }
 
   render() {
@@ -56,6 +56,7 @@ class QuizQuestion extends Component {
 
 QuizQuestion.propTypes = {
   answer: React.PropTypes.any,
+  updateActiveQuestion: React.PropTypes.func,
   options: React.PropTypes.array,
   questionType: React.PropTypes.string,
   active: React.PropTypes.bool,
