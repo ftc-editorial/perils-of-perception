@@ -26,13 +26,9 @@ class App extends Component {
         questionNumber={i + 1}
         questionText={question.questiontext}
         questionType={question.type}
-        options={Object.keys(question.options).map(option => {
-          if (question.options[option] !== null) {
-            return question.options[option];
-          }
-
-          return null;
-        }).filter(option => option !== null)}
+        options={Object.keys(question.options).map(option =>
+          question.options[option]
+        ).filter(option => option !== null)}
         answer={question.answer}
         active={i === this.state.activeQuestion}
         updateActiveQuestion={this.updateActiveQuestion}
