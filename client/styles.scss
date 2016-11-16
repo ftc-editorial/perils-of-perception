@@ -8,4 +8,8 @@
     opacity: 1;
     pointer-events: all;
   }
+  &.answered {
+    opacity: 1;
+    pointer-events: none;
+  }
 }

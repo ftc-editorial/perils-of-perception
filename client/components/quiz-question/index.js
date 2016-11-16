@@ -7,7 +7,7 @@ class QuizQuestion extends Component {
     super(props);
 
     this.state = {
-      isAnswered: false,
+      answered: false,
       score: 0,
     };
     this.markQuestion = this.markQuestion.bind(this);
@@ -18,7 +18,9 @@ class QuizQuestion extends Component {
 
     const correct = value === this.props.answer;
 
-    this.setState({ isAnswered: true });
+    this.setState({
+      answered: true,
+    });
 
     if (correct) {
       this.setState({ score: 1 });
@@ -41,9 +43,10 @@ class QuizQuestion extends Component {
       />
       : <MultipleChoice />;
     const active = this.props.active ? ' active' : '';
+    const answered = this.state.answered ? ' answered' : '';
 
     return (
-      <div className={`quiz-question${active}`}>
+      <div className={`quiz-question${active}${answered}`}>
         <h2>Question {this.props.questionNumber}</h2>
 
         <p>{this.props.questionText}</p>
