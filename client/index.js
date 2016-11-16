@@ -29,10 +29,6 @@ class App extends Component {
       />
     );
 
-    // if (!quizQuestions) {
-    //   return <div>Loading…</div>;
-    // }
-
     return (
       <div>
         <h1>Quiz app</h1>
