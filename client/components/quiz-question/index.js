@@ -38,9 +38,10 @@ class QuizQuestion extends Component {
         onSubmit={this.markQuestion}
       />
       : <MultipleChoice />;
+    const active = this.props.active ? ' active' : '';
 
     return (
-      <div>
+      <div className={`quiz-question${active}`}>
         <h2>Question {this.props.questionNumber}</h2>
 
         <p>{this.props.questionText}</p>
@@ -52,9 +53,10 @@ class QuizQuestion extends Component {
 }
 
 QuizQuestion.propTypes = {
-  options: React.PropTypes.array,
   answer: React.PropTypes.any,
+  options: React.PropTypes.array,
   questionType: React.PropTypes.string,
+  active: React.PropTypes.bool,
   questionNumber: React.PropTypes.number,
   questionText: React.PropTypes.string,
 };

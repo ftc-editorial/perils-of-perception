@@ -26,6 +26,7 @@ class App extends Component {
           return null;
         }).filter(option => option !== null)}
         answer={question.answer}
+        active={i === 0}
       />
     );
 
