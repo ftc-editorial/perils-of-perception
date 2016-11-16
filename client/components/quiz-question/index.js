@@ -17,13 +17,15 @@ class QuizQuestion extends Component {
     event.preventDefault();
 
     const correct = value === this.props.answer;
+    const score = 1; // Define question score value (use for weighting)
 
     this.setState({
       answered: true,
     });
 
     if (correct) {
-      this.setState({ score: 1 });
+      this.setState({ score });
+      this.props.updateOverallScore(score);
     }
 
     this.props.updateActiveQuestion();
@@ -64,6 +66,7 @@ class QuizQuestion extends Component {
 QuizQuestion.propTypes = {
   answer: React.PropTypes.any,
   updateActiveQuestion: React.PropTypes.func,
+  updateOverallScore: React.PropTypes.func,
   options: React.PropTypes.array,
   questionType: React.PropTypes.string,
   active: React.PropTypes.bool,

@@ -9,13 +9,21 @@ class App extends Component {
     this.state = {
       questions: JSON.parse(document.getElementById('data').textContent),
       activeQuestion: 0,
+      score: 0,
     };
     this.updateActiveQuestion = this.updateActiveQuestion.bind(this);
+    this.updateOverallScore = this.updateOverallScore.bind(this);
   }
 
   updateActiveQuestion() {
     this.setState(prevState => ({
       activeQuestion: prevState.activeQuestion + 1,
+    }));
+  }
+
+  updateOverallScore(n) {
+    this.setState(prevState => ({
+      score: prevState.score + n,
     }));
   }
 
@@ -32,6 +40,7 @@ class App extends Component {
         answer={question.answer}
         active={i === this.state.activeQuestion}
         updateActiveQuestion={this.updateActiveQuestion}
+        updateOverallScore={this.updateOverallScore}
       />
     );
 
@@ -42,6 +51,8 @@ class App extends Component {
         <p>This quiz has {quizQuestions.length} questions.</p>
 
         {quizQuestions}
+
+        <p>Your score: {this.state.score}</p>
       </div>
     );
   }
