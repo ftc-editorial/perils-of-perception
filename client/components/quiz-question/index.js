@@ -24,9 +24,6 @@ class QuizQuestion extends Component {
 
     if (correct) {
       this.setState({ score: 1 });
-      console.log('Correct');
-    } else {
-      console.log('Incorrect');
     }
 
     this.props.updateActiveQuestion();
