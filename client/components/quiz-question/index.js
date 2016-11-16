@@ -44,6 +44,11 @@ class QuizQuestion extends Component {
       : <MultipleChoice />;
     const active = this.props.active ? ' active' : '';
     const answered = this.state.answered ? ' answered' : '';
+    let output;
+
+    if (this.state.answered) {
+      output = this.state.score > 0 ? <p>Correct</p> : <p>Incorrect</p>;
+    }
 
     return (
       <div className={`quiz-question${active}${answered}`}>
@@ -52,6 +57,8 @@ class QuizQuestion extends Component {
         <p>{this.props.questionText}</p>
 
         {input}
+
+        {output}
       </div>
     );
   }
