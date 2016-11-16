@@ -26,6 +26,8 @@ class QuizQuestion extends Component {
     } else {
       console.log('Incorrect');
     }
+
+    this.props.updateActiveQuestion()
   }
 
   render() {

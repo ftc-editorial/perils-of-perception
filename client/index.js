@@ -8,7 +8,15 @@ class App extends Component {
 
     this.state = {
       questions: JSON.parse(document.getElementById('data').textContent),
+      activeQuestion: 0,
     };
+    this.updateActiveQuestion = this.updateActiveQuestion.bind(this);
+  }
+
+  updateActiveQuestion() {
+    this.setState(prevState => ({
+      activeQuestion: prevState.activeQuestion + 1,
+    }));
   }
 
   render() {
@@ -26,7 +34,8 @@ class App extends Component {
           return null;
         }).filter(option => option !== null)}
         answer={question.answer}
-        active={i === 0}
+        active={i === this.state.activeQuestion}
+        updateActiveQuestion={this.updateActiveQuestion}
       />
     );
 
