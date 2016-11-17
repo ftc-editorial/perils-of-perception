@@ -33,7 +33,7 @@ class MultipleChoice extends Component {
     );
 
     return (
-      <div>
+      <div className="multiple-choice-input">
         {buttons}
       </div>
     );

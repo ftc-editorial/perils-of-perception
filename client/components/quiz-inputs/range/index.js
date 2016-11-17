@@ -22,6 +22,7 @@ class Range extends Component {
 
           this.setState({ disabled: true });
         }}
+        className="range-input"
       >
         <input
           type="range"
