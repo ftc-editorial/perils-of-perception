@@ -12,7 +12,7 @@ class App extends Component {
       score: 0,
     };
     this.updateActiveQuestion = this.updateActiveQuestion.bind(this);
-    this.updateOverallScore = this.updateOverallScore.bind(this);
+    this.updateScore = this.updateScore.bind(this);
   }
 
   updateActiveQuestion() {
@@ -21,7 +21,7 @@ class App extends Component {
     }));
   }
 
-  updateOverallScore(n) {
+  updateScore(n) {
     this.setState(prevState => ({
       score: prevState.score + n,
     }));
@@ -40,7 +40,7 @@ class App extends Component {
         answer={question.answer}
         active={i === this.state.activeQuestion}
         updateActiveQuestion={this.updateActiveQuestion}
-        updateOverallScore={this.updateOverallScore}
+        updateScore={this.updateScore}
       />
     );
 

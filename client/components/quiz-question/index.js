@@ -8,7 +8,7 @@ class QuizQuestion extends Component {
 
     this.state = {
       answered: false,
-      score: 0,
+      correct: false,
     };
     this.markQuestion = this.markQuestion.bind(this);
   }
@@ -16,16 +16,18 @@ class QuizQuestion extends Component {
   markQuestion(event, value) {
     event.preventDefault();
 
+    // Check if user answered correctly
     const correct = value === this.props.answer;
-    const score = 1; // Define question score value (use for weighting)
+    // Points awarded for this question (use for weighting etc.)
+    const questionValue = 1;
 
     this.setState({
       answered: true,
     });
 
     if (correct) {
-      this.setState({ score });
-      this.props.updateOverallScore(score);
+      this.setState({ correct });
+      this.props.updateScore(questionValue);
     }
 
     this.props.updateActiveQuestion();
@@ -46,7 +48,7 @@ class QuizQuestion extends Component {
     let output;
 
     if (this.state.answered) {
-      output = this.state.score > 0 ? <p>Correct</p> : <p>Incorrect</p>;
+      output = this.state.correct ? <p>Correct</p> : <p>Incorrect</p>;
     }
 
     return (
@@ -66,7 +68,7 @@ class QuizQuestion extends Component {
 QuizQuestion.propTypes = {
   answer: React.PropTypes.any,
   updateActiveQuestion: React.PropTypes.func,
-  updateOverallScore: React.PropTypes.func,
+  updateScore: React.PropTypes.func,
   options: React.PropTypes.array,
   questionType: React.PropTypes.string,
   active: React.PropTypes.bool,
