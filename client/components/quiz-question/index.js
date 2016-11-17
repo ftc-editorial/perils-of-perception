@@ -14,7 +14,9 @@ class QuizQuestion extends Component {
   }
 
   markQuestion(event, value) {
-    event.preventDefault();
+    if (event) {
+      event.preventDefault();
+    }
 
     // Check if user answered correctly
     const correct = value === this.props.answer;
@@ -42,7 +44,10 @@ class QuizQuestion extends Component {
         max={rangeMax}
         onSubmit={this.markQuestion}
       />
-      : <MultipleChoice />;
+      : <MultipleChoice
+        options={this.props.options}
+        onSubmit={this.markQuestion}
+      />;
     const active = this.props.active ? ' active' : '';
     const answered = this.state.answered ? ' answered' : '';
     let output;

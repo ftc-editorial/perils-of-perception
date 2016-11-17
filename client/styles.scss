@@ -4,12 +4,15 @@
 .quiz-question {
   opacity: 0.62;
   pointer-events: none;
-  &.active {
-    opacity: 1;
-    pointer-events: all;
-  }
+  transition: opacity linear 300ms;
+  &.active,
   &.answered {
     opacity: 1;
     pointer-events: all;
   }
+}
+
+
+button {
+  display: block;
 }
