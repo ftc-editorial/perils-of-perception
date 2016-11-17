@@ -5,27 +5,22 @@ class MultipleChoice extends Component {
     super(props);
 
     this.state = {
-      value: null,
       disabled: false,
     };
   }
 
   handleClick(value) {
     this.setState({
-      value,
       disabled: true,
     });
-    this.props.onSubmit(null, this.state.value);
-
-    console.log(value);
+    this.props.onSubmit(null, value);
   }
 
   render() {
     const buttons = this.props.options.map((option, i) =>
       <button
         key={`b${i}`}
-        // value={i}
-        onClick={() => this.handleClick(i)}
+        onClick={() => this.handleClick(option)}
         disabled={this.state.disabled}
       >
         {option}

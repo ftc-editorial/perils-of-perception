@@ -18,6 +18,8 @@ class QuizQuestion extends Component {
       event.preventDefault();
     }
 
+    console.log(value);
+
     // Check if user answered correctly
     const correct = value === this.props.answer;
     // Points awarded for this question (use for weighting etc.)
