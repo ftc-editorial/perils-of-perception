@@ -10,15 +10,21 @@ class App extends Component {
       questions: JSON.parse(document.getElementById('data').textContent),
       activeQuestion: 0,
       score: 0,
+      complete: false,
     };
-    this.updateActiveQuestion = this.updateActiveQuestion.bind(this);
+    this.updateProgress = this.updateProgress.bind(this);
     this.updateScore = this.updateScore.bind(this);
   }
 
-  updateActiveQuestion() {
-    this.setState(prevState => ({
-      activeQuestion: prevState.activeQuestion + 1,
-    }));
+  updateProgress(n) {
+    if (n <= this.state.questions.length - 1) {
+      this.setState({ activeQuestion: n });
+    } else {
+      this.setState({
+        activeQuestion: null,
+        complete: true,
+      });
+    }
   }
 
   updateScore(n) {
@@ -31,7 +37,7 @@ class App extends Component {
     const quizQuestions = this.state.questions.map((question, i) =>
       <QuizQuestion
         key={question.id}
-        questionNumber={i + 1}
+        questionIndex={i}
         questionText={question.questiontext}
         questionType={question.type}
         options={Object.keys(question.options).map(option =>
@@ -39,10 +45,15 @@ class App extends Component {
         ).filter(option => option !== null)}
         answer={question.answer}
         active={i === this.state.activeQuestion}
-        updateActiveQuestion={this.updateActiveQuestion}
+        updateProgress={this.updateProgress}
         updateScore={this.updateScore}
       />
     );
+    const results = this.state.complete
+      ? <div>
+        <p>Your score: {this.state.score}</p>
+      </div>
+      : null;
 
     return (
       <div>
@@ -52,7 +63,7 @@ class App extends Component {
 
         {quizQuestions}
 
-        <p>Your score: {this.state.score}</p>
+        {results}
       </div>
     );
   }

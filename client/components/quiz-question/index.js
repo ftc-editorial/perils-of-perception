@@ -34,7 +34,7 @@ class QuizQuestion extends Component {
       this.props.updateScore(questionValue);
     }
 
-    this.props.updateActiveQuestion();
+    this.props.updateProgress(this.props.questionIndex + 1);
   }
 
   render() {
@@ -60,7 +60,7 @@ class QuizQuestion extends Component {
 
     return (
       <div className={`quiz-question${active}${answered}`}>
-        <h2>Question {this.props.questionNumber}</h2>
+        <h2>Question {this.props.questionIndex + 1}</h2>
 
         <p>{this.props.questionText}</p>
 
@@ -74,12 +74,12 @@ class QuizQuestion extends Component {
 
 QuizQuestion.propTypes = {
   answer: React.PropTypes.any,
-  updateActiveQuestion: React.PropTypes.func,
+  updateProgress: React.PropTypes.func,
   updateScore: React.PropTypes.func,
   options: React.PropTypes.array,
   questionType: React.PropTypes.string,
   active: React.PropTypes.bool,
-  questionNumber: React.PropTypes.number,
+  questionIndex: React.PropTypes.number,
   questionText: React.PropTypes.string,
 };
 
