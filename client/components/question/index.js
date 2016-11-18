@@ -55,18 +55,20 @@ class Question extends Component {
     let output;
 
     if (this.state.answered) {
-      output = this.state.correct ? <p>Correct</p> : <p>Incorrect</p>;
+      output = this.state.correct ? 'Correct' : 'Incorrect';
     }
 
     return (
       <div className={`question${active}${answered}`}>
-        <h2>Question {this.props.questionIndex + 1}</h2>
+        <h2 className="o-typography-subhead--crosshead">
+          Question {this.props.questionIndex + 1}
+        </h2>
 
-        <p>{this.props.questionText}</p>
+        <p className="o-typography-lead--small">{this.props.questionText}</p>
 
         {input}
 
-        {output}
+        <p className="o-typography-lead--small">{output}</p>
       </div>
     );
   }

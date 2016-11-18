@@ -57,6 +57,7 @@ class App extends Component {
 
     return (
       <div>
+        <link rel="stylesheet" href="https://build.origami.ft.com/v2/bundles/css?modules=o-buttons@^4.4.1" />
         <h1>Quiz app</h1>
 
         <p>This quiz has {questions.length} questions.</p>

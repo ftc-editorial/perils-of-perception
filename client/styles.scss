@@ -1,6 +1,7 @@
 @import 'o-colors/main';
 @import 'components/core/main';
 
+// Core app styling
 .question {
   opacity: 0.62;
   pointer-events: none;
@@ -8,7 +9,14 @@
   &.active,
   &.answered {
     opacity: 1;
-    pointer-events: all;
+    pointer-events: auto;
+  }
+  .o-typography-lead--small {
+    font-family: MetricWeb, sans-serif;
+    line-height: 24px;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0;
   }
 }
 

@@ -22,6 +22,7 @@ class MultipleChoice extends Component {
         key={`b${i}`}
         onClick={() => this.handleClick(option)}
         disabled={this.state.disabled}
+        className="o-buttons"
       >
         {option}
       </button>

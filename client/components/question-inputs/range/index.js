@@ -30,13 +30,17 @@ class Range extends Component {
           max={this.props.max}
           value={this.state.value}
           onChange={event => this.handleChange(event.target.value)}
-          className="quiz-slider"
           disabled={this.state.disabled}
         />
 
         {this.state.value}
 
-        <input type="submit" value="submit" disabled={this.state.disabled} />
+        <input
+          type="submit"
+          value="Submit"
+          disabled={this.state.disabled}
+          className="o-buttons"
+        />
       </form>
     );
   }
