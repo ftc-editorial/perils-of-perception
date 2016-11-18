@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import MultipleChoice from '../quiz-inputs/multiple-choice';
-import Range from '../quiz-inputs/range';
+import MultipleChoice from '../question-inputs/multiple-choice';
+import Range from '../question-inputs/range';
 
-class QuizQuestion extends Component {
+class Question extends Component {
   constructor(props) {
     super(props);
 
@@ -59,7 +59,7 @@ class QuizQuestion extends Component {
     }
 
     return (
-      <div className={`quiz-question${active}${answered}`}>
+      <div className={`question${active}${answered}`}>
         <h2>Question {this.props.questionIndex + 1}</h2>
 
         <p>{this.props.questionText}</p>
@@ -72,7 +72,7 @@ class QuizQuestion extends Component {
   }
 }
 
-QuizQuestion.propTypes = {
+Question.propTypes = {
   answer: React.PropTypes.any,
   updateProgress: React.PropTypes.func,
   updateScore: React.PropTypes.func,
@@ -83,4 +83,4 @@ QuizQuestion.propTypes = {
   questionText: React.PropTypes.string,
 };
 
-export default QuizQuestion;
+export default Question;

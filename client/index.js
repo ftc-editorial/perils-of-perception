@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import QuizQuestion from './components/quiz-question';
+import Question from './components/question';
 
 class App extends Component {
   constructor(props) {
@@ -34,8 +34,8 @@ class App extends Component {
   }
 
   render() {
-    const quizQuestions = this.state.questions.map((question, i) =>
-      <QuizQuestion
+    const questions = this.state.questions.map((question, i) =>
+      <Question
         key={question.id}
         questionIndex={i}
         questionText={question.questiontext}
@@ -59,9 +59,9 @@ class App extends Component {
       <div>
         <h1>Quiz app</h1>
 
-        <p>This quiz has {quizQuestions.length} questions.</p>
+        <p>This quiz has {questions.length} questions.</p>
 
-        {quizQuestions}
+        {questions}
 
         {results}
       </div>
