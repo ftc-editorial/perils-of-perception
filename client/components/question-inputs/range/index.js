@@ -5,7 +5,7 @@ class Range extends Component {
     super(props);
 
     this.state = {
-      value: this.props.max / 2,
+      value: props.max / 2,
       disabled: false,
     };
   }

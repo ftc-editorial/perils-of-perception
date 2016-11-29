@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MultipleChoice from '../question-inputs/multiple-choice';
 import Range from '../question-inputs/range';
+import AreaChart from '../question-outputs/area-chart';
 
 class Question extends Component {
   constructor(props) {
@@ -18,10 +19,9 @@ class Question extends Component {
       event.preventDefault();
     }
 
-    console.log(value);
-
     // Check if user answered correctly
     const correct = value === this.props.answer;
+
     // Points awarded for this question (use for weighting etc.)
     const questionValue = 1;
 
@@ -53,13 +53,23 @@ class Question extends Component {
     const active = this.props.active ? ' active' : '';
     const answered = this.state.answered ? ' answered' : '';
     let output;
+    let chart;
 
     if (this.state.answered) {
       output = this.state.correct ? 'Correct' : 'Incorrect';
+      chart = (
+        <AreaChart
+          data={this.props.responsesData}
+          parentWidth={this.node.getBoundingClientRect().width}
+        />
+      );
     }
 
     return (
-      <div className={`question${active}${answered}`}>
+      <div
+        className={`question${active}${answered}`}
+        ref={node => { this.node = node; }}
+      >
         <h2 className="o-typography-subhead--crosshead">
           Question {this.props.questionIndex + 1}
         </h2>
@@ -69,6 +79,8 @@ class Question extends Component {
         {input}
 
         <p className="o-typography-lead--small">{output}</p>
+
+        {chart}
       </div>
     );
   }
@@ -81,6 +93,7 @@ Question.propTypes = {
   options: React.PropTypes.array,
   questionType: React.PropTypes.string,
   active: React.PropTypes.bool,
+  responsesData: React.PropTypes.array,
   questionIndex: React.PropTypes.number,
   questionText: React.PropTypes.string,
 };

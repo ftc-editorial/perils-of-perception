@@ -44,6 +44,7 @@ class App extends Component {
           question.options[option]
         ).filter(option => option !== null)}
         answer={question.answer}
+        responsesData={[10, 0, 50, 100, 25]}
         active={i === this.state.activeQuestion}
         updateProgress={this.updateProgress}
         updateScore={this.updateScore}

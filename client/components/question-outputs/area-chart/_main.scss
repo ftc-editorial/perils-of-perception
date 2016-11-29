@@ -1,0 +1,15 @@
+svg.area-chart {
+  position: absolute;
+  top: 0;
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: oColorsGetPaletteColor('black');
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+  }
+
+  .area {
+    fill: oColorsGetPaletteColor('claret');
+  }
+}

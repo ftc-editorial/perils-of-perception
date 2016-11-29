@@ -88,7 +88,11 @@
     "test": "npm run lint && npm run build"
   },
   "dependencies": {
+    "d3": "^3.5.17",
+    "e": "0.0.4",
+    "lodash": "^4.17.2",
     "react": "^15.3.2",
-    "react-dom": "^15.3.2"
+    "react-dom": "^15.3.2",
+    "react-faux-dom": "^3.0.0"
   }
 }
