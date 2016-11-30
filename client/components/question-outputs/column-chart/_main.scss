@@ -1,16 +1,16 @@
-svg.area-chart {
+svg.column-chart {
   align-self: flex-start;
   .axis path,
   .axis line {
     fill: none;
     stroke: #c3bcb0;
-    stroke-width: 1;
+    stroke-width: 2;
     shape-rendering: crispEdges;
   }
   text {
     fill: #6b6e68;
   }
-  .area {
+  .bar {
     fill: #bb6d82;
   }
 }

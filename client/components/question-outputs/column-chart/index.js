@@ -3,7 +3,7 @@ import ReactFauxDOM from 'react-faux-dom';
 import throttle from 'lodash/throttle';
 import d3 from 'd3';
 
-class AreaChart extends Component {
+class ColumnChart extends Component {
   constructor(props) {
     super(props);
 
@@ -64,16 +64,19 @@ class AreaChart extends Component {
     const svg = d3.select(chart)
         .attr('width', width + margin.left + margin.right)
         .attr('height', 0)
-        .attr('class', 'area-chart');
-    const area = d3.svg.area()
-        .x((d, i) => i * (width / (data.length - 1)))
-        .y0(height)
-        .y1(height)
-        .interpolate('basis');
-    const path = svg.append('path')
-        .datum(data)
-        .attr('class', 'area')
-        .attr('d', area);
+        .attr('class', 'column-chart');
+    const bar = svg.selectAll('.bar')
+        .data(data)
+      .enter().append('g')
+        .attr('class', 'bar')
+        .attr('transform', (d, i) =>
+          `translate(${i * (width / data.length)}, 0)`
+        );
+    const rect = bar.append('rect')
+        .attr('x', 1)
+        .attr('y', height)
+        .attr('width', width / data.length)
+        .attr('height', 0);
 
     svg.append('g')
         .attr('class', 'x axis')
@@ -90,14 +93,15 @@ class AreaChart extends Component {
         .duration(500)
         .attr('height', height + margin.top + margin.bottom);
 
-    area.y1(d =>
-        height - ((d / 100) * height)
-      );
-
-    path.transition()
+    rect.transition()
         .delay(500)
         .duration(500)
-        .attr('d', area);
+        .attr('y', d =>
+          height - ((d / 100) * height)
+        )
+        .attr('height', d =>
+          (d / 100) * height
+        );
 
     // Kick off transitions
     this.animateFauxDOM(1000);
@@ -144,13 +148,6 @@ class AreaChart extends Component {
     const yAxis = d3.svg.axis()
         .scale(y)
         .orient('left');
-    const area = d3.svg.area()
-        .x((d, i) =>
-          i * (width / (this.props.data.length - 1))
-        )
-        .y0(height)
-        .y1(d => (height - ((d / 100) * height)))
-        .interpolate('basis');
 
     // Update chart width and drill down to update x axis
     d3.select(chart)
@@ -164,9 +161,19 @@ class AreaChart extends Component {
     d3.select(chart).select('.y')
         .call(yAxis);
 
-    // Come back up again to update area
-    d3.select(chart).select('.area')
-        .attr('d', area);
+    // Come back up again to update bars
+    d3.select(chart).selectAll('.bar')
+        .attr('transform', (d, i) =>
+          `translate(${i * (width / data.length)}, 0)`
+        )
+      .select('rect')
+        .attr('y', d =>
+          height - ((d / 100) * height)
+        )
+        .attr('width', width / data.length)
+        .attr('height', d =>
+          (d / 100) * height
+        );
 
     this.drawFauxDOM();
   }
@@ -183,10 +190,10 @@ class AreaChart extends Component {
   }
 }
 
-AreaChart.propTypes = {
+ColumnChart.propTypes = {
   data: React.PropTypes.array,
   parentWidth: React.PropTypes.number,
   parentHeight: React.PropTypes.number,
 };
 
-export default AreaChart;
+export default ColumnChart;

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import MultipleChoice from '../question-inputs/multiple-choice';
 import Range from '../question-inputs/range';
 import AreaChart from '../question-outputs/area-chart';
+import ColumnChart from '../question-outputs/column-chart';
 
 class Question extends Component {
   constructor(props) {
@@ -60,7 +61,7 @@ class Question extends Component {
       chart = (
         <AreaChart
           data={this.props.responsesData}
-          parentWidth={this.node.getBoundingClientRect().width}
+          parentWidth={this.node.offsetWidth}
         />
       );
     }
