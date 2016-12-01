@@ -18,12 +18,24 @@ class Range extends Component {
     return (
       <form
         onSubmit={event => {
-          this.props.onSubmit(event, this.state.value);
-
           this.setState({ disabled: true });
+          this.submitButton.style.opacity = 0;
+          this.props.onSubmit(event, this.state.value);
         }}
         className="range-input"
       >
+        <div className="range-labels">
+          <div className="range-labels-min">
+            {this.props.min}
+          </div>
+          <div className="range-labels-input">
+            {this.state.value}
+          </div>
+          <div className="range-labels-max">
+            {this.props.max}
+          </div>
+        </div>
+
         <input
           type="range"
           min={this.props.min}
@@ -33,14 +45,17 @@ class Range extends Component {
           disabled={this.state.disabled}
         />
 
-        {this.state.value}
-
-        <input
-          type="submit"
-          value="Submit"
-          disabled={this.state.disabled}
-          className="o-buttons"
-        />
+        <div
+          className="button-container"
+        >
+          <input
+            ref={node => { this.submitButton = node; }}
+            type="submit"
+            value="Submit"
+            disabled={this.state.disabled}
+            className="o-buttons"
+          />
+        </div>
       </form>
     );
   }

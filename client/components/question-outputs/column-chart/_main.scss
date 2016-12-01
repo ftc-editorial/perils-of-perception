@@ -1,5 +1,6 @@
 svg.column-chart {
   align-self: flex-start;
+  margin: -5px 0 0;
   .axis path,
   .axis line {
     fill: none;
@@ -12,5 +13,7 @@ svg.column-chart {
   }
   .bar {
     fill: #bb6d82;
+    stroke: #fff1e0;
+    shape-rendering: geometricPrecision;
   }
 }

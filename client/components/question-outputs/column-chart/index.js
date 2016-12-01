@@ -18,8 +18,8 @@ class ColumnChart extends Component {
       // Placeholder content displayed before chart render
       chart: 'Loading chart…',
     };
-    this.redrawChart = this.redrawChart.bind(this);
     this.handleResize = this.handleResize.bind(this);
+    this.redrawChart = this.redrawChart.bind(this);
 
     for (const mixin in ReactFauxDOM.mixins.anim) { // eslint-disable-line
       if ({}.hasOwnProperty.call(ReactFauxDOM.mixins.anim, mixin)) {
@@ -76,7 +76,17 @@ class ColumnChart extends Component {
         .attr('x', 1)
         .attr('y', height)
         .attr('width', width / data.length)
-        .attr('height', 0);
+        .attr('height', 0)
+        .attr('fill', d => {
+          const color = d === d3.max(data) ? '#9e2f50' : null;
+          return color;
+        })
+        .attr('stroke-width', () => {
+          const rectWidth = d3.select(chart)
+              .select('rect')
+              .attr('width');
+          return rectWidth * 0.1;
+        });
 
     svg.append('g')
         .attr('class', 'x axis')
@@ -94,7 +104,8 @@ class ColumnChart extends Component {
         .attr('height', height + margin.top + margin.bottom);
 
     rect.transition()
-        .delay(500)
+        .ease('elastic')
+        .delay((d, i) => 500 + (i * 7.5))
         .duration(500)
         .attr('y', d =>
           height - ((d / 100) * height)
@@ -104,7 +115,7 @@ class ColumnChart extends Component {
         );
 
     // Kick off transitions
-    this.animateFauxDOM(1000);
+    this.animateFauxDOM(2000);
 
     // Add window resize event listener
     window.addEventListener('resize', throttle(this.handleResize, 500));
@@ -173,7 +184,13 @@ class ColumnChart extends Component {
         .attr('width', width / data.length)
         .attr('height', d =>
           (d / 100) * height
-        );
+        )
+        .attr('stroke-width', () => {
+          const rectWidth = d3.select(chart)
+              .select('rect')
+              .attr('width');
+          return rectWidth * 0.1;
+        });
 
     this.drawFauxDOM();
   }
@@ -193,7 +210,6 @@ class ColumnChart extends Component {
 ColumnChart.propTypes = {
   data: React.PropTypes.array,
   parentWidth: React.PropTypes.number,
-  parentHeight: React.PropTypes.number,
 };
 
 export default ColumnChart;

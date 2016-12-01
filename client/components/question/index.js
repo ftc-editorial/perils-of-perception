@@ -79,9 +79,9 @@ class Question extends Component {
 
         {input}
 
-        <p className="o-typography-lead--small">{output}</p>
-
         {chart}
+
+        <p className="o-typography-lead--small">{output}</p>
       </div>
     );
   }

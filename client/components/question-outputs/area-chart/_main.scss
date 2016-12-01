@@ -1,5 +1,6 @@
 svg.area-chart {
   align-self: flex-start;
+  margin: -5px 0 0;
   .axis path,
   .axis line {
     fill: none;
@@ -12,5 +13,6 @@ svg.area-chart {
   }
   .area {
     fill: #bb6d82;
+    shape-rendering: geometricPrecision;
   }
 }

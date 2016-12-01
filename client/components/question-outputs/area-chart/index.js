@@ -18,8 +18,8 @@ class AreaChart extends Component {
       // Placeholder content displayed before chart render
       chart: 'Loading chart…',
     };
-    this.redrawChart = this.redrawChart.bind(this);
     this.handleResize = this.handleResize.bind(this);
+    this.redrawChart = this.redrawChart.bind(this);
 
     for (const mixin in ReactFauxDOM.mixins.anim) { // eslint-disable-line
       if ({}.hasOwnProperty.call(ReactFauxDOM.mixins.anim, mixin)) {
@@ -95,6 +95,7 @@ class AreaChart extends Component {
       );
 
     path.transition()
+        .ease('elastic')
         .delay(500)
         .duration(500)
         .attr('d', area);
@@ -186,7 +187,6 @@ class AreaChart extends Component {
 AreaChart.propTypes = {
   data: React.PropTypes.array,
   parentWidth: React.PropTypes.number,
-  parentHeight: React.PropTypes.number,
 };
 
 export default AreaChart;

@@ -1,7 +1,34 @@
 form.range-input {
   padding: 0 10px;
+  .range-labels {
+    display: flex;
+    justify-content: space-between;
+    &-min {
+      align-self: flex-start;
+    }
+    &-max {
+      align-self: flex-end;
+    }
+  }
   input[type=range] {
     width: 100%;
     max-width: 605px;
+  }
+  .button-container {
+    position: relative;
+    width: 100%;
+    padding: 0 10px;
+    input[type=submit] {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 375px;
+      margin: 10px 0 10px -10px;
+      -webkit-transition: opacity linear 500ms; /* Safari */
+      transition: opacity linear 500ms;
+    }
   }
 }
