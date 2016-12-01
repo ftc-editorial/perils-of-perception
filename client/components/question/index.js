@@ -59,7 +59,7 @@ class Question extends Component {
     if (this.state.answered) {
       output = this.state.correct ? 'Correct' : 'Incorrect';
       chart = (
-        <AreaChart
+        <ColumnChart
           data={this.props.responsesData}
           parentWidth={this.node.offsetWidth}
         />
@@ -79,9 +79,12 @@ class Question extends Component {
 
         {input}
 
+        {/* TODO: comment out the line below if you don't want a chart output */}
         {chart}
 
-        <p className="o-typography-lead--small">{output}</p>
+        <div className="output-container">
+          <p className="o-typography-lead--small">{output}</p>
+        </div>
       </div>
     );
   }

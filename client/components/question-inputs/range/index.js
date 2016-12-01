@@ -19,8 +19,9 @@ class Range extends Component {
       <form
         onSubmit={event => {
           this.setState({ disabled: true });
-          this.submitButton.style.opacity = 0;
           this.props.onSubmit(event, this.state.value);
+          // TODO: comment out the line below if you don't want the submit button to fade out
+          this.submitButton.style.opacity = 0;
         }}
         className="range-input"
       >
