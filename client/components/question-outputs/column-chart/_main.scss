@@ -1,6 +1,6 @@
 svg.column-chart {
   align-self: flex-start;
-  margin: -5px 0 0;
+  margin: -8px 0 0;
   .axis path,
   .axis line {
     fill: none;
@@ -8,12 +8,15 @@ svg.column-chart {
     stroke-width: 2;
     shape-rendering: crispEdges;
   }
+  .y.axis .tick line {
+    stroke-width: 1;
+    stroke-dasharray: 2 2;
+  }
   text {
     fill: #6b6e68;
   }
   .bar {
     fill: #bb6d82;
-    stroke: #fff1e0;
     shape-rendering: geometricPrecision;
   }
 }

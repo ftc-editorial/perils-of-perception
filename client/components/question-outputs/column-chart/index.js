@@ -50,7 +50,7 @@ class ColumnChart extends Component {
     const height = this.state.height - margin.top - margin.bottom;
     const x = d3.scale.linear()
         .domain([0, data.length])
-        .range([0, width]);
+        .range([0, width + 1]);
     const y = d3.scale.linear()
         .domain([0, 100])
         .range([height, 0]);
@@ -63,7 +63,7 @@ class ColumnChart extends Component {
         .scale(y)
         .orient('left')
         .tickValues([50, 100])
-        .tickSize(-width);
+        .tickSize(-width, 0);
     const svg = d3.select(chart)
         .attr('width', width + margin.left + margin.right)
         .attr('height', 0)
@@ -79,12 +79,12 @@ class ColumnChart extends Component {
       .enter().append('g')
         .attr('class', 'bar')
         .attr('transform', (d, i) =>
-          `translate(${i * (width / data.length)}, 0)`
+          `translate(${(i * (width / data.length)) + ((width / data.length) / 5.05)}, 0)`
         );
     const rect = bar.append('rect')
         .attr('x', 1)
         .attr('y', height)
-        .attr('width', width / data.length)
+        .attr('width', (width / data.length) - ((width / data.length) / 5.05))
         .attr('height', 0)
         .attr('fill', d => {
           const color = d === d3.max(data) ? '#9e2f50' : null;
@@ -99,7 +99,7 @@ class ColumnChart extends Component {
 
     svg.append('g')
         .attr('class', 'x axis')
-        .attr('transform', `translate(1, ${height})`)
+        .attr('transform', `translate(0, ${height})`)
         .call(xAxis);
 
     // Set up on-render transitions
@@ -153,7 +153,7 @@ class ColumnChart extends Component {
     const height = this.state.height - margin.top - margin.bottom;
     const x = d3.scale.linear()
         .domain([0, data.length])
-        .range([0, width]);
+        .range([0, width + 1]);
     const y = d3.scale.linear()
         .domain([0, 100]) // TODO: set domain upper bound per chart requirements
         .range([height, 0]);
@@ -166,7 +166,7 @@ class ColumnChart extends Component {
         .scale(y)
         .orient('left')
         .tickValues([50, 100])
-        .tickSize(-width);
+        .tickSize(-width, 0);
 
     // Update chart width and drill down to update x axis
     d3.select(chart)
@@ -184,13 +184,13 @@ class ColumnChart extends Component {
     // Come back up again to update bars
     d3.select(chart).selectAll('.bar')
         .attr('transform', (d, i) =>
-          `translate(${i * (width / data.length)}, 0)`
+          `translate(${(i * (width / data.length)) + ((width / data.length) / 5.05)}, 0)`
         )
       .select('rect')
         .attr('y', d =>
           height - ((d / 100) * height)
         )
-        .attr('width', width / data.length)
+        .attr('width', (width / data.length) - ((width / data.length) / 5.05))
         .attr('height', d =>
           (d / 100) * height
         )
