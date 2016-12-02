@@ -41,6 +41,7 @@ class Range extends Component {
           type="range"
           min={this.props.min}
           max={this.props.max}
+          step={1}
           value={this.state.value}
           onChange={event => this.handleChange(event.target.value)}
           disabled={this.state.disabled}
