@@ -56,15 +56,24 @@ class ColumnChart extends Component {
         .range([height, 0]);
     const xAxis = d3.svg.axis()
         .scale(x)
-        .orient('bottom');
+        .orient('bottom')
+        .tickValues([10, 20, 30, 40, 50, 60, 70, 80, 90])
+        .outerTickSize(0);
     const yAxis = d3.svg.axis()
         .scale(y)
         .orient('left')
-        .ticks(0);
+        .tickValues([50, 100])
+        .tickSize(-width);
     const svg = d3.select(chart)
         .attr('width', width + margin.left + margin.right)
         .attr('height', 0)
         .attr('class', 'column-chart');
+
+    svg.append('g')
+        .attr('class', 'y axis')
+        .attr('transform', 'translate(1, 0)')
+        .call(yAxis);
+
     const bar = svg.selectAll('.bar')
         .data(data)
       .enter().append('g')
@@ -90,13 +99,8 @@ class ColumnChart extends Component {
 
     svg.append('g')
         .attr('class', 'x axis')
-        .attr('transform', `translate(0, ${height})`)
+        .attr('transform', `translate(1, ${height})`)
         .call(xAxis);
-
-    svg.append('g')
-        .attr('class', 'y axis')
-        .attr('transform', 'translate(1, 0)')
-        .call(yAxis);
 
     // Set up on-render transitions
     svg.transition()
@@ -155,10 +159,14 @@ class ColumnChart extends Component {
         .range([height, 0]);
     const xAxis = d3.svg.axis()
         .scale(x)
-        .orient('bottom');
+        .orient('bottom')
+        .tickValues([10, 20, 30, 40, 50, 60, 70, 80, 90])
+        .outerTickSize(0);
     const yAxis = d3.svg.axis()
         .scale(y)
-        .orient('left');
+        .orient('left')
+        .tickValues([50, 100])
+        .tickSize(-width);
 
     // Update chart width and drill down to update x axis
     d3.select(chart)
@@ -170,6 +178,7 @@ class ColumnChart extends Component {
 
     // Come back up to update y axis
     d3.select(chart).select('.y')
+        .attr('transform', 'translate(1, 0)')
         .call(yAxis);
 
     // Come back up again to update bars
