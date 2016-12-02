@@ -42,15 +42,15 @@ class Question extends Component {
     const rangeMin = this.props.options[0];
     const rangeMax = this.props.options[1];
     const input = this.props.questionType === 'range'
-      ? <Range
+      ? (<Range
         min={rangeMin}
         max={rangeMax}
         onSubmit={this.markQuestion}
-      />
-      : <MultipleChoice
+      />)
+      : (<MultipleChoice
         options={this.props.options}
         onSubmit={this.markQuestion}
-      />;
+      />);
     const active = this.props.active ? ' active' : '';
     const answered = this.state.answered ? ' answered' : '';
     let output;

@@ -10,8 +10,11 @@ class Range extends Component {
     };
   }
 
-  handleChange(value) {
-    this.setState({ value: parseInt(value, 10) });
+  handleChange(inputValue) {
+    const value = parseInt(inputValue, 10);
+    const number = isNaN(value) ? 50 : value;
+
+    this.setState({ value: number });
   }
 
   render() {
