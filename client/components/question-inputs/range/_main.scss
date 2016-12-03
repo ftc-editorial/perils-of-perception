@@ -1,6 +1,7 @@
 form.range-input {
+  position: relative;
   width: 100%;
-  .range-labels {
+  div.range-labels {
     display: flex;
     justify-content: space-between;
     &-min {
@@ -61,20 +62,19 @@ form.range-input {
       outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
     }
   }
-  .button-container {
-    position: relative;
-    // padding: 0 10px;
-    input[type=submit] {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      -webkit-transform: translateX(-50%);
-      transform: translateX(-50%);
-      width: 100%;
-      max-width: 315px;
-      margin: 25px auto;
-      -webkit-transition: opacity linear 500ms; /* Safari */
-      transition: opacity linear 500ms;
-    }
+  input[type=submit] {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 315px;
+    margin: 22px 0 0;
+    -webkit-transition: opacity linear 500ms;
+    transition: opacity linear 500ms;
   }
+}
+div.spacer {
+  height: 26px;
 }

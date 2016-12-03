@@ -19,6 +19,7 @@ class Range extends Component {
 
   render() {
     return (
+      <div>
       <form
         onSubmit={event => {
           this.setState({ disabled: true });
@@ -50,18 +51,16 @@ class Range extends Component {
           disabled={this.state.disabled}
         />
 
-        <div
-          className="button-container"
-        >
-          <input
-            ref={node => { this.submitButton = node; }}
-            type="submit"
-            value="Submit"
-            disabled={this.state.disabled}
-            className="o-buttons"
-          />
-        </div>
+        <input
+          ref={node => { this.submitButton = node; }}
+          type="submit"
+          value="Submit"
+          disabled={this.state.disabled}
+          className="o-buttons"
+        />
       </form>
+      <div className="spacer" />
+    </div>
     );
   }
 }

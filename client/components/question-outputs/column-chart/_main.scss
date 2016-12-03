@@ -1,5 +1,6 @@
 svg.column-chart {
   align-self: flex-start;
+  margin-top: -26px; // TODO: if using range input, make same width as div.spacer
   .axis path,
   .axis line {
     fill: none;
