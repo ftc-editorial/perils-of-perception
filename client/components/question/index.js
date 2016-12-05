@@ -58,7 +58,7 @@ class Question extends Component {
 
     if (this.state.answered) {
       chart = (
-        <AreaChart
+        <ColumnChart
           data={this.props.responsesData}
           parentWidth={this.node.offsetWidth}
         />
