@@ -20,47 +20,47 @@ class Range extends Component {
   render() {
     return (
       <div>
-      <form
-        onSubmit={event => {
-          this.setState({ disabled: true });
-          this.props.onSubmit(event, this.state.value);
-          // TODO: comment out the line below if you don't want the submit button to fade out
-          this.submitButton.style.opacity = 0;
-        }}
-        className="range-input"
-      >
-        <div className="range-labels">
-          <div className="range-labels-min">
-            {this.props.min}
+        <form
+          onSubmit={event => {
+            this.setState({ disabled: true });
+            this.props.onSubmit(event, this.state.value);
+            // TODO: comment out the line below if you don't want the submit button to fade out
+            this.submitButton.style.opacity = 0;
+          }}
+          className="range-input"
+        >
+          <div className="range-labels">
+            <div className="range-labels-min">
+              {this.props.min}
+            </div>
+            <div className="range-labels-input">
+              {this.state.value}
+            </div>
+            <div className="range-labels-max">
+              {this.props.max}
+            </div>
           </div>
-          <div className="range-labels-input">
-            {this.state.value}
-          </div>
-          <div className="range-labels-max">
-            {this.props.max}
-          </div>
-        </div>
 
-        <input
-          type="range"
-          min={this.props.min}
-          max={this.props.max}
-          step={1}
-          value={this.state.value}
-          onChange={event => this.handleChange(event.target.value)}
-          disabled={this.state.disabled}
-        />
+          <input
+            type="range"
+            min={this.props.min}
+            max={this.props.max}
+            step={1}
+            value={this.state.value}
+            onChange={event => this.handleChange(event.target.value)}
+            disabled={this.state.disabled}
+          />
 
-        <input
-          ref={node => { this.submitButton = node; }}
-          type="submit"
-          value="Submit"
-          disabled={this.state.disabled}
-          className="o-buttons"
-        />
-      </form>
-      <div className="spacer" />
-    </div>
+          <input
+            ref={node => { this.submitButton = node; }}
+            type="submit"
+            value="Submit"
+            disabled={this.state.disabled}
+            className="o-buttons"
+          />
+        </form>
+        <div className="spacer" />
+      </div>
     );
   }
 }

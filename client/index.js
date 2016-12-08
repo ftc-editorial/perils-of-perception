@@ -1,19 +1,30 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Question from './components/question';
+import Overlay from './components/overlay';
 
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      questions: JSON.parse(document.getElementById('data').textContent),
+      questions: [],
       activeQuestion: 0,
       score: 0,
       complete: false,
+      // TODO: set chooseQuestions to true if you want the question set to be
+      // selectable on page load
+      chooseQuestions: true,
     };
+    this.setQuestions = this.setQuestions.bind(this);
     this.updateProgress = this.updateProgress.bind(this);
     this.updateScore = this.updateScore.bind(this);
+  }
+
+  setQuestions(value) {
+    console.log(value);
+
+    this.setState({ questions: JSON.parse(document.getElementById('data').textContent) });
   }
 
   updateProgress(n) {
@@ -50,10 +61,13 @@ class App extends Component {
         updateScore={this.updateScore}
       />
     );
-    const results = this.state.complete
-      ? <div>
+    const results = this.state.complete ?
+      (<div>
         <p>Your score: {this.state.score}</p>
-      </div>
+      </div>)
+      : null;
+    const chooseQuestions = this.state.chooseQuestions ?
+      <Overlay setQuestions={this.setQuestions} />
       : null;
 
     return (
@@ -63,6 +77,8 @@ class App extends Component {
         {questions}
 
         {results}
+
+        {chooseQuestions}
       </div>
     );
   }

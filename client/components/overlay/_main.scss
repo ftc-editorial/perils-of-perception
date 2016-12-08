@@ -1,0 +1,34 @@
+div.overlay {
+  z-index: 999 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(51, 51, 51, 0.62);
+  -webkit-transition: background-color 250ms linear;
+  transition: background-color 250ms linear;
+  -webkit-backdrop-filter: blur(8px);
+  &.hidden {
+    display: none;
+  }
+  &.animate-blur {
+    @-webkit-keyframes into_focus {
+      from { -webkit-backdrop-filter: blur(8px); }
+      to { -webkit-backdrop-filter: blur(0px); }
+    }
+    -webkit-animation: 250ms linear into_focus;
+  }
+  div.o-grid-container {
+    margin: 0 10px;
+    border: 2px solid #74736c;
+    border-radius: 5px;
+    padding: 10px 10px 10px 20px;
+    width: 100%;
+    max-width: 625px;
+    background: #fff;
+  }
+}
