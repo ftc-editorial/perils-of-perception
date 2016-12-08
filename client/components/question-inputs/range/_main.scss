@@ -1,9 +1,11 @@
 form.range-input {
   position: relative;
   width: 100%;
+  margin: 10px 0 0;
   div.range-labels {
     display: flex;
     justify-content: space-between;
+    color: #a7a59b;
     &-min {
       align-self: flex-start;
     }
@@ -12,11 +14,11 @@ form.range-input {
     }
   }
   input[type=range] {
-    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
-    width: 100%; /* Specific width is required for Firefox. */
+    -webkit-appearance: none;
+    width: 100%;
     max-width: 625px;
     margin-top: 20px;
-    background: transparent; /* Otherwise white in Chrome */
+    background: transparent;
     &::-webkit-slider-thumb {
       -webkit-appearance: none;
       border: 1px solid rgba(38,116,122,.15);
@@ -25,7 +27,7 @@ form.range-input {
       border-radius: 12.5px;
       background: #27757b;
       cursor: pointer;
-      margin-top: -10px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+      margin-top: -10px;
     }
     &::-webkit-slider-runnable-track {
       width: 100%;
@@ -53,13 +55,12 @@ form.range-input {
     &::-ms-track {
       width: 100%;
       cursor: pointer;
-      /* Hides the slider so custom styles can be added */
       background: transparent;
       border-color: transparent;
       color: transparent;
     }
     &:focus {
-      outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+      outline: none;
     }
   }
   input[type=submit] {

@@ -108,8 +108,8 @@ class Overlay extends Component {
                 </select>
                 <input
                   type="submit"
-                  value="Submit"
-                  className="o-buttons"
+                  value="START THE QUIZ"
+                  className="o-buttons o-buttons--standout"
                   disabled={this.state.inputsDisabled}
                 />
               </form>

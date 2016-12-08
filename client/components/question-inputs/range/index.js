@@ -54,9 +54,9 @@ class Range extends Component {
           <input
             ref={node => { this.submitButton = node; }}
             type="submit"
-            value="Submit"
+            value="CHECK YOUR ANSWER"
             disabled={this.state.disabled}
-            className="o-buttons"
+            className="o-buttons o-buttons--standout"
           />
         </form>
         <div className="spacer" />
