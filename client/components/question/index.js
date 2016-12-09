@@ -11,6 +11,7 @@ class Question extends Component {
     this.state = {
       answered: false,
       correct: false,
+      value: null,
     };
     this.markQuestion = this.markQuestion.bind(this);
   }
@@ -28,6 +29,7 @@ class Question extends Component {
 
     this.setState({
       answered: true,
+      value,
     });
 
     if (correct) {
@@ -61,6 +63,10 @@ class Question extends Component {
         <ColumnChart
           data={this.props.responsesData}
           parentWidth={this.node.offsetWidth}
+          inputMin={rangeMin}
+          inputMax={rangeMax}
+          userAnswer={this.state.value}
+          actualAnswer={this.props.answer}
         />
       );
       output = this.state.correct

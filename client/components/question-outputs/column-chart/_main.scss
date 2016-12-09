@@ -1,6 +1,5 @@
 svg.column-chart {
   align-self: flex-start;
-  margin-top: -26px; // TODO: if using range input, make same width as div.spacer
   .axis path,
   .axis line {
     fill: none;
@@ -8,15 +7,45 @@ svg.column-chart {
     stroke-width: 2;
     shape-rendering: crispEdges;
   }
-  .y.axis .tick line {
-    stroke-width: 1;
-    stroke-dasharray: 2 2;
+  .y.axis {
+    path {
+       stroke: none;
+     }
+    .tick line {
+      stroke-width: 1;
+      stroke-dasharray: 1, 2;
+    }
+  }
+  .x2.axis {
+    path {
+      stroke: none;
+    }
+    .tick {
+      line {
+        stroke-width: 3;
+        stroke-dasharray: 6, 3;
+      }
+      &.user line {
+        stroke: #26747a;
+      }
+      &.actual line {
+        stroke: #458b00;
+      }
+    }
   }
   text {
+    font-size: 18px;
+    font-weight: 400;
     fill: #6b6e68;
   }
   .bar {
     fill: #bb6d82;
+    shape-rendering: geometricPrecision;
+  }
+  .actual-answer {
+    fill: #458b00;
+    stroke: #fff1e0;
+    stroke-width: 2px;
     shape-rendering: geometricPrecision;
   }
 }

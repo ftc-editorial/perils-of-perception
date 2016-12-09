@@ -21,9 +21,9 @@ form.range-input {
     background: transparent;
     &::-webkit-slider-thumb {
       -webkit-appearance: none;
-      border: 1px solid rgba(38,116,122,.15);
       height: 23px;
       width: 23px;
+      border: 2px solid #fff1e0;
       border-radius: 12.5px;
       background: #27757b;
       cursor: pointer;
@@ -37,7 +37,6 @@ form.range-input {
       border-radius: 4px;
     }
     &::-moz-range-thumb {
-      border: 1px solid rgba(38,116,122,.15);
       height: 23px;
       width: 23px;
       border-radius: 10px;
@@ -45,7 +44,6 @@ form.range-input {
       cursor: pointer;
     }
     &::-ms-thumb {
-      border: 1px solid rgba(38,116,122,.15);
       height: 23px;
       width: 23px;
       border-radius: 10px;
@@ -62,6 +60,11 @@ form.range-input {
     &:focus {
       outline: none;
     }
+    &.hidden {
+      &::-webkit-slider-runnable-track {
+        background: rgba(38, 116, 122, 0);;
+      }
+    }
   }
   input[type=submit] {
     position: absolute;
@@ -71,11 +74,11 @@ form.range-input {
     transform: translateX(-50%);
     width: 100%;
     max-width: 315px;
-    margin: 22px 0 0;
+    margin: 23px 0 0;
     -webkit-transition: opacity linear 500ms;
     transition: opacity linear 500ms;
   }
 }
 div.spacer {
-  height: 26px;
+  height: 30px;
 }

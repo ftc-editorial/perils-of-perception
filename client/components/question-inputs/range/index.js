@@ -19,13 +19,14 @@ class Range extends Component {
 
   render() {
     return (
-      <div>
+      <div className="input">
         <form
           onSubmit={event => {
             this.setState({ disabled: true });
             this.props.onSubmit(event, this.state.value);
             // TODO: comment out the line below if you don't want the submit button to fade out
             this.submitButton.style.opacity = 0;
+            this.rangeInput.classList.add('hidden');
           }}
           className="range-input"
         >
@@ -42,6 +43,7 @@ class Range extends Component {
           </div>
 
           <input
+            ref={node => { this.rangeInput = node; }}
             type="range"
             min={this.props.min}
             max={this.props.max}

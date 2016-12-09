@@ -1,5 +1,6 @@
 .output-chart-container {
   position: relative;
   display: flex;
-  padding-left: 10px; // Should mirror right chart margin
+  margin: -54px 0 0;
+  padding: 10px 0 0; // Left padding should mirror right chart margin
 }
