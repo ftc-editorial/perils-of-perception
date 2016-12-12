@@ -1,5 +1,11 @@
 @import 'o-colors/main';
 @import 'components/core/main';
+@import 'components/question/main';
+@import 'components/question-inputs/range/main';
+@import 'components/question-outputs/main';
+@import 'components/question-outputs/area-chart/main';
+@import 'components/question-outputs/column-chart/main';
+@import 'components/overlay/main';
 
 // Core app styling
 .question {

@@ -1,0 +1,57 @@
+$axis-color: #c3bcb0;
+$tick-label-color: #6b6e68;
+$distribution-color: #cec6b9;
+$user-color: #26747a;
+$actual-color: #458b00;
+
+svg.column-chart {
+  align-self: flex-start;
+  margin-top: 10px;
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: $axis-color;
+    stroke-width: 2;
+    shape-rendering: crispEdges;
+  }
+  .y.axis {
+    path {
+       stroke: none;
+     }
+    .tick line {
+      stroke-width: 1;
+      stroke-dasharray: 1, 2;
+    }
+  }
+  .x2.axis {
+    path {
+      stroke: none;
+    }
+    .tick {
+      line {
+        stroke-width: 2;
+      }
+      &.user line {
+        stroke: $user-color;
+        stroke-dasharray: 2, 2;
+      }
+      &.actual line {
+        stroke: $actual-color;
+        stroke-dasharray: 2, 2;
+      }
+    }
+  }
+  text {
+    font-size: 18px;
+    font-weight: 400;
+    fill: $tick-label-color;
+  }
+  .bar {
+    fill: $distribution-color;
+    shape-rendering: geometricPrecision;
+  }
+  .actual-answer {
+    fill: $actual-color;
+    shape-rendering: geometricPrecision;
+  }
+}

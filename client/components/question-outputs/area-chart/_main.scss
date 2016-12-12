@@ -1,0 +1,18 @@
+svg.area-chart {
+  align-self: flex-start;
+  margin-top: -26px; // TODO: if using range input, make same width as div.spacer
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #c3bcb0;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+  }
+  text {
+    fill: #6b6e68;
+  }
+  .area {
+    fill: #bb6d82;
+    shape-rendering: geometricPrecision;
+  }
+}

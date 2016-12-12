@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import MultipleChoice from '../question-inputs/multiple-choice';
 import Range from '../question-inputs/range';
+// import AreaChart from '../question-outputs/area-chart';
+import ColumnChart from '../question-outputs/column-chart';
 
 class Question extends Component {
   constructor(props) {
@@ -9,6 +11,7 @@ class Question extends Component {
     this.state = {
       answered: false,
       correct: false,
+      value: null,
     };
     this.markQuestion = this.markQuestion.bind(this);
   }
@@ -18,15 +21,15 @@ class Question extends Component {
       event.preventDefault();
     }
 
-    console.log(value);
-
     // Check if user answered correctly
     const correct = value === this.props.answer;
+
     // Points awarded for this question (use for weighting etc.)
     const questionValue = 1;
 
     this.setState({
       answered: true,
+      value,
     });
 
     if (correct) {
@@ -40,26 +43,53 @@ class Question extends Component {
   render() {
     const rangeMin = this.props.options[0];
     const rangeMax = this.props.options[1];
-    const input = this.props.questionType === 'range'
-      ? <Range
-        min={rangeMin}
-        max={rangeMax}
-        onSubmit={this.markQuestion}
-      />
-      : <MultipleChoice
-        options={this.props.options}
-        onSubmit={this.markQuestion}
-      />;
     const active = this.props.active ? ' active' : '';
     const answered = this.state.answered ? ' answered' : '';
+    let input;
     let output;
+    let chart;
+
+    if (this.props.questionType === 'range') {
+      input = (<Range
+        min={rangeMin}
+        max={rangeMax}
+        step={rangeMax / 100}
+        thumbSize={28}
+        onSubmit={this.markQuestion}
+      />);
+    } else {
+      input = (<MultipleChoice
+        options={this.props.options}
+        onSubmit={this.markQuestion}
+      />);
+    }
 
     if (this.state.answered) {
-      output = this.state.correct ? 'Correct' : 'Incorrect';
+      chart = (
+        <ColumnChart
+          data={this.props.responsesData}
+          initialWidth={this.node.offsetWidth}
+          inputMin={rangeMin}
+          inputMax={rangeMax}
+          userAnswer={this.state.value}
+          actualAnswer={this.props.answer}
+        />
+      );
+
+      output = this.state.correct
+        ? (<div className="output-container">
+          <p className="o-typography-lead--small">Correct</p>
+        </div>)
+        : (<div className="output-container">
+          <p className="o-typography-lead--small">Incorrect</p>
+        </div>);
     }
 
     return (
-      <div className={`question${active}${answered}`}>
+      <div
+        ref={node => { this.node = node; }}
+        className={`question${active}${answered}`}
+      >
         <h2 className="o-typography-subhead--crosshead">
           Question {this.props.questionIndex + 1}
         </h2>
@@ -68,7 +98,10 @@ class Question extends Component {
 
         {input}
 
-        <p className="o-typography-lead--small">{output}</p>
+        {/* TODO: comment out the line below if you don't want a chart output */}
+        {chart}
+
+        {output}
       </div>
     );
   }
@@ -81,6 +114,7 @@ Question.propTypes = {
   options: React.PropTypes.array,
   questionType: React.PropTypes.string,
   active: React.PropTypes.bool,
+  responsesData: React.PropTypes.array,
   questionIndex: React.PropTypes.number,
   questionText: React.PropTypes.string,
 };
