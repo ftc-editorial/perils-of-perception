@@ -15,7 +15,7 @@ class App extends Component {
       complete: false,
       // TODO: set chooseQuestions to true if you want the question set to be
       // selectable on page load
-      // chooseQuestions: true,
+      chooseQuestions: true,
     };
     this.setQuestions = this.setQuestions.bind(this);
     this.updateProgress = this.updateProgress.bind(this);

@@ -93,26 +93,31 @@ class Overlay extends Component {
         <div className="o-grid-container">
           <div className="o-grid-row">
             <div data-o-grid-colspan="12">
-              Modal header
-              <form
-                onSubmit={(event, value) => {
-                  this.handleSubmit(event, value);
-                }}
-              >
-                <select
-                  value={this.state.value}
-                  onChange={this.handleChange}
-                  required
+              <header className="overlay-header">
+                Which country would you like to answer questions about?
+              </header>
+              <section className="overlay-content">
+                <form
+                  onSubmit={(event, value) => {
+                    this.handleSubmit(event, value);
+                  }}
                 >
-                  {selectOptions}
-                </select>
-                <input
-                  type="submit"
-                  value="START THE QUIZ"
-                  className="o-buttons o-buttons--standout"
-                  disabled={this.state.inputsDisabled}
-                />
-              </form>
+                  <select
+                    value={this.state.value}
+                    onChange={this.handleChange}
+                    required
+                  >
+                    {selectOptions}
+                  </select>
+
+                  <input
+                    type="submit"
+                    value="START THE QUIZ"
+                    className="o-buttons o-buttons--standout"
+                    disabled={this.state.inputsDisabled}
+                  />
+                </form>
+              </section>
             </div>
           </div>
         </div>

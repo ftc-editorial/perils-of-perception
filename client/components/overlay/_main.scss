@@ -1,11 +1,11 @@
 div.overlay {
-  z-index: 999 !important;
+  position: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: fixed;
   top: 0;
   left: 0;
+  z-index: 999 !important;
   width: 100%;
   height: 100vh;
   background-color: rgba(51, 51, 51, 0.62);
@@ -23,12 +23,29 @@ div.overlay {
     -webkit-animation: 250ms linear into_focus;
   }
   div.o-grid-container {
+    width: 100%;
+    max-width: 490px;
     margin: 0 10px;
     border: 2px solid #74736c;
     border-radius: 5px;
-    padding: 10px 10px 10px 20px;
-    width: 100%;
-    max-width: 625px;
+    padding: 0;
     background: #fff;
+    header.overlay-header {
+      padding: 10px 10px 10px 20px;
+      background: #74736c;
+      color: #fff;
+    }
+    section.overlay-content {
+      padding: 20px;
+      form {
+        select {
+          width: 100%;
+        }
+        input[type=submit] {
+          margin-top: 10px;
+          width: 100%;
+        }
+      }
+    }
   }
 }

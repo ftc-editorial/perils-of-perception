@@ -8,12 +8,12 @@ class ColumnChart extends Component {
     super(props);
 
     // Calculate height at 16:9 aspect ratio
-    const calculatedHeight = (this.props.parentWidth / 1.78) + 11.5;
+    const calculatedHeight = (this.props.initialWidth / 1.78) + 14;
     // Make sure height is never less than n
     const height = calculatedHeight < 125 ? 125 : calculatedHeight;
 
     this.state = {
-      width: this.props.parentWidth,
+      width: this.props.initialWidth,
       height,
       // Placeholder content displayed before chart render
       chart: 'Loading chart…',
@@ -42,12 +42,12 @@ class ColumnChart extends Component {
     // Run some D3 on the faux SVG
     const margin = { // Mike Bostock's margin convention
       top: 20,
-      right: 23,
+      right: 28,
       bottom: 30,
       left: 0,
     };
     const width = this.state.width - margin.left - margin.right;
-    const height = ((this.state.height - margin.top) - margin.bottom) + 11.5;
+    const height = ((this.state.height - margin.top) - margin.bottom) + 14;
     const x1 = d3.scale.linear()
         .domain([0, data.length])
         .range([0, width]);
@@ -78,16 +78,16 @@ class ColumnChart extends Component {
         .attr('width', width + margin.left + margin.right)
         .attr('height', 0)
         .attr('class', 'column-chart');
-
-    svg.append('g')
+    const actualCircle = svg.append('g')
         .attr('class', 'actual-answer')
-        .attr('transform', `translate(${x2(this.props.actualAnswer) + 11.5}, 11.5)`)
+        .attr('transform', `translate(${x2(this.props.actualAnswer) + 14}, 14)`)
       .append('circle')
-        .attr('r', 11.5);
+        .attr('r', 9)
+        .style('opacity', 1e-6);
 
     svg.append('g')
         .attr('class', 'y axis')
-        .attr('transform', 'translate(11.5, 23)')
+        .attr('transform', 'translate(14, 28)')
         .call(yAxis)
       .selectAll('text')
         .attr('y', 9)
@@ -98,18 +98,13 @@ class ColumnChart extends Component {
       .enter().append('g')
         .attr('class', 'bar')
         .attr('transform', (d, i) =>
-          `translate(${(i * (width / data.length)) + ((width / data.length) / 5.05) + 9.5}, 23)`
+          `translate(${(i * (width / data.length)) + ((width / data.length) / 5.05) + 12}, 28)`
         );
     const rect = bar.append('rect')
         .attr('x', 1)
         .attr('y', height)
         .attr('width', (width / data.length) - ((width / data.length) / 5.05))
         .attr('height', 0)
-        .attr('fill', d => {
-          const color = d === d3.max(data) ? '#9e2f50' : null;
-
-          return color;
-        })
         .attr('stroke-width', () => {
           const rectWidth = d3.select(chart)
               .select('rect')
@@ -120,13 +115,12 @@ class ColumnChart extends Component {
 
     svg.append('g')
         .attr('class', 'x axis')
-        .attr('transform', `translate(11.5, ${height + 23})`)
+        .attr('transform', `translate(14, ${height + 28})`)
         .call(xAxis);
-
 
     svg.append('g')
         .attr('class', 'x2 axis')
-        .attr('transform', 'translate(11.5, 23)')
+        .attr('transform', 'translate(14, 28)')
         .call(xAxis2)
       .selectAll('.tick')
         .attr('class', d => {
@@ -143,6 +137,10 @@ class ColumnChart extends Component {
         .duration(500)
         .attr('height', height + margin.top + margin.bottom);
 
+    actualCircle.transition()
+        .duration(500)
+        .style('opacity', 1);
+
     rect.transition()
         .ease('elastic')
         .delay((d, i) => 500 + (i * 7.5))
@@ -158,7 +156,7 @@ class ColumnChart extends Component {
     this.animateFauxDOM(2000);
 
     // Add window resize event listener
-    window.addEventListener('resize', throttle(this.handleResize, 500));
+    window.addEventListener('resize', throttle(this.handleResize, 750));
   }
 
   redrawChart() {
@@ -169,12 +167,12 @@ class ColumnChart extends Component {
     // Redraw the chart
     const margin = {
       top: 20,
-      right: 23,
+      right: 28,
       bottom: 30,
       left: 0,
     };
     const width = this.state.width - margin.left - margin.right;
-    const height = ((this.state.height - margin.top) - margin.bottom) + 11.5;
+    const height = ((this.state.height - margin.top) - margin.bottom) + 14;
     const x1 = d3.scale.linear()
         .domain([0, data.length])
         .range([0, width]);
@@ -207,16 +205,16 @@ class ColumnChart extends Component {
         .attr('width', width + margin.left + margin.right)
         .attr('height', height + margin.top + margin.bottom)
       .select('.x')
-        .attr('transform', `translate(11.5, ${height + 23})`)
+        .attr('transform', `translate(14, ${height + 28})`)
         .call(xAxis);
 
     d3.select(chart).select('.x2')
-        .attr('transform', 'translate(11.5, 23)')
+        .attr('transform', 'translate(14, 28)')
         .call(xAxis2);
 
     // Come back up to update y axis
     d3.select(chart).select('.y')
-        .attr('transform', 'translate(11.5, 23)')
+        .attr('transform', 'translate(14, 28)')
         .call(yAxis)
       .selectAll('text')
         .attr('y', 9)
@@ -225,7 +223,7 @@ class ColumnChart extends Component {
     // Come back up again to update bars
     d3.select(chart).selectAll('.bar')
         .attr('transform', (d, i) =>
-          `translate(${(i * (width / data.length)) + ((width / data.length) / 5.05) + 9.5}, 23)`
+          `translate(${(i * (width / data.length)) + ((width / data.length) / 5.05) + 12}, 28)`
         )
       .select('rect')
         .attr('y', d =>
@@ -244,14 +242,14 @@ class ColumnChart extends Component {
         });
 
     d3.select(chart).select('.actual-answer')
-        .attr('transform', `translate(${x2(this.props.actualAnswer) + 11.5}, 11.5)`);
+        .attr('transform', `translate(${x2(this.props.actualAnswer) + 14}, 14)`);
 
     this.drawFauxDOM();
   }
 
   handleResize() {
     // Repeat height calculation with fallback value as above
-    const calculatedHeight = (this.node.offsetWidth / 1.78) + 11.5;
+    const calculatedHeight = (this.node.offsetWidth / 1.78) + 14;
     const height = calculatedHeight < 125 ? 125 : calculatedHeight;
 
     this.setState({
@@ -275,7 +273,7 @@ class ColumnChart extends Component {
 
 ColumnChart.propTypes = {
   data: React.PropTypes.array,
-  parentWidth: React.PropTypes.number,
+  initialWidth: React.PropTypes.number,
   inputMin: React.PropTypes.number,
   inputMax: React.PropTypes.number,
   userAnswer: React.PropTypes.number,
