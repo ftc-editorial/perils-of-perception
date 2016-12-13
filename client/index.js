@@ -3,19 +3,22 @@ import ReactDOM from 'react-dom';
 import Question from './components/question';
 import Overlay from './components/overlay';
 
+const endpoint = 'http://localhost:5353/api/v1';
+
 class App extends Component {
   constructor(props) {
     super(props);
+    const { questions } = props;
 
     this.state = {
-      // questions: [],
-      questions: JSON.parse(document.getElementById('data').textContent),
+      questions,
       activeQuestion: 0,
       score: 0,
       complete: false,
       // TODO: set chooseQuestions to true if you want the question set to be
       // selectable on page load
       chooseQuestions: true,
+      country: null,
     };
     this.setQuestions = this.setQuestions.bind(this);
     this.updateProgress = this.updateProgress.bind(this);
@@ -23,9 +26,11 @@ class App extends Component {
   }
 
   setQuestions(value) {
-    this.setState({
-      questions: JSON.parse(document.getElementById('data').textContent)
-    });
+    console.log(`Country selected: ${value}`);
+
+    fetch(`${endpoint}/project/1?aggregate=true&key=Country&value=${value}`)
+      .then(res => res.json())
+      .then(({ questions }) => this.setState({ questions, country: value }));
   }
 
   updateProgress(n) {
@@ -48,19 +53,22 @@ class App extends Component {
   render() {
     const questions = this.state.questions.map((question, i) =>
       <Question
-        key={question.id}
+        key={question.meta.id}
+        questionId={question.id}
         questionIndex={i}
-        questionText={question.questiontext}
-        questionType={question.type}
+        questionText={question.text}
+        questionType={question.meta.type}
         options={Object.keys(question.options).map(option =>
           question.options[option]
         ).filter(option => option !== null)}
         answer={question.answer}
         countryAnswer={50}
-        responsesData={[48, 35, 61, 31, 34, 92, 19, 38, 26, 60, 10, 75, 23, 63, 98, 33, 72, 12, 54, 57, 96, 37, 20, 46, 14, 74, 25, 55, 32, 95, 39, 49, 18, 42, 56, 47, 62, 8, 21, 67, 45, 70, 5, 11, 2, 1, 59, 100, 58, 77, 41, 17, 71, 88, 91, 84, 76, 50, 80, 43, 87, 28, 6, 81, 22, 24, 44, 64, 40, 82, 53, 89, 16, 29, 4, 13, 51, 30, 86, 93, 7, 85, 3, 66, 78, 90, 83, 52, 73, 15, 36, 9, 68, 27, 65, 44, 47, 49, 19, 29]}
+        responsesData={Object.values(question.responses)}
         active={i === this.state.activeQuestion}
         updateProgress={this.updateProgress}
         updateScore={this.updateScore}
+        endpoint={endpoint}
+        country={this.state.country}
       />
     );
     const results = this.state.complete ?
@@ -86,4 +94,12 @@ class App extends Component {
   }
 }
 
-ReactDOM.render(<App />, document.querySelector('#react-container'));
+App.propTypes = {
+  questions: React.PropTypes.array,
+};
+
+fetch(`${endpoint}/project/1?aggregate=true`) // This is bad -- needs questions for initial populate.
+  .then(res => res.json())
+  .then(({ questions }) => {
+    ReactDOM.render(<App questions={questions} />, document.querySelector('#react-container'));
+  });

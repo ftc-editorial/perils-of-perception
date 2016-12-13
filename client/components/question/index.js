@@ -37,6 +37,22 @@ class Question extends Component {
       this.props.updateScore(questionValue);
     }
 
+    // POST response to server
+    fetch(`${this.props.endpoint}/response/`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        value,
+        submitted: Date.now(),
+        questionId: this.props.questionId,
+        meta: {
+          Country: this.props.country,
+        },
+      }),
+    }).then(res => console.log(res)).catch(e => console.error(e));
+
     this.props.updateProgress(this.props.questionIndex + 1);
   }
 
@@ -119,6 +135,9 @@ Question.propTypes = {
   responsesData: React.PropTypes.array,
   questionIndex: React.PropTypes.number,
   questionText: React.PropTypes.string,
+  endpoint: React.PropTypes.string,
+  country: React.PropTypes.string,
+  questionId: React.PropTypes.number,
 };
 
 export default Question;

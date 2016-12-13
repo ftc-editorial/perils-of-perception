@@ -6,7 +6,6 @@ import d3 from 'd3';
 class ColumnChart extends Component {
   constructor(props) {
     super(props);
-
     // Calculate height at 16:9 aspect ratio
     const calculatedHeight = (this.props.initialWidth / 1.78) + 14;
     // Make sure height is never less than n
