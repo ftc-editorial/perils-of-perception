@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Question from './components/question';
 import Overlay from './components/overlay';
 
-const endpoint = 'http://localhost:5353/api/v1/project/1?aggregate=true';
+const endpoint = 'http://localhost:5353/api/v1';
 
 class App extends Component {
   constructor(props) {
@@ -18,6 +18,7 @@ class App extends Component {
       // TODO: set chooseQuestions to true if you want the question set to be
       // selectable on page load
       chooseQuestions: true,
+      country: null,
     };
     this.setQuestions = this.setQuestions.bind(this);
     this.updateProgress = this.updateProgress.bind(this);
@@ -26,8 +27,8 @@ class App extends Component {
 
   setQuestions(value) {
     console.log(`Country selected: ${value}`);
-    fetch(`${endpoint}&key=Country&value=${value}`).then(res => res.json())
-    .then(({ questions }) => this.setState({ questions }));
+    fetch(`${endpoint}/project/1?aggregate=true&key=Country&value=${value}`).then(res => res.json())
+      .then(({ questions }) => this.setState({ questions, country: value }));
   }
 
   updateProgress(n) {
@@ -50,18 +51,21 @@ class App extends Component {
   render() {
     const questions = this.state.questions.map((question, i) =>
       <Question
-        key={question.id}
+        key={question.meta.id}
+        questionId={question.id}
         questionIndex={i}
         questionText={question.text}
         questionType={question.meta.type}
-        options={Object.keys(question.options).filter(option => option).map(option =>
+        options={Object.keys(question.options).map(option =>
           question.options[option]
-        )}
+        ).filter(option => option !== null)}
         answer={question.answer}
         responsesData={Object.values(question.responses)}
         active={i === this.state.activeQuestion}
         updateProgress={this.updateProgress}
         updateScore={this.updateScore}
+        endpoint={endpoint}
+        country={this.state.country}
       />
     );
     const results = this.state.complete ?
@@ -91,7 +95,7 @@ App.propTypes = {
   questions: React.PropTypes.array,
 };
 
-fetch(endpoint)
+fetch(`${endpoint}/project/1?aggregate=true`) // This is bad -- needs questions for initial populate.
   .then(res => res.json())
   .then(({ questions }) => {
     ReactDOM.render(<App questions={questions} />, document.querySelector('#react-container'));
