@@ -73,6 +73,7 @@ class Question extends Component {
           inputMax={rangeMax}
           userAnswer={this.state.value}
           actualAnswer={this.props.answer}
+          countryAnswer={this.props.countryAnswer}
         />
       );
 
@@ -109,6 +110,7 @@ class Question extends Component {
 
 Question.propTypes = {
   answer: React.PropTypes.any,
+  countryAnswer: React.PropTypes.any,
   updateProgress: React.PropTypes.func,
   updateScore: React.PropTypes.func,
   options: React.PropTypes.array,
