@@ -42,7 +42,7 @@ export default () => ({ // eslint-disable-line
   ],
 
   // Appears in the HTML <title>
-  title: 'How well do you really know about your country?',
+  title: 'How well do you really know your country?',
 
   // meta data
   description: 'A new poll shows how little many people know about their home countries. Use our quiz to see how you and other FT readers compare.',
@@ -54,7 +54,7 @@ export default () => ({ // eslint-disable-line
         Twitter card docs:
         https://dev.twitter.com/cards/markup
   */
-  twitterCard: 'How well do you really know about your country? Try the @ftdata quiz:',
+  twitterCard: 'How well do you really know your country? Try the @ftdata quiz:',
 
   /*
   TODO: Do you want to tweak any of the
