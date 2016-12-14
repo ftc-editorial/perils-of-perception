@@ -28,9 +28,10 @@ class App extends Component {
 
   setQuestions(value) {
     console.log(`Country selected: ${value}`);
-
+    const key = value.toLowerCase().replace(/\s/g, '-');
+    const data = `http://ft-ig-content-prod.s3.amazonaws.com/v1/ft-interactive/answer-api/2/2__perils-of-perception-survey-2016__${key}.json`;
     // fetch(`${endpoint}/project/1?aggregate=true&key=Country&value=${value}`)
-    fetch(`${endpoint}/project/1?aggregate=true`)
+    fetch(data)
       .then(res => res.json())
       .then(({ questions }) => this.setState({
         questionsLoaded: true,
@@ -55,31 +56,36 @@ class App extends Component {
       score: prevState.score + n,
     }));
   }
+
   render() {
     const loadStatus = this.state.questionsLoaded ?
       null :
       <p><strong>Loading quiz…</strong></p>;
 
-    const questions = this.state.questions.map((question, i) =>
-      <Question
-        key={question.meta.id}
-        questionId={question.id}
-        questionIndex={i}
-        questionText={question.text}
-        questionType={question.meta.type}
-        options={Object.keys(question.options).map(option =>
-          question.options[option]
-        ).filter(option => option !== null)}
-        answer={question.answer}
-        countryAnswer={50}
-        responsesData={Object.values(question.responses)}
-        active={i === this.state.activeQuestion}
-        updateProgress={this.updateProgress}
-        updateScore={this.updateScore}
-        endpoint={endpoint}
-        country={this.state.country}
-      />
-    );
+    const questions = this.state.questions
+      .filter(question => question.answer !== '')
+      .sort((a, b) => Number(a.meta.qid.slice(1)) - Number(b.meta.qid.slice(1)))
+      .slice(2)
+      .map((question, i) =>
+        <Question
+          key={question.meta.qid}
+          questionId={question.id}
+          questionIndex={i}
+          questionText={question.text}
+          questionType={question.meta.type}
+          options={Object.keys(question.options).map(option =>
+              question.options[option]
+            ).filter(option => option !== null)}
+          answer={question.answer}
+          countryAnswer={question.meta.perceived}
+          responsesData={question.responses}
+          active={i === this.state.activeQuestion}
+          updateProgress={this.updateProgress}
+          updateScore={this.updateScore}
+          endpoint={endpoint}
+          country={this.state.country}
+        />
+      );
     const results = this.state.complete ?
       (<div>
         <p>Your score: {this.state.score}</p>

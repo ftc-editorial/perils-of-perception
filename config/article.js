@@ -9,12 +9,12 @@ export default () => ({ // eslint-disable-line
 
   // To set an exact publish date do this:
   //       new Date('2016-05-17T17:11:22Z')
-  publishedDate: new Date('2016-05-17T15:00:00Z'),
+  publishedDate: new Date('2016-12-14T17:00:00Z'),
 
   headline: 'How well do you really know your country?',
 
   // summary === standfirst (Summary is what the content API calls it)
-  summary: 'A new poll shows how little many people know about their home countries. Use our quiz to see how you and other FT readers compare.',
+  summary: 'A new poll shows how little many people know about their home countries. Take our quiz to see how you and other FT readers compare.',
 
   topic: {
     name: 'FT Data',
@@ -27,9 +27,9 @@ export default () => ({ // eslint-disable-line
   },
 
   mainImage: {
-    title: '',
-    description: '',
-    url: '',
+    title: 'FT Perils of Perception quiz',
+    description: 'Faces in a crowd',
+    url: 'http://ig.ft.com/static/perilsofperception.jpg',
     width: 2048, // ensure correct width
     height: 1152, // ensure correct height
   },
@@ -45,7 +45,7 @@ export default () => ({ // eslint-disable-line
   title: 'How well do you really know your country?',
 
   // meta data
-  description: 'A new poll shows how little many people know about their home countries. Use our quiz to see how you and other FT readers compare.',
+  description: 'A new poll shows how little many people know about their home countries. Take our quiz to see how you and other FT readers compare.',
 
   /*
   TODO: Select Twitter card type -
@@ -54,7 +54,7 @@ export default () => ({ // eslint-disable-line
         Twitter card docs:
         https://dev.twitter.com/cards/markup
   */
-  twitterCard: 'How well do you really know your country? Try the @ftdata quiz:',
+  twitterCard: 'How well do you really know your country? Take the @ftdata quiz:',
 
   /*
   TODO: Do you want to tweak any of the

@@ -61,24 +61,16 @@ class Question extends Component {
     const rangeMax = this.props.options[1];
     const active = this.props.active ? ' active' : '';
     const answered = this.state.answered ? ' answered' : '';
-    let input;
     let output;
     let chart;
 
-    if (this.props.questionType === 'range') {
-      input = (<Range
-        min={rangeMin}
-        max={rangeMax}
-        step={rangeMax / 100}
-        thumbSize={28}
-        onSubmit={this.markQuestion}
-      />);
-    } else {
-      input = (<MultipleChoice
-        options={this.props.options}
-        onSubmit={this.markQuestion}
-      />);
-    }
+    const input = (<Range
+      min={rangeMin}
+      max={rangeMax}
+      step={rangeMax / 100}
+      thumbSize={28}
+      onSubmit={this.markQuestion}
+    />);
 
     if (this.state.answered) {
       chart = (
@@ -105,7 +97,7 @@ class Question extends Component {
                 <p className="o-typography-lead--small">Actual answer</p>
               </div>
               <p>
-                The actual answer was <strong>xyz</strong>.
+                The actual answer is <strong>xyz&#37;</strong>.
               </p>
             </div>
             <div data-o-grid-colspan="12 M4">
@@ -116,7 +108,7 @@ class Question extends Component {
                 <p className="o-typography-lead--small">Your answer</p>
               </div>
               <p>
-                {/* You answered <strong>{this.state.value} {this.props.meta.units}</strong>. */}
+                Your guess was <strong>{this.state.value}&#37;</strong>.
               </p>
             </div>
             <div data-o-grid-colspan="12 M4">
@@ -127,7 +119,7 @@ class Question extends Component {
                 <p className="o-typography-lead--small">{this.props.country} answer</p>
               </div>
               <p>
-                {/* People in {this.props.country} answered <strong className="legend-country">xyz {this.props.meta.units}</strong>. */}
+                People in {this.props.country} answered <strong>xyz&#37;</strong>.
               </p>
             </div>
           </div>
@@ -144,7 +136,7 @@ class Question extends Component {
           Question {this.props.questionIndex + 1}
         </h2>
 
-        <p className="o-typography-lead--small">{this.props.questionText}</p>
+        <p className="o-typography-lead--small">“{this.props.questionText}”</p>
 
         {input}
 
@@ -165,7 +157,7 @@ Question.propTypes = {
   options: React.PropTypes.array,
   questionType: React.PropTypes.string,
   active: React.PropTypes.bool,
-  responsesData: React.PropTypes.array,
+  responsesData: React.PropTypes.object,
   questionIndex: React.PropTypes.number,
   questionText: React.PropTypes.string,
   endpoint: React.PropTypes.string,

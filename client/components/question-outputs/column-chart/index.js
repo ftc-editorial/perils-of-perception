@@ -37,7 +37,10 @@ class ColumnChart extends Component {
     // Create a faux SVG and store its virtual DOM in state.chart
     const chart = this.connectFauxDOM('svg', 'chart');
     // Get chart data off component props
-    const data = this.props.data;
+    const data = Object.keys(this.props.data).reduce((last, curr) => {
+      last[curr] = data[curr];
+      return last;
+    }, []) || Array(100);
     // Run some D3 on the faux SVG
     const margin = { // Mike Bostock's margin convention
       top: 20,

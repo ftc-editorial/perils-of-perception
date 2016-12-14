@@ -5,51 +5,9 @@ class Overlay extends Component {
     super(props);
 
     this.state = {
-      dropdownOptions: [
-        { Argentina: 'argentina' },
-        { Australia: 'australia' },
-        { Belgium: 'belgium' },
-        { Brazil: 'brazil' },
-        { Canada: 'canada' },
-        { Chile: 'chile' },
-        { China: 'china' },
-        { Colombia: 'colombia' },
-        { 'Czech Republic': 'czech-republic' },
-        { Denmark: 'denmark' },
-        { France: 'france' },
-        { Germany: 'germany' },
-        { 'Hong Kong': 'hong-kong' },
-        { Hungary: 'hungary' },
-        { India: 'india' },
-        { Indonesia: 'indonesia' },
-        { Israel: 'israel' },
-        { Italy: 'italy' },
-        { Japan: 'japan' },
-        { Malaysia: 'malaysia' },
-        { Mexico: 'mexico' },
-        { Montenegro: 'montenegro' },
-        { Netherlands: 'netherlands' },
-        { Norway: 'norway' },
-        { Peru: 'peru' },
-        { Philippines: 'philippines' },
-        { Poland: 'poland' },
-        { Russia: 'russia' },
-        { Serbia: 'serbia' },
-        { Singapore: 'singapore' },
-        { 'South Africa': 'south-africa' },
-        { 'South Korea': 'south-korea' },
-        { Spain: 'spain' },
-        { Sweden: 'sweden' },
-        { Taiwan: 'taiwan' },
-        { Thailand: 'thailand' },
-        { Turkey: 'turkey' },
-        { 'United Kingdom': 'united-kingdom' },
-        { 'United States': 'united-states' },
-        { Vietnam: 'vietnam' },
-      ],
       inputsDisabled: false,
       visibility: '',
-      value: 'United Kingdom',
+      value: 'united-kingdom',
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -76,14 +34,61 @@ class Overlay extends Component {
   }
 
   render() {
-    const selectOptions = this.state.dropdownOptions.map((option, i) =>
-      <option
-        key={`o${i}`}
-        value={option}
-      >
-        {option}
-      </option>
-    );
+    const options = [
+      { Argentina: 'argentina' },
+      { Australia: 'australia' },
+      { Belgium: 'belgium' },
+      { Brazil: 'brazil' },
+      { Canada: 'canada' },
+      { Chile: 'chile' },
+      { China: 'china' },
+      { Colombia: 'colombia' },
+      { 'Czech Republic': 'czech-republic' },
+      { Denmark: 'denmark' },
+      { France: 'france' },
+      { Germany: 'germany' },
+      { 'Hong Kong': 'hong-kong' },
+      { Hungary: 'hungary' },
+      { India: 'india' },
+      { Indonesia: 'indonesia' },
+      { Israel: 'israel' },
+      { Italy: 'italy' },
+      { Japan: 'japan' },
+      { Malaysia: 'malaysia' },
+      { Mexico: 'mexico' },
+      { Montenegro: 'montenegro' },
+      { Netherlands: 'netherlands' },
+      { Norway: 'norway' },
+      { Peru: 'peru' },
+      { Philippines: 'philippines' },
+      { Poland: 'poland' },
+      { Russia: 'russia' },
+      { Serbia: 'serbia' },
+      { Singapore: 'singapore' },
+      { 'South Africa': 'south-africa' },
+      { 'South Korea': 'south-korea' },
+      { Spain: 'spain' },
+      { Sweden: 'sweden' },
+      { Taiwan: 'taiwan' },
+      { Thailand: 'thailand' },
+      { Turkey: 'turkey' },
+      { 'United Kingdom': 'united-kingdom' },
+      { 'United States': 'united-states' },
+      { Vietnam: 'vietnam' },
+    ];
+
+    const selectOptions = options.map((option) => {
+      const key = Object.keys(option)[0];
+      const value = option[key];
+      return (
+        <option
+          key={key}
+          value={value}
+        >
+          {key}
+        </option>
+      );
+    });
 
     return (
       <div
