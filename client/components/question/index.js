@@ -115,7 +115,7 @@ class Question extends Component {
                 <p className="o-typography-lead--small">Your answer</p>
               </div>
               <p>
-                You answered <strong>your answer</strong>.
+                You answered <strong>{this.state.value}</strong>.
               </p>
             </div>
             <div data-o-grid-colspan="12 M4">
@@ -123,10 +123,10 @@ class Question extends Component {
                 <svg width="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="5" cy="5" r="5" className="legend-country" />
                 </svg>
-                <p className="o-typography-lead--small">[country] answer</p>
+                <p className="o-typography-lead--small">{this.props.country} answer</p>
               </div>
               <p>
-                People in [country] answered <strong className="legend-country">xyz</strong>.
+                People in {this.props.country} answered <strong className="legend-country">xyz</strong>.
               </p>
             </div>
           </div>

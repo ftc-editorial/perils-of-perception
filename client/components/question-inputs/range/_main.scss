@@ -2,6 +2,7 @@ div.input {
   margin-top: 43px;
   form.range-input {
     position: relative;
+    display: block;
     width: 100%;
     -webkit-transition: opacity linear 500ms;
     div.range-labels {
@@ -146,7 +147,7 @@ div.input {
       transform: translateX(-50%);
       width: 100%;
       max-width: 315px;
-      margin: 28px 0 0;
+      margin: 38px 0 0;
       -webkit-transition: opacity linear 500ms;
       transition: opacity linear 500ms;
     }

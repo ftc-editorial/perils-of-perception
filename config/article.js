@@ -9,9 +9,9 @@ export default () => ({ // eslint-disable-line
 
   // To set an exact publish date do this:
   //       new Date('2016-05-17T17:11:22Z')
-  publishedDate: new Date('2016-12-14'),
+  publishedDate: new Date('2016-05-17T15:00:00Z'),
 
-  headline: 'How well do you really know about your country?',
+  headline: 'How well do you really know your country?',
 
   // summary === standfirst (Summary is what the content API calls it)
   summary: 'A new poll shows how little many people know about their home countries. Use our quiz to see how you and other FT readers compare.',

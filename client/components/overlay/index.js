@@ -94,7 +94,7 @@ class Overlay extends Component {
           <div className="o-grid-row">
             <div data-o-grid-colspan="12">
               <header className="overlay-header">
-                Perils of Perception survey 2016
+                How well do you really know your country?
               </header>
               <section className="overlay-content">
                 <p>Which country would you like to answer questions about?</p>

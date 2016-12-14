@@ -56,7 +56,10 @@ class App extends Component {
     }));
   }
   render() {
-    const loadStatus = this.state.questionsLoaded ? null : <p>Loading quiz…</p>;
+    const loadStatus = this.state.questionsLoaded ?
+      null :
+      <p style={{ textAlign: 'center' }}>Loading quiz…</p>;
+
     const questions = this.state.questions.map((question, i) =>
       <Question
         key={question.meta.id}
