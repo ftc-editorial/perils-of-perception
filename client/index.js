@@ -11,6 +11,7 @@ class App extends Component {
     const { questions } = props;
 
     this.state = {
+      questionsLoaded: false,
       questions: [],
       activeQuestion: 0,
       score: 0,
@@ -31,7 +32,11 @@ class App extends Component {
     // fetch(`${endpoint}/project/1?aggregate=true&key=Country&value=${value}`)
     fetch(`${endpoint}/project/1?aggregate=true`)
       .then(res => res.json())
-      .then(({ questions }) => this.setState({ questions, country: value }));
+      .then(({ questions }) => this.setState({
+        questionsLoaded: true,
+        questions,
+        country: value,
+      }));
   }
 
   updateProgress(n) {
@@ -50,8 +55,8 @@ class App extends Component {
       score: prevState.score + n,
     }));
   }
-
   render() {
+    const loadStatus = this.state.questionsLoaded ? null : <p>Loading quiz…</p>;
     const questions = this.state.questions.map((question, i) =>
       <Question
         key={question.meta.id}
@@ -84,6 +89,8 @@ class App extends Component {
     return (
       <div>
         <link rel="stylesheet" href="https://build.origami.ft.com/v2/bundles/css?modules=o-buttons@^4.4.1" />
+
+        {loadStatus}
 
         {questions}
 
