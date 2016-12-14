@@ -135,10 +135,10 @@ div.input {
       left: 50%;
       width: 0;
       height: 0;
-      margin-left: -11px;
-      border-top: 11px solid #fff;
-      border-left: 11px solid transparent;
-      border-right: 11px solid transparent;
+      margin: -1px 0 0 -12px;
+      border-top: 12px solid #fff;
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
     }
     input[type=submit] {
       position: absolute;
