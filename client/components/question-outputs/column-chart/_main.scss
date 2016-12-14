@@ -55,3 +55,23 @@ svg.column-chart {
     shape-rendering: geometricPrecision;
   }
 }
+
+div.legend {
+  display: flex;
+  align-items: center;
+  .legend-actual {
+    color: #458b00;
+    fill: #458b00;
+  }
+  .legend-user {
+    color: #26747a;
+    fill: #26747a;
+  }
+  .legend-country {
+    color: #ff7f8a;
+    fill: #ff7f8a;
+  }
+  p.o-typography-lead--small {
+    margin: 0.3em 0 0.3em 7px;
+  }
+}

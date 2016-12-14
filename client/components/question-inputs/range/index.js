@@ -110,7 +110,7 @@ class Range extends Component {
             type="submit"
             value="CHECK YOUR ANSWER"
             disabled={this.state.submitDisabled}
-            className="o-buttons o-buttons--standout"
+            className="o-buttons o-buttons--big o-buttons--standout"
           />
         </form>
         <div className="spacer" />

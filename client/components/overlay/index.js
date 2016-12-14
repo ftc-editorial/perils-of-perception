@@ -18,7 +18,6 @@ class Overlay extends Component {
         'Denmark',
         'France',
         'Germany',
-        'Great Britain',
         'Hong Kong',
         'Hungary',
         'India',
@@ -44,12 +43,13 @@ class Overlay extends Component {
         'Taiwan',
         'Thailand',
         'Turkey',
-        'USA',
+        'United Kingdom',
+        'United States',
         'Vietnam',
       ],
       inputsDisabled: false,
       visibility: '',
-      value: 'Great Britain',
+      value: 'United Kingdom',
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -94,9 +94,11 @@ class Overlay extends Component {
           <div className="o-grid-row">
             <div data-o-grid-colspan="12">
               <header className="overlay-header">
-                Which country would you like to answer questions about?
+                Perils of Perception survey 2016
               </header>
               <section className="overlay-content">
+                <p>Which country would you like to answer questions about?</p>
+
                 <form
                   onSubmit={(event, value) => {
                     this.handleSubmit(event, value);
@@ -113,7 +115,7 @@ class Overlay extends Component {
                   <input
                     type="submit"
                     value="START THE QUIZ"
-                    className="o-buttons o-buttons--standout"
+                    className="o-buttons o-buttons--big o-buttons--standout"
                     disabled={this.state.inputsDisabled}
                   />
                 </form>

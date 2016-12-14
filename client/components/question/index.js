@@ -93,13 +93,45 @@ class Question extends Component {
         />
       );
 
-      output = this.state.correct
-        ? (<div className="output-container">
-          <p className="o-typography-lead--small">Correct</p>
-        </div>)
-        : (<div className="output-container">
-          <p className="o-typography-lead--small">Incorrect</p>
-        </div>);
+      output = (
+        <div className="o-grid-container">
+          <div className="o-grid-row">
+            <div data-o-grid-colspan="12 M4">
+              <div className="legend">
+                <svg width="28" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="13" cy="13" r="13" className="legend-actual" />
+                </svg>
+                <p className="o-typography-lead--small">Actual answer</p>
+              </div>
+              <p>
+                The actual answer was <strong>xyz</strong>.
+              </p>
+            </div>
+            <div data-o-grid-colspan="12 M4">
+              <div className="legend">
+                <svg width="26" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="13" cy="13" r="13" className="legend-user" />
+                </svg>
+                <p className="o-typography-lead--small">Your answer</p>
+              </div>
+              <p>
+                You answered <strong>your answer</strong>.
+              </p>
+            </div>
+            <div data-o-grid-colspan="12 M4">
+              <div className="legend">
+                <svg width="26" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="13" cy="13" r="13" className="legend-country" />
+                </svg>
+                <p className="o-typography-lead--small">[country] answer</p>
+              </div>
+              <p>
+                People in [country] answered <strong className="legend-country">xyz</strong>.
+              </p>
+            </div>
+          </div>
+        </div>
+      );
     }
 
     return (

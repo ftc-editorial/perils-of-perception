@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Question from './components/question';
 import Overlay from './components/overlay';
 
-const endpoint = 'http://localhost:5353/api/v1';
+const endpoint = 'https://ft-ig-answer-api.herokuapp.com/api/v1';
 
 class App extends Component {
   constructor(props) {
@@ -11,7 +11,7 @@ class App extends Component {
     const { questions } = props;
 
     this.state = {
-      questions,
+      questions: [],
       activeQuestion: 0,
       score: 0,
       complete: false,
@@ -28,7 +28,8 @@ class App extends Component {
   setQuestions(value) {
     console.log(`Country selected: ${value}`);
 
-    fetch(`${endpoint}/project/1?aggregate=true&key=Country&value=${value}`)
+    // fetch(`${endpoint}/project/1?aggregate=true&key=Country&value=${value}`)
+    fetch(`${endpoint}/project/1?aggregate=true`)
       .then(res => res.json())
       .then(({ questions }) => this.setState({ questions, country: value }));
   }
@@ -98,8 +99,4 @@ App.propTypes = {
   questions: React.PropTypes.array,
 };
 
-fetch(`${endpoint}/project/1?aggregate=true`) // This is bad -- needs questions for initial populate.
-  .then(res => res.json())
-  .then(({ questions }) => {
-    ReactDOM.render(<App questions={questions} />, document.querySelector('#react-container'));
-  });
+ReactDOM.render(<App />, document.querySelector('#react-container'));
