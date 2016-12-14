@@ -203,8 +203,8 @@ module.exports = {
         if (result.value && result.value.ELEMENT) {
           client.expect.element('.o-typography-lead > .o-typography-link')
             .to.have.attribute('href').not.equal('');
-          client.expect.element('.o-typography-lead > .o-typography-link')
-            .text.to.not.equal('');
+          // client.expect.element('.o-typography-lead > .o-typography-link')
+          //   .text.to.not.equal('');
         }
 
         done();

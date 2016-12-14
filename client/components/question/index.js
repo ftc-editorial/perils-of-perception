@@ -118,7 +118,7 @@ class Question extends Component {
                 <p className="o-typography-lead--small">{this.props.country} answer</p>
               </div>
               <p>
-                People in {this.props.country} answered <strong>{this.props.countryAnswer}&#37;</strong>.
+                People polled answered <strong>{this.props.countryAnswer}&#37;</strong>.
               </p>
             </div>
           </div>
@@ -135,7 +135,7 @@ class Question extends Component {
           Question {this.props.questionIndex + 1}
         </h2>
 
-        <p className="o-typography-lead--small">“{this.props.questionText}”</p>
+        <p className="o-typography-lead--small">{this.props.questionText}</p>
 
         {input}
 

@@ -54,7 +54,7 @@ export default () => ({ // eslint-disable-line
         Twitter card docs:
         https://dev.twitter.com/cards/markup
   */
-  twitterCard: 'How well do you really know your country? Take the @ftdata quiz:',
+  twitterCard: 'summary_large_image',
 
   /*
   TODO: Do you want to tweak any of the

@@ -29,7 +29,7 @@ class App extends Component {
   setQuestions(value) {
     console.log(`Country selected: ${value}`);
     const key = value.toLowerCase().replace(/\s/g, '-');
-    const data = `http://ft-ig-content-prod.s3.amazonaws.com/v1/ft-interactive/answer-api/2/2__perils-of-perception-survey-2016__${key}.json`;
+    const data = `https://ft-ig-content-prod.s3.amazonaws.com/v1/ft-interactive/answer-api/2/2__perils-of-perception-survey-2016__${key}.json`;
     // fetch(`${endpoint}/project/1?aggregate=true&key=Country&value=${value}`)
     fetch(data)
       .then(res => res.json())
@@ -76,8 +76,8 @@ class App extends Component {
           options={Object.keys(question.options).map(option =>
               question.options[option]
             ).filter(option => option !== null)}
-          answer={parseInt(question.answer, 10)}
-          countryAnswer={parseInt(question.meta.perceived, 10)}
+          answer={Number(question.answer)}
+          countryAnswer={Number(question.meta.perceived)}
           responsesData={question.responses}
           active={i === this.state.activeQuestion}
           updateProgress={this.updateProgress}

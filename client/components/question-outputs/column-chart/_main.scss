@@ -2,7 +2,7 @@ $axis-color: #c3bcb0;
 $tick-label-color: #6b6e68;
 $distribution-color: #cec6b9;
 $user-color: #26747a;
-$actual-color: #458b00;
+$actual-color: #09a25c;
 $country-color: #ff7f8a;
 
 svg.column-chart {
@@ -69,15 +69,12 @@ div.legend {
   display: flex;
   align-items: center;
   .legend-actual {
-    color: #458b00;
-    fill: #458b00;
+    fill: $actual-color;
   }
   .legend-user {
-    color: #26747a;
     fill: #26747a;
   }
   .legend-country {
-    color: #ff7f8a;
     fill: #ff7f8a;
   }
   p.o-typography-lead--small {
