@@ -3,10 +3,11 @@ $tick-label-color: #6b6e68;
 $distribution-color: #cec6b9;
 $user-color: #26747a;
 $actual-color: #458b00;
+$country-color: #ff7f8a;
 
 svg.column-chart {
   align-self: flex-start;
-  margin-top: 10px;
+  margin-top: 7px;
   .axis path,
   .axis line {
     fill: none;
@@ -39,6 +40,10 @@ svg.column-chart {
         stroke: $actual-color;
         stroke-dasharray: 2, 2;
       }
+      &.country line {
+        stroke: $country-color;
+        stroke-dasharray: 2, 2;
+      }
     }
   }
   text {
@@ -52,6 +57,10 @@ svg.column-chart {
   }
   .actual-answer {
     fill: $actual-color;
+    shape-rendering: geometricPrecision;
+  }
+  .country-answer {
+    fill: $country-color;
     shape-rendering: geometricPrecision;
   }
 }

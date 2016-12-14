@@ -65,15 +65,15 @@ class ColumnChart extends Component {
     const xAxis2 = d3.svg.axis()
         .scale(x2)
         .orient('top')
-        .tickValues([this.props.userAnswer, this.props.actualAnswer])
+        .tickValues([this.props.userAnswer, this.props.actualAnswer, this.props.countryAnswer])
         .tickFormat('')
         .tickSize(height * -1, 0);
     const yAxis = d3.svg.axis()
         .scale(y)
-        .orient('right')
+        .orient('left')
         .tickValues([50, 100])
         .tickFormat(d => `${d}%`)
-        .tickSize(width, 0);
+        .tickSize(-width, 0);
     const svg = d3.select(chart)
         .attr('width', width + margin.left + margin.right)
         .attr('height', 0)
@@ -84,14 +84,28 @@ class ColumnChart extends Component {
       .append('circle')
         .attr('r', 9)
         .style('opacity', 1e-6);
+    const countryCircle = svg.append('g')
+        .attr('class', 'country-answer')
+        .attr('transform', `translate(${x2(this.props.countryAnswer) + 14}, 14)`)
+      .append('circle')
+        .attr('r', 9)
+        .style('opacity', 1e-6);
 
     svg.append('g')
         .attr('class', 'y axis')
         .attr('transform', 'translate(14, 28)')
         .call(yAxis)
       .selectAll('text')
-        .attr('y', 9)
-        .style('text-anchor', 'end');
+        .attr('x', 2)
+        .attr('y', 9.75)
+        .style('text-anchor', 'start');
+
+    svg.select('.y')
+      .append('text')
+        .attr('class', 'label')
+        .attr('x', 2)
+        .attr('y', -4)
+        .text('Per cent of FT users');
 
     const bar = svg.selectAll('.bar')
         .data(data)
@@ -128,6 +142,8 @@ class ColumnChart extends Component {
             return 'tick user';
           } else if (d === this.props.actualAnswer) {
             return 'tick actual';
+          } else if (d === this.props.countryAnswer) {
+            return 'tick country';
           }
           return null;
         });
@@ -138,6 +154,10 @@ class ColumnChart extends Component {
         .attr('height', height + margin.top + margin.bottom);
 
     actualCircle.transition()
+        .duration(500)
+        .style('opacity', 1);
+
+    countryCircle.transition()
         .duration(500)
         .style('opacity', 1);
 
@@ -190,15 +210,15 @@ class ColumnChart extends Component {
     const xAxis2 = d3.svg.axis()
         .scale(x2)
         .orient('top')
-        .tickValues([this.props.userAnswer, this.props.actualAnswer])
+        .tickValues([this.props.userAnswer, this.props.actualAnswer, this.props.countryAnswer])
         .tickFormat('')
         .tickSize(height * -1, 0);
     const yAxis = d3.svg.axis()
         .scale(y)
-        .orient('right')
+        .orient('left')
         .tickValues([50, 100])
         .tickFormat(d => `${d}%`)
-        .tickSize(width, 0);
+        .tickSize(-width, 0);
 
     // Update chart width and drill down to update x axis
     d3.select(chart)
@@ -217,8 +237,14 @@ class ColumnChart extends Component {
         .attr('transform', 'translate(14, 28)')
         .call(yAxis)
       .selectAll('text')
-        .attr('y', 9)
-        .style('text-anchor', 'end');
+        .attr('x', 2)
+        .attr('y', 9.75)
+        .style('text-anchor', 'start');
+
+    d3.select(chart).select('.label')
+        .attr('x', 2)
+        .attr('y', -4)
+        .text('Per cent of FT users');
 
     // Come back up again to update bars
     d3.select(chart).selectAll('.bar')
@@ -243,6 +269,9 @@ class ColumnChart extends Component {
 
     d3.select(chart).select('.actual-answer')
         .attr('transform', `translate(${x2(this.props.actualAnswer) + 14}, 14)`);
+
+    d3.select(chart).select('.country-answer')
+        .attr('transform', `translate(${x2(this.props.countryAnswer) + 14}, 14)`);
 
     this.drawFauxDOM();
   }
@@ -280,6 +309,7 @@ ColumnChart.propTypes = {
   units: React.PropTypes.string,
   userAnswer: React.PropTypes.number,
   actualAnswer: React.PropTypes.number,
+  countryAnswer: React.PropTypes.number,
 };
 
 export default ColumnChart;

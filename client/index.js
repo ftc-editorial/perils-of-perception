@@ -58,7 +58,7 @@ class App extends Component {
   render() {
     const loadStatus = this.state.questionsLoaded ?
       null :
-      <p style={{ textAlign: 'center' }}>Loading quiz…</p>;
+      <p><strong>Loading quiz…</strong></p>;
 
     const questions = this.state.questions.map((question, i) =>
       <Question

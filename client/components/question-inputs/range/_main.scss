@@ -8,6 +8,7 @@ div.input {
     div.range-labels {
       display: flex;
       justify-content: space-between;
+      margin-bottom: -6px;
       color: #6b6e68;
       transition: opacity linear 500ms;
       &-min {
@@ -103,7 +104,7 @@ div.input {
     }
     output {
       position: absolute;
-      top: -30px;
+      top: -32px;
       left: 0;
       z-index: 1;
       width: 40px;
