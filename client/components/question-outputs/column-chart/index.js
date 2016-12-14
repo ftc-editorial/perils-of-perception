@@ -59,7 +59,8 @@ class ColumnChart extends Component {
     const xAxis = d3.svg.axis()
         .scale(x1)
         .orient('bottom')
-        .tickValues([10, 20, 30, 40, 50, 60, 70, 80, 90])
+        .ticks(10)
+        // .tickFormat(d => `${d}${this.props.units}`)
         .outerTickSize(0);
     const xAxis2 = d3.svg.axis()
         .scale(x2)
@@ -255,6 +256,7 @@ class ColumnChart extends Component {
       width: this.node.offsetWidth,
       height,
     });
+
     this.redrawChart();
   }
 
@@ -275,6 +277,7 @@ ColumnChart.propTypes = {
   initialWidth: React.PropTypes.number,
   inputMin: React.PropTypes.number,
   inputMax: React.PropTypes.number,
+  units: React.PropTypes.string,
   userAnswer: React.PropTypes.number,
   actualAnswer: React.PropTypes.number,
 };

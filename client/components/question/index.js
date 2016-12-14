@@ -87,6 +87,7 @@ class Question extends Component {
           initialWidth={this.node.offsetWidth}
           inputMin={rangeMin}
           inputMax={rangeMax}
+          // units={this.props.meta.units}
           userAnswer={this.state.value}
           actualAnswer={this.props.answer}
           countryAnswer={this.props.countryAnswer}
@@ -115,7 +116,7 @@ class Question extends Component {
                 <p className="o-typography-lead--small">Your answer</p>
               </div>
               <p>
-                You answered <strong>{this.state.value}</strong>.
+                {/* You answered <strong>{this.state.value} {this.props.meta.units}</strong>. */}
               </p>
             </div>
             <div data-o-grid-colspan="12 M4">
@@ -126,7 +127,7 @@ class Question extends Component {
                 <p className="o-typography-lead--small">{this.props.country} answer</p>
               </div>
               <p>
-                People in {this.props.country} answered <strong className="legend-country">xyz</strong>.
+                {/* People in {this.props.country} answered <strong className="legend-country">xyz {this.props.meta.units}</strong>. */}
               </p>
             </div>
           </div>
@@ -170,6 +171,7 @@ Question.propTypes = {
   endpoint: React.PropTypes.string,
   country: React.PropTypes.string,
   questionId: React.PropTypes.number,
+  meta: React.PropTypes.object,
 };
 
 export default Question;
