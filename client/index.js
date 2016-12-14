@@ -76,8 +76,8 @@ class App extends Component {
           options={Object.keys(question.options).map(option =>
               question.options[option]
             ).filter(option => option !== null)}
-          answer={question.answer}
-          countryAnswer={question.meta.perceived}
+          answer={parseInt(question.answer, 10)}
+          countryAnswer={parseInt(question.meta.perceived, 10)}
           responsesData={question.responses}
           active={i === this.state.activeQuestion}
           updateProgress={this.updateProgress}

@@ -79,7 +79,6 @@ class Question extends Component {
           initialWidth={this.node.offsetWidth}
           inputMin={rangeMin}
           inputMax={rangeMax}
-          // units={this.props.meta.units}
           userAnswer={this.state.value}
           actualAnswer={this.props.answer}
           countryAnswer={this.props.countryAnswer}
@@ -97,7 +96,7 @@ class Question extends Component {
                 <p className="o-typography-lead--small">Actual answer</p>
               </div>
               <p>
-                The actual answer is <strong>xyz&#37;</strong>.
+                The answer is <strong>{this.props.answer}&#37;</strong>.
               </p>
             </div>
             <div data-o-grid-colspan="12 M4">
@@ -108,7 +107,7 @@ class Question extends Component {
                 <p className="o-typography-lead--small">Your answer</p>
               </div>
               <p>
-                Your guess was <strong>{this.state.value}&#37;</strong>.
+                You answered <strong>{this.state.value}&#37;</strong>.
               </p>
             </div>
             <div data-o-grid-colspan="12 M4">
@@ -119,7 +118,7 @@ class Question extends Component {
                 <p className="o-typography-lead--small">{this.props.country} answer</p>
               </div>
               <p>
-                People in {this.props.country} answered <strong>xyz&#37;</strong>.
+                People in {this.props.country} answered <strong>{this.props.countryAnswer}&#37;</strong>.
               </p>
             </div>
           </div>
@@ -151,7 +150,7 @@ class Question extends Component {
 
 Question.propTypes = {
   answer: React.PropTypes.any,
-  countryAnswer: React.PropTypes.any,
+  countryAnswer: React.PropTypes.number,
   updateProgress: React.PropTypes.func,
   updateScore: React.PropTypes.func,
   options: React.PropTypes.array,

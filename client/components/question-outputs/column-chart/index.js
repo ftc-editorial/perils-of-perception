@@ -38,7 +38,7 @@ class ColumnChart extends Component {
     const chart = this.connectFauxDOM('svg', 'chart');
     // Get chart data off component props
     const data = Object.keys(this.props.data).reduce((last, curr) => {
-      last[curr] = data[curr];
+      last[curr] = this.props.data[curr];
       return last;
     }, []) || Array(100);
     // Run some D3 on the faux SVG
@@ -51,7 +51,7 @@ class ColumnChart extends Component {
     const width = this.state.width - margin.left - margin.right;
     const height = ((this.state.height - margin.top) - margin.bottom) + 14;
     const x1 = d3.scale.linear()
-        .domain([0, data.length])
+        .domain([0, 100])
         .range([0, width]);
     const x2 = d3.scale.linear()
         .domain([this.props.inputMin, this.props.inputMax])
@@ -197,7 +197,7 @@ class ColumnChart extends Component {
     const width = this.state.width - margin.left - margin.right;
     const height = ((this.state.height - margin.top) - margin.bottom) + 14;
     const x1 = d3.scale.linear()
-        .domain([0, data.length])
+        .domain([0, 100])
         .range([0, width]);
     const x2 = d3.scale.linear()
         .domain([this.props.inputMin, this.props.inputMax])
@@ -305,7 +305,7 @@ class ColumnChart extends Component {
 }
 
 ColumnChart.propTypes = {
-  data: React.PropTypes.array,
+  data: React.PropTypes.object,
   initialWidth: React.PropTypes.number,
   inputMin: React.PropTypes.number,
   inputMax: React.PropTypes.number,

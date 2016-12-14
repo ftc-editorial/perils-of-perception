@@ -7,7 +7,7 @@ class Overlay extends Component {
     this.state = {
       inputsDisabled: false,
       visibility: '',
-      value: 'united-kingdom',
+      value: 'United Kingdom',
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -35,57 +35,58 @@ class Overlay extends Component {
 
   render() {
     const options = [
-      { Argentina: 'argentina' },
-      { Australia: 'australia' },
-      { Belgium: 'belgium' },
-      { Brazil: 'brazil' },
-      { Canada: 'canada' },
-      { Chile: 'chile' },
-      { China: 'china' },
-      { Colombia: 'colombia' },
-      { 'Czech Republic': 'czech-republic' },
-      { Denmark: 'denmark' },
-      { France: 'france' },
-      { Germany: 'germany' },
-      { 'Hong Kong': 'hong-kong' },
-      { Hungary: 'hungary' },
-      { India: 'india' },
-      { Indonesia: 'indonesia' },
-      { Israel: 'israel' },
-      { Italy: 'italy' },
-      { Japan: 'japan' },
-      { Malaysia: 'malaysia' },
-      { Mexico: 'mexico' },
-      { Montenegro: 'montenegro' },
-      { Netherlands: 'netherlands' },
-      { Norway: 'norway' },
-      { Peru: 'peru' },
-      { Philippines: 'philippines' },
-      { Poland: 'poland' },
-      { Russia: 'russia' },
-      { Serbia: 'serbia' },
-      { Singapore: 'singapore' },
-      { 'South Africa': 'south-africa' },
-      { 'South Korea': 'south-korea' },
-      { Spain: 'spain' },
-      { Sweden: 'sweden' },
-      { Taiwan: 'taiwan' },
-      { Thailand: 'thailand' },
-      { Turkey: 'turkey' },
-      { 'United Kingdom': 'united-kingdom' },
-      { 'United States': 'united-states' },
-      { Vietnam: 'vietnam' },
+      'Argentina',
+      'Australia',
+      'Belgium',
+      'Brazil',
+      'Canada',
+      'Chile',
+      'China',
+      'Colombia',
+      'Czech Republic',
+      'Denmark',
+      'France',
+      'Germany',
+      'Great Britain',
+      'Hong Kong',
+      'Hungary',
+      'India',
+      'Indonesia',
+      'Israel',
+      'Italy',
+      'Japan',
+      'Malaysia',
+      'Mexico',
+      'Montenegro',
+      'Netherlands',
+      'Norway',
+      'Peru',
+      'Philippines',
+      'Poland',
+      'Russia',
+      'Serbia',
+      'Singapore',
+      'South Africa',
+      'South Korea',
+      'Spain',
+      'Sweden',
+      'Taiwan',
+      'Thailand',
+      'Turkey',
+      'United Kingdom',
+      'United States',
+      'Vietnam',
     ];
 
-    const selectOptions = options.map((option) => {
-      const key = Object.keys(option)[0];
-      const value = option[key];
+    const selectOptions = options.map((option, i) => {
+      // const key = Object.keys(option)[0];
+      // const value = option[key];
       return (
         <option
-          key={key}
-          value={value}
+          key={`o${i}`}
+          value={option}
         >
-          {key}
+          {option}
         </option>
       );
     });
