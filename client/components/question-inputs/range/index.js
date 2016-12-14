@@ -83,7 +83,6 @@ class Range extends Component {
             <div className="range-labels-min">
               {this.props.min}
             </div>
-            <div className="range-labels-input"></div>
             <div className="range-labels-max">
               {this.props.max}
             </div>
