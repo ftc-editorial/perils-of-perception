@@ -7,7 +7,7 @@ class ColumnChart extends Component {
   constructor(props) {
     super(props);
     // Calculate height at 16:9 aspect ratio
-    const calculatedHeight = (this.props.initialWidth / 1.78) + 14;
+    const calculatedHeight = (this.props.initialWidth / 3.2) + 14;
     // Make sure height is never less than n
     const height = calculatedHeight < 125 ? 125 : calculatedHeight;
 
@@ -37,8 +37,10 @@ class ColumnChart extends Component {
     // Create a faux SVG and store its virtual DOM in state.chart
     const chart = this.connectFauxDOM('svg', 'chart');
     // Get chart data off component props
+    const total = Object.keys(this.props.data)
+      .reduce((sum, key) => sum + Number(this.props.data[key]), 0);
     const data = Object.keys(this.props.data).reduce((last, curr) => {
-      last[curr] = this.props.data[curr];
+      last[curr] = (this.props.data[curr] / total) * 100; // eslint-disable-line
       return last;
     }, []) || Array(100);
     // Run some D3 on the faux SVG
@@ -73,10 +75,10 @@ class ColumnChart extends Component {
         .tickSize(height * -1, 0);
     const yAxis = d3.svg.axis()
         .scale(y)
-        .orient('left')
+        .orient('right')
         .tickValues([50, 100])
         .tickFormat(d => `${d}%`)
-        .tickSize(-width, 0);
+        .tickSize(width, 0);
     const svg = d3.select(chart)
         .attr('width', width + margin.left + margin.right)
         .attr('height', 0)
@@ -99,15 +101,15 @@ class ColumnChart extends Component {
         .attr('transform', 'translate(14, 28)')
         .call(yAxis)
       .selectAll('text')
-        .attr('x', 2)
         .attr('y', 9.75)
-        .style('text-anchor', 'start');
+        .style('text-anchor', 'end');
 
     svg.select('.y')
       .append('text')
         .attr('class', 'label')
-        .attr('x', 2)
+        .attr('x', width)
         .attr('y', -4)
+        .style('text-anchor', 'end')
         .text('Per cent of FT users');
 
     const bar = svg.selectAll('.bar')
@@ -115,12 +117,12 @@ class ColumnChart extends Component {
       .enter().append('g')
         .attr('class', 'bar')
         .attr('transform', (d, i) =>
-          `translate(${(i * (width / data.length)) + ((width / data.length) / 5.05) + 12}, 28)`
+          `translate(${(i * (width / 100)) + ((width / 100) / 5.05) + 12}, 28)`
         );
     const rect = bar.append('rect')
         .attr('x', 1)
         .attr('y', height)
-        .attr('width', (width / data.length) - ((width / data.length) / 5.05))
+        .attr('width', (width / 100) - ((width / 100) / 5.05))
         .attr('height', 0)
         .attr('stroke-width', () => {
           const rectWidth = d3.select(chart)
@@ -186,7 +188,11 @@ class ColumnChart extends Component {
     // Access the SVG virtual DOM
     const chart = this.connectedFauxDOM.chart;
     // Access the data
-    const data = this.props.data;
+    const data = Object.keys(this.props.data).reduce((last, curr) => {
+      last[curr] = this.props.data[curr];
+
+      return last;
+    }, []) || Array(100);
     // Redraw the chart
     const margin = {
       top: 20,
@@ -218,10 +224,10 @@ class ColumnChart extends Component {
         .tickSize(height * -1, 0);
     const yAxis = d3.svg.axis()
         .scale(y)
-        .orient('left')
+        .orient('right')
         .tickValues([50, 100])
         .tickFormat(d => `${d}%`)
-        .tickSize(-width, 0);
+        .tickSize(width, 0);
 
     // Update chart width and drill down to update x axis
     d3.select(chart)
@@ -240,25 +246,25 @@ class ColumnChart extends Component {
         .attr('transform', 'translate(14, 28)')
         .call(yAxis)
       .selectAll('text')
-        .attr('x', 2)
         .attr('y', 9.75)
-        .style('text-anchor', 'start');
+        .style('text-anchor', 'end');
 
     d3.select(chart).select('.label')
-        .attr('x', 2)
+        .attr('x', width)
         .attr('y', -4)
+        .style('text-anchor', 'end')
         .text('Per cent of FT users');
 
     // Come back up again to update bars
     d3.select(chart).selectAll('.bar')
         .attr('transform', (d, i) =>
-          `translate(${(i * (width / data.length)) + ((width / data.length) / 5.05) + 12}, 28)`
+          `translate(${(i * (width / 100)) + ((width / 100) / 5.05) + 12}, 28)`
         )
       .select('rect')
         .attr('y', d =>
           height - ((d / 100) * height)
         )
-        .attr('width', (width / data.length) - ((width / data.length) / 5.05))
+        .attr('width', (width / 100) - ((width / 100) / 5.05))
         .attr('height', d =>
           (d / 100) * height
         )
@@ -281,7 +287,7 @@ class ColumnChart extends Component {
 
   handleResize() {
     // Repeat height calculation with fallback value as above
-    const calculatedHeight = (this.node.offsetWidth / 1.78) + 14;
+    const calculatedHeight = (this.node.offsetWidth / 3.2) + 14;
     const height = calculatedHeight < 125 ? 125 : calculatedHeight;
 
     this.setState({
