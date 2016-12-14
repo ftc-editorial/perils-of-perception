@@ -1,30 +1,29 @@
 export default () => ({ // eslint-disable-line
 
   // link file UUID
-  id: '$uuid',
+  id: '325eb0aa-c156-11e6-9bca-2b93a6856354',
 
   // canonical URL of the published page
   // "$url" get filled in by the ./configure script
-  url: '$url',
+  url: 'https://ig.ft.com/sites/quiz/perils-of-perception/2016/',
 
   // To set an exact publish date do this:
   //       new Date('2016-05-17T17:11:22Z')
-  publishedDate: new Date(),
+  publishedDate: new Date('2016-12-14'),
 
-  headline: 'Politics and the English Language',
+  headline: 'How well do you really know about your country?',
 
   // summary === standfirst (Summary is what the content API calls it)
-  summary: 'Political language is designed to make lies sound truthful' +
-           'and murder respectable, and to give an appearance of solidity to pure wind',
+  summary: 'A new poll shows how little many people know about their home countries. Use our quiz to see how you and other FT readers compare.',
 
   topic: {
-    name: 'Starter Kit',
-    url: '/foo',
+    name: 'FT Data',
+    url: 'https://www.ft.com/ft-data',
   },
 
   relatedArticle: {
     text: 'Related article »',
-    url: 'https://en.wikipedia.org/wiki/Politics_and_the_English_Language',
+    url: 'https://www.ft.com/content/bed2e788-c154-11e6-9bca-2b93a6856354',
   },
 
   mainImage: {
@@ -38,15 +37,15 @@ export default () => ({ // eslint-disable-line
   // Byline can by a plain string, markdown, or array of authors
   // if array of authors, url is optional
   byline: [
-    { name: 'Author One', url: '/foo/bar' },
-    { name: 'Author Two' },
+    { name: 'David Blood', url: 'https://www.ft.com/stream/authorsId/NTBmY2Q1M2ItNjVhOC00ZGRhLWE5MGEtNzgxMTc0ZDlhOWQ3-QXV0aG9ycw==' },
+    { name: 'Ændrew Rininsland', url: 'https://www.ft.com/topics/authors/%C3%86ndrew_Rininsland' },
   ],
 
   // Appears in the HTML <title>
-  title: '',
+  title: 'How well do you really know about your country?',
 
   // meta data
-  description: '',
+  description: 'A new poll shows how little many people know about their home countries. Use our quiz to see how you and other FT readers compare.',
 
   /*
   TODO: Select Twitter card type -
@@ -55,7 +54,7 @@ export default () => ({ // eslint-disable-line
         Twitter card docs:
         https://dev.twitter.com/cards/markup
   */
-  twitterCard: 'summary',
+  twitterCard: 'How well do you really know about your country? Try the @ftdata quiz:',
 
   /*
   TODO: Do you want to tweak any of the
