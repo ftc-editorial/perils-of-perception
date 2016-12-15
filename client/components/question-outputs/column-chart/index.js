@@ -52,6 +52,7 @@ class ColumnChart extends Component {
     };
     const width = this.state.width - margin.left - margin.right;
     const height = ((this.state.height - margin.top) - margin.bottom) + 14;
+    const yDomainMax = (5 * Math.ceil(d3.max(data) / 5)) + 5;
     const x1 = d3.scale.linear()
         .domain([0, 100])
         .range([0, width]);
@@ -59,13 +60,12 @@ class ColumnChart extends Component {
         .domain([this.props.inputMin, this.props.inputMax])
         .range([0, width]);
     const y = d3.scale.linear()
-        .domain([0, 100])
+        .domain([0, yDomainMax])
         .range([height, 0]);
     const xAxis = d3.svg.axis()
         .scale(x1)
         .orient('bottom')
         .ticks(10)
-        // .tickFormat(d => `${d}${this.props.units}`)
         .outerTickSize(0);
     const xAxis2 = d3.svg.axis()
         .scale(x2)
@@ -76,7 +76,7 @@ class ColumnChart extends Component {
     const yAxis = d3.svg.axis()
         .scale(y)
         .orient('right')
-        .tickValues([50, 100])
+        .tickValues([Math.ceil(yDomainMax / 2), yDomainMax])
         .tickFormat(d => `${d}%`)
         .tickSize(width, 0);
     const svg = d3.select(chart)
@@ -170,13 +170,10 @@ class ColumnChart extends Component {
         .ease('elastic')
         .delay((d, i) => 500 + (i * 7.5))
         .duration(500)
-        .attr('y', d =>
-          height - ((d / 100) * height)
-        )
-        .attr('height', d =>
-          (d / 100) * height
-        );
+        .attr('y', d => y(d))
+        .attr('height', d => height - y(d));
 
+    console.log(d3.max(data), yDomainMax);
     // Kick off transitions
     this.animateFauxDOM(2000);
 
@@ -188,9 +185,10 @@ class ColumnChart extends Component {
     // Access the SVG virtual DOM
     const chart = this.connectedFauxDOM.chart;
     // Access the data
+    const total = Object.keys(this.props.data)
+      .reduce((sum, key) => sum + Number(this.props.data[key]), 0);
     const data = Object.keys(this.props.data).reduce((last, curr) => {
-      last[curr] = this.props.data[curr];
-
+      last[curr] = (this.props.data[curr] / total) * 100; // eslint-disable-line
       return last;
     }, []) || Array(100);
     // Redraw the chart
@@ -202,6 +200,7 @@ class ColumnChart extends Component {
     };
     const width = this.state.width - margin.left - margin.right;
     const height = ((this.state.height - margin.top) - margin.bottom) + 14;
+    const yDomainMax = (5 * Math.ceil(d3.max(data) / 5)) + 5;
     const x1 = d3.scale.linear()
         .domain([0, 100])
         .range([0, width]);
@@ -209,7 +208,7 @@ class ColumnChart extends Component {
         .domain([this.props.inputMin, this.props.inputMax])
         .range([0, width]);
     const y = d3.scale.linear()
-        .domain([0, 100]) // TODO: set domain upper bound per chart requirements
+        .domain([0, yDomainMax]) // TODO: set domain upper bound per chart requirements
         .range([height, 0]);
     const xAxis = d3.svg.axis()
         .scale(x1)
@@ -225,7 +224,7 @@ class ColumnChart extends Component {
     const yAxis = d3.svg.axis()
         .scale(y)
         .orient('right')
-        .tickValues([50, 100])
+        .tickValues([Math.ceil(yDomainMax / 2), yDomainMax])
         .tickFormat(d => `${d}%`)
         .tickSize(width, 0);
 
@@ -261,13 +260,9 @@ class ColumnChart extends Component {
           `translate(${(i * (width / 100)) + ((width / 100) / 5.05) + 12}, 28)`
         )
       .select('rect')
-        .attr('y', d =>
-          height - ((d / 100) * height)
-        )
+        .attr('y', d => y(d))
         .attr('width', (width / 100) - ((width / 100) / 5.05))
-        .attr('height', d =>
-          (d / 100) * height
-        )
+        .attr('height', d => height - y(d))
         .attr('stroke-width', () => {
           const rectWidth = d3.select(chart)
               .select('rect')
