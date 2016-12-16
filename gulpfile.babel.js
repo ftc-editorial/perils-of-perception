@@ -172,7 +172,7 @@ gulp.task('watch', ['styles', 'build-pages', 'copy'], done => {
       open: process.argv.includes('--open'),
       ui: process.argv.includes('--bsui'),
       ghostMode: process.argv.includes('--ghost'),
-      port: '9000',
+      port:'3000',
       server: {
         baseDir: 'dist',
       },
