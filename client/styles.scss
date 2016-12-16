@@ -7,6 +7,9 @@
 @import 'components/question-outputs/column-chart/main';
 @import 'components/overlay/main';
 
+$o-share-is-silent: false;
+@import 'ftc-share/main';
+
 // Core app styling
 .question {
   opacity: 0.62;

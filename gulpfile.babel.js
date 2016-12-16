@@ -20,6 +20,9 @@ import util from 'gulp-util';
 import autoprefixer from 'gulp-autoprefixer';
 import plumber from 'gulp-plumber';
 import http from 'http';
+import config from './config';
+const $ = require('gulp-load-plugins')();
+const views = require('./views');
 
 const ansiToHTML = new AnsiToHTML();
 
@@ -169,7 +172,7 @@ gulp.task('watch', ['styles', 'build-pages', 'copy'], done => {
       open: process.argv.includes('--open'),
       ui: process.argv.includes('--bsui'),
       ghostMode: process.argv.includes('--ghost'),
-      port: process.env.PORT || '3000',
+      port: '9000',
       server: {
         baseDir: 'dist',
       },
@@ -197,15 +200,25 @@ gulp.task('copy', () =>
 );
 
 gulp.task('build-pages', () => {
+  /// 删除一些缓冲文件/模块
   delete require.cache[require.resolve('./views')];
+  /* require.resolve():Return the resolved filename
+   * require.cache: type——Object; Modules are cached in this object when they are required. By deleting a key value from this object, the next require will reload the module
+   */
   delete require.cache[require.resolve('./config/flags')];
   delete require.cache[require.resolve('./config/article')];
   delete require.cache[require.resolve('./config/index')];
 
   return gulp.src('client/**/*.html')
-    .pipe(plumber())
-    .pipe(gulpdata(async(d) => await require('./config').default(d)))
-    .pipe(gulpnunjucks.compile(null, { env: require('./views').configure() }))
+    .pipe(plumber())//防止管道因为来自gulp插件的错误而导致的中断
+    //.pipe(gulpdata(async(d) => await require('./config').default(d)))
+    .pipe(gulpdata(async(d) => await config(d)))
+    /* async function 声明了一个异步函数，并返回了一个 AsyncFunction 对象。
+     * 异步函数可能会包括  await 表达式，这将会使异步函数暂停执行并等待 promise 解析传值后，继续执行异步函数并返回解析值。
+    */
+    .pipe(gulpnunjucks.compile(null, { env: views.configure() }))
+    /* gulp-nunjucks: Compile/precompile Nunjucks templates
+    */
     .pipe(gulp.dest('dist'));
 });
 
@@ -230,13 +243,16 @@ gulp.task('scripts', () =>
 gulp.task('styles', () =>
   gulp.src('client/**/*.scss')
     .pipe(plumber())
+    .pipe($.sourcemaps.init({loadMaps:true}))
     .pipe(sass({
       includePaths: 'bower_components',
       outputStyle: process.env.NODE_ENV === 'production' ? 'compressed' : 'expanded',
     }).on('error', function sassError(error) {
       handleBuildError.call(this, 'Error building Sass', error);
     }))
+
     .pipe(autoprefixer({ browsers: AUTOPREFIXER_BROWSERS }))
+    .pipe($.sourcemaps.write('./'))
     .pipe(gulp.dest('dist'))
 );
 

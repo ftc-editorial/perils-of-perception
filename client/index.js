@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Question from './components/question';
 import Overlay from './components/overlay';
+import Share from 'ftc-share';
+const shareInstance = new Share(document.querySelector('[data-o-component=o-share]'));
 
 const endpoint = 'https://ft-ig-answer-api.herokuapp.com/api/v1';
 
@@ -114,5 +116,7 @@ class App extends Component {
 App.propTypes = {
   questions: React.PropTypes.array,
 };
+
+
 
 ReactDOM.render(<App />, document.querySelector('#react-container'));
