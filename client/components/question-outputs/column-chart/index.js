@@ -170,8 +170,8 @@ class ColumnChart extends Component {
         .ease('elastic')
         .delay((d, i) => 500 + (i * 7.5))
         .duration(500)
-        .attr('y', d => y(d))
-        .attr('height', d => height - y(d));
+        .attr('y', d => y(d || 0))
+        .attr('height', d => height - y(d || 0));
 
     console.log(d3.max(data), yDomainMax);
     // Kick off transitions

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import MultipleChoice from '../question-inputs/multiple-choice';
+// import MultipleChoice from '../question-inputs/multiple-choice';
 import Range from '../question-inputs/range';
 // import AreaChart from '../question-outputs/area-chart';
 import ColumnChart from '../question-outputs/column-chart';
