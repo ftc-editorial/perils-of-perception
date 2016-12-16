@@ -9,7 +9,9 @@
 
 $o-share-is-silent: false;
 @import 'ftc-share/main';
-
+.o-share {
+  float:right;
+}
 // Core app styling
 .question {
   opacity: 0.62;
