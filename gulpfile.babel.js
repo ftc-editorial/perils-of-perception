@@ -216,6 +216,7 @@ gulp.task('build-pages', () => {
     /* async function 声明了一个异步函数，并返回了一个 AsyncFunction 对象。
      * 异步函数可能会包括  await 表达式，这将会使异步函数暂停执行并等待 promise 解析传值后，继续执行异步函数并返回解析值。
     */
+    //.pipe(gulpdata(config()))
     .pipe(gulpnunjucks.compile(null, { env: views.configure() }))
     /* gulp-nunjucks: Compile/precompile Nunjucks templates
     */

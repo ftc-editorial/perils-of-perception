@@ -30,7 +30,7 @@ export default async function() {
   */
 
   return {
-    ...d,
+    ...d,//把d这个对象拆开
     flags,
     onwardJourney,
     // data,
