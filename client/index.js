@@ -8,7 +8,7 @@ const endpoint = 'https://ft-ig-answer-api.herokuapp.com/api/v1';
 class App extends Component {
   constructor(props) {
     super(props);
-    const { questions } = props;
+    const { questions } = props; // eslint-disable-line
 
     this.state = {
       questionsLoaded: false,
@@ -30,7 +30,6 @@ class App extends Component {
     console.log(`Country selected: ${value}`);
     const key = value.toLowerCase().replace(/\s/g, '-');
     const data = `https://ft-ig-content-prod.s3.amazonaws.com/v1/ft-interactive/answer-api/2/2__perils-of-perception-survey-2016__${key}.json`;
-    // fetch(`${endpoint}/project/1?aggregate=true&key=Country&value=${value}`)
     fetch(data)
       .then(res => res.json())
       .then(({ questions }) => this.setState({
