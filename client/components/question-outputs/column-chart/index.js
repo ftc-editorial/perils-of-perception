@@ -173,7 +173,6 @@ class ColumnChart extends Component {
         .attr('y', d => y(d || 0))
         .attr('height', d => height - y(d || 0));
 
-    console.log(d3.max(data), yDomainMax);
     // Kick off transitions
     this.animateFauxDOM(2000);
 
@@ -260,9 +259,9 @@ class ColumnChart extends Component {
           `translate(${(i * (width / 100)) + ((width / 100) / 5.05) + 12}, 28)`
         )
       .select('rect')
-        .attr('y', d => y(d))
+        .attr('y', d => y(d || 0))
         .attr('width', (width / 100) - ((width / 100) / 5.05))
-        .attr('height', d => height - y(d))
+        .attr('height', d => height - y(d || 0))
         .attr('stroke-width', () => {
           const rectWidth = d3.select(chart)
               .select('rect')
