@@ -142,20 +142,6 @@ class Question extends Component {
     };
     const crosshead = crossheadLookup[this.props.questionId];
 
-    const crossheadLookup = {
-      19: 'Current Muslim population',
-      20: 'Future Muslim population',
-      21: 'Health care spending',
-      22: 'Home ownership',
-      23: 'Wealth distribution',
-      24: 'Happiness',
-      26: 'Attitudes toward abortion',
-      27: 'Attitudes toward homosexuality',
-      28: 'Attitudes toward premarital sex',
-    };
-
-    const crosshead = crossheadLookup[this.props.questionId];
-
     return (
       <div
         ref={node => { this.node = node; }}

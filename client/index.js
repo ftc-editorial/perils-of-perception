@@ -13,6 +13,7 @@ class App extends Component {
     this.state = {
       questionsLoaded: false,
       questions: [],
+      questionsLength: 0,
       activeQuestion: 0,
       score: 0,
       complete: false,
@@ -36,11 +37,16 @@ class App extends Component {
         questionsLoaded: true,
         questions,
         country: value,
+        questionsLength: questions
+          .filter(question => question.answer !== '')
+          .sort((a, b) => Number(a.meta.qid.slice(1)) - Number(b.meta.qid.slice(1)))
+          .slice(2)
+          .length,
       }));
   }
 
   updateProgress(n) {
-    if (n <= this.state.questions.length - 3) {
+    if (n < this.state.questionsLength) {
       this.setState({ activeQuestion: n });
     } else {
       this.setState({
@@ -83,7 +89,7 @@ class App extends Component {
           updateScore={this.updateScore}
           endpoint={endpoint}
           country={this.state.country}
-          questionsLength={this.state.questions.length - 2}
+          questionsLength={this.state.questionsLength}
         />
       );
     let feedback;
