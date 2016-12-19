@@ -102,7 +102,17 @@ class App extends Component {
       >
         <h2>Your overall rating: {Math.round(this.state.score)}&#37;{feedback}</h2>
 
-        <button className="o-buttons o-buttons--big o-buttons--standout">Tweet Your Score</button>
+        <a
+          href={`https://twitter.com/intent/tweet?text=How%20well%20do%20you%20really%20know%20your%20country%3F%20My%20${this.state.country}%20rating%20was%20${Math.round(this.state.score)}%25%3B%20see%20how%20you%20compare%3A&url=https%3A%2F%2Fig.ft.com%2Fsites%2Fquiz%2Fperils-of-perception%2F2016%2F&via=FT`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button
+            className="o-buttons o-buttons--big o-buttons--standout"
+          >
+            Tweet Your Rating
+          </button>
+        </a>
       </div>
     );
 

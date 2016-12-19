@@ -5,11 +5,14 @@ div.input {
     display: block;
     width: 100%;
     -webkit-transition: opacity linear 500ms;
+    -moz-transition: opacity linear 500ms;
+    transition: opacity linear 500ms;
     div.range-labels {
       display: flex;
       justify-content: space-between;
       margin-bottom: -6px;
       color: #6b6e68;
+      -webkit-transition: opacity linear 500ms;
       transition: opacity linear 500ms;
       &-min {
         align-self: flex-start;
@@ -47,8 +50,8 @@ div.input {
         -webkit-transition: background linear 500ms;
       }
       &::-moz-range-thumb {
-        height: 30px;
-        width: 30px;
+        height: 26px;
+        width: 26px;
         border: none;
         border-radius: 50%;
         background-color: #27757b;
@@ -115,6 +118,12 @@ div.input {
       background-color: #fff;
       text-align: center;
       font-weight: 700;
+      -webkit-transition: opacity linear 500ms;
+      -moz-transition: opacity linear 500ms;
+      transition: opacity linear 500ms;
+      &.hidden {
+        opacity: 0;
+      }
     }
     output:before {
       content: '';
