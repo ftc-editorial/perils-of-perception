@@ -42,38 +42,15 @@ export default () => ({ // eslint-disable-line
   ],
 
   // Appears in the HTML <title>
-  title: 'How well do you really know your country?',
+  title: '你真的了解你的国家吗?',
 
   // meta data
-  description: 'A new poll shows how little many people know about their home countries. Take our quiz to see how you and other FT readers compare.',
+  description: '一项新的民意调查表明鲜有人了解他们的国家。做一做我们的题目吧，然后比较一下你自己和其他读者的答案。',
 
-  /*
-  TODO: Select Twitter card type -
-        "summary" or "summary_large_image"
 
-        Twitter card docs:
-        https://dev.twitter.com/cards/markup
-  */
   twitterCard: 'summary_large_image',
 
-  /*
-  TODO: Do you want to tweak any of the
-        optional social meta data?
-  */
-  // General social
-  // socialImage: '',
-  // socialHeadline: '',
-  // socialSummary:  '',
-
-  // TWITTER
-  // twitterImage: '',
-  // twitterCreator: '@individual's_account',
-  // tweetText:  '',
-  // twitterHeadline:  '',
-
-  // FACEBOOK
-  // facebookImage: '',
-  // facebookHeadline: '',
+ 
 
   tracking: {
 
