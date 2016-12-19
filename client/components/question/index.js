@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-// import MultipleChoice from '../question-inputs/multiple-choice';
 import Range from '../question-inputs/range';
-// import AreaChart from '../question-outputs/area-chart';
 import ColumnChart from '../question-outputs/column-chart';
 
 class Question extends Component {
@@ -17,15 +15,14 @@ class Question extends Component {
   }
 
   markQuestion(event, value) {
+    // Check if user answered correctly
+    const correct = value === this.props.answer;
+    // Points awarded for this question (use for weighting etc.)
+    const questionValue = 1;
+
     if (event) {
       event.preventDefault();
     }
-
-    // Check if user answered correctly
-    const correct = value === this.props.answer;
-
-    // Points awarded for this question (use for weighting etc.)
-    const questionValue = 1;
 
     this.setState({
       answered: true,
@@ -59,73 +56,67 @@ class Question extends Component {
   render() {
     const rangeMin = this.props.options[0];
     const rangeMax = this.props.options[1];
-    const active = this.props.active ? ' active' : '';
-    const answered = this.state.answered ? ' answered' : '';
-    let output;
-    let chart;
-
-    const input = (<Range
-      min={rangeMin}
-      max={rangeMax}
-      step={rangeMax / 100}
-      thumbSize={28}
-      onSubmit={this.markQuestion}
-    />);
-
-    if (this.state.answered) {
-      chart = (
-        <ColumnChart
-          data={this.props.responsesData}
-          initialWidth={this.node.offsetWidth}
-          inputMin={rangeMin}
-          inputMax={rangeMax}
-          userAnswer={this.state.value}
-          actualAnswer={this.props.answer}
-          countryAnswer={this.props.countryAnswer}
-        />
-      );
-
-      output = (
-        <div className="o-grid-container">
-          <div className="o-grid-row">
-            <div data-o-grid-colspan="12 M4">
-              <div className="legend">
-                <svg width="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="5" cy="5" r="5" className="legend-actual" />
-                </svg>
-                <p className="o-typography-lead--small">Actual answer</p>
-              </div>
-              <p>
-                The answer is <strong>{this.props.answer}&#37;</strong>.
-              </p>
+    const activeClass = this.props.active ? ' active' : '';
+    const answeredClass = this.state.answered ? ' answered' : '';
+    const input = (
+      <Range
+        min={rangeMin}
+        max={rangeMax}
+        step={rangeMax / 100}
+        thumbSize={28}
+        onSubmit={this.markQuestion}
+      />
+    );
+    const chart = this.state.answered && (
+      <ColumnChart
+        data={this.props.responsesData}
+        initialWidth={this.node.offsetWidth}
+        inputMin={rangeMin}
+        inputMax={rangeMax}
+        userAnswer={this.state.value}
+        actualAnswer={this.props.answer}
+        countryAnswer={this.props.countryAnswer}
+      />
+    );
+    const output = this.state.answered && (
+      <div className="o-grid-container">
+        <div className="o-grid-row">
+          <div data-o-grid-colspan="12 M4">
+            <div className="legend">
+              <svg width="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="5" cy="5" r="5" className="legend-actual" />
+              </svg>
+              <p className="o-typography-lead--small">Actual answer</p>
             </div>
-            <div data-o-grid-colspan="12 M4">
-              <div className="legend">
-                <svg width="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="5" cy="5" r="5" className="legend-user" />
-                </svg>
-                <p className="o-typography-lead--small">Your answer</p>
-              </div>
-              <p>
-                You answered <strong>{this.state.value}&#37;</strong>.
-              </p>
+            <p>
+              The answer is <strong>{this.props.answer}&#37;</strong>.
+            </p>
+          </div>
+          <div data-o-grid-colspan="12 M4">
+            <div className="legend">
+              <svg width="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="5" cy="5" r="5" className="legend-user" />
+              </svg>
+              <p className="o-typography-lead--small">Your answer</p>
             </div>
-            <div data-o-grid-colspan="12 M4">
-              <div className="legend">
-                <svg width="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="5" cy="5" r="5" className="legend-country" />
-                </svg>
-                <p className="o-typography-lead--small">{this.props.country} answer</p>
-              </div>
-              <p>
-                People polled answered <strong>{this.props.countryAnswer}&#37;</strong>.
-              </p>
+            <p>
+              You answered <strong>{this.state.value}&#37;</strong>.
+            </p>
+          </div>
+          <div data-o-grid-colspan="12 M4">
+            <div className="legend">
+              <svg width="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="5" cy="5" r="5" className="legend-country" />
+              </svg>
+              <p className="o-typography-lead--small">{this.props.country} answer</p>
             </div>
+            <p>
+              People polled answered <strong>{this.props.countryAnswer}&#37;</strong>.
+            </p>
           </div>
         </div>
-      );
-    }
-
+      </div>
+    );
     const crossheadLookup = {
       19: 'Current Muslim population',
       20: 'Future Muslim population',
@@ -137,19 +128,20 @@ class Question extends Component {
       27: 'Attitudes toward homosexuality',
       28: 'Attitudes toward premarital sex',
     };
-
     const crosshead = crossheadLookup[this.props.questionId];
 
     return (
       <div
         ref={node => { this.node = node; }}
-        className={`question${active}${answered}`}
+        className={`question${activeClass}${answeredClass}`}
       >
         <h2 className="o-typography-subhead--crosshead">
           {this.props.questionIndex + 1}. {crosshead}
         </h2>
 
-        <p className="o-typography-lead--small">{this.props.questionText}</p>
+        <p className="o-typography-lead--small">
+          {this.props.questionText}
+        </p>
 
         {input}
 
@@ -163,20 +155,19 @@ class Question extends Component {
 }
 
 Question.propTypes = {
+  questionId: React.PropTypes.number,
+  questionIndex: React.PropTypes.number,
+  active: React.PropTypes.bool,
+  questionType: React.PropTypes.string,
+  questionText: React.PropTypes.string,
+  options: React.PropTypes.array,
   answer: React.PropTypes.any,
   countryAnswer: React.PropTypes.number,
+  responsesData: React.PropTypes.object,
   updateProgress: React.PropTypes.func,
   updateScore: React.PropTypes.func,
-  options: React.PropTypes.array,
-  questionType: React.PropTypes.string,
-  active: React.PropTypes.bool,
-  responsesData: React.PropTypes.object,
-  questionIndex: React.PropTypes.number,
-  questionText: React.PropTypes.string,
   endpoint: React.PropTypes.string,
   country: React.PropTypes.string,
-  questionId: React.PropTypes.number,
-  meta: React.PropTypes.object,
 };
 
 export default Question;

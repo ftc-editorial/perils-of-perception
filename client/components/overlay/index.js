@@ -79,9 +79,7 @@ class Overlay extends Component {
     ];
 
     const selectOptions = options.map((option, i) => {
-      // const key = Object.keys(option)[0];
-      // const value = option[key];
-      return (
+      const jsx = (
         <option
           key={`o${i}`}
           value={option}
@@ -89,6 +87,8 @@ class Overlay extends Component {
           {option}
         </option>
       );
+
+      return jsx;
     });
 
     return (
@@ -102,6 +102,7 @@ class Overlay extends Component {
               <header className="overlay-header">
                 How well do you really know your country?
               </header>
+
               <section className="overlay-content">
                 <p>Which country would you like to answer questions about?</p>
 

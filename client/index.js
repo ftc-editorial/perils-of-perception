@@ -27,9 +27,9 @@ class App extends Component {
   }
 
   setQuestions(value) {
-    console.log(`Country selected: ${value}`);
     const key = value.toLowerCase().replace(/\s/g, '-');
     const data = `https://ft-ig-content-prod.s3.amazonaws.com/v1/ft-interactive/answer-api/2/2__perils-of-perception-survey-2016__${key}.json`;
+
     fetch(data)
       .then(res => res.json())
       .then(({ questions }) => this.setState({
@@ -57,9 +57,7 @@ class App extends Component {
   }
 
   render() {
-    const loadStatus = this.state.questionsLoaded ?
-      null :
-      <p><strong>Loading quiz…</strong></p>;
+    const loadStatus = !this.state.questionsLoaded && <p><strong>Loading quiz…</strong></p>;
 
     const questions = this.state.questions
       .filter(question => question.answer !== '')
@@ -70,41 +68,41 @@ class App extends Component {
           key={question.meta.qid}
           questionId={question.id}
           questionIndex={i}
-          questionText={question.text}
+          active={i === this.state.activeQuestion}
           questionType={question.meta.type}
+          questionText={question.text}
           options={Object.keys(question.options).map(option =>
               question.options[option]
             ).filter(option => option !== null)}
           answer={Number(question.answer)}
           countryAnswer={Number(question.meta.perceived)}
           responsesData={question.responses}
-          active={i === this.state.activeQuestion}
           updateProgress={this.updateProgress}
           updateScore={this.updateScore}
           endpoint={endpoint}
           country={this.state.country}
         />
       );
-    const results = this.state.complete ?
-      (<div>
-        <p>Your score: {this.state.score}</p>
-      </div>)
-      : null;
-    const chooseQuestions = this.state.chooseQuestions ?
+    // const results = this.state.complete && (
+    //   <div>
+    //     <p>Your score: {this.state.score}</p>
+    //   </div>
+    // );
+    const chooseQuestions = this.state.chooseQuestions && (
       <Overlay setQuestions={this.setQuestions} />
-      : null;
+    );
 
     return (
       <div>
         <link rel="stylesheet" href="https://build.origami.ft.com/v2/bundles/css?modules=o-buttons@^4.4.1" />
 
+        {chooseQuestions}
+
         {loadStatus}
 
         {questions}
 
-        {results}
-
-        {chooseQuestions}
+        {/* {results} */}
       </div>
     );
   }
@@ -114,4 +112,4 @@ App.propTypes = {
   questions: React.PropTypes.array,
 };
 
-ReactDOM.render(<App />, document.querySelector('#react-container'));
+ReactDOM.render(<App />, document.getElementById('react-container'));
