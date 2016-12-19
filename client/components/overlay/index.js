@@ -78,18 +78,14 @@ class Overlay extends Component {
       'Vietnam',
     ];
 
-    const selectOptions = options.map((option, i) => {
-      const jsx = (
-        <option
-          key={`o${i}`}
-          value={option}
-        >
-          {option}
-        </option>
-      );
-
-      return jsx;
-    });
+    const selectOptions = options.map((option, i) =>
+      <option
+        key={`o${i}`}
+        value={option}
+      >
+        {option}
+      </option>
+    );
 
     return (
       <div
