@@ -73,6 +73,7 @@ class Range extends Component {
             this.submitButton.style.opacity = 0;
             this.rangeInput.classList.add('hidden');
             this.rangeLabels.classList.add('hidden');
+            this.output.classList.add('hidden');
           }}
           className="range-input"
         >
@@ -100,6 +101,7 @@ class Range extends Component {
           />
 
           <output
+            ref={node => { this.output = node; }}
             style={{ left: this.state.rangeOverlayPosition }}
           >
             {this.state.value}

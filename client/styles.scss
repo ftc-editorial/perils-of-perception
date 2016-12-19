@@ -7,21 +7,14 @@
 @import 'components/question-outputs/column-chart/main';
 @import 'components/overlay/main';
 
-// Core app styling
-.question {
-  opacity: 0.62;
-  pointer-events: none;
-  transition: opacity linear 200ms;
-  &.active,
-  &.answered {
-    opacity: 1;
-    pointer-events: auto;
+div.results {
+  h2 {
+    margin-top: 0;
   }
-  .o-typography-lead--small {
-    font-family: MetricWeb, sans-serif;
-    line-height: 24px;
-    font-size: 20px;
-    font-weight: 400;
-    margin: 0;
+  button {
+    display: block;
+    width: 100%;
+    max-width: 315px;
+    margin: 38px auto 0;
   }
 }

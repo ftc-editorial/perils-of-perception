@@ -27,9 +27,9 @@ class App extends Component {
   }
 
   setQuestions(value) {
-    console.log(`Country selected: ${value}`);
     const key = value.toLowerCase().replace(/\s/g, '-');
     const data = `https://ft-ig-content-prod.s3.amazonaws.com/v1/ft-interactive/answer-api/2/2__perils-of-perception-survey-2016__${key}.json`;
+
     fetch(data)
       .then(res => res.json())
       .then(({ questions }) => this.setState({
@@ -40,7 +40,7 @@ class App extends Component {
   }
 
   updateProgress(n) {
-    if (n <= this.state.questions.length - 1) {
+    if (n <= this.state.questions.length - 3) {
       this.setState({ activeQuestion: n });
     } else {
       this.setState({
@@ -57,10 +57,10 @@ class App extends Component {
   }
 
   render() {
-    const loadStatus = this.state.questionsLoaded ?
-      null :
-      <p><strong>Loading quiz…</strong></p>;
-
+    const chooseQuestions = this.state.chooseQuestions && (
+      <Overlay setQuestions={this.setQuestions} />
+    );
+    const loadStatus = !this.state.questionsLoaded && <p><strong>Loading quiz…</strong></p>;
     const questions = this.state.questions
       .filter(question => question.answer !== '')
       .sort((a, b) => Number(a.meta.qid.slice(1)) - Number(b.meta.qid.slice(1)))
@@ -70,41 +70,63 @@ class App extends Component {
           key={question.meta.qid}
           questionId={question.id}
           questionIndex={i}
-          questionText={question.text}
+          active={i === this.state.activeQuestion}
           questionType={question.meta.type}
+          questionText={question.text}
           options={Object.keys(question.options).map(option =>
               question.options[option]
             ).filter(option => option !== null)}
           answer={Number(question.answer)}
           countryAnswer={Number(question.meta.perceived)}
           responsesData={question.responses}
-          active={i === this.state.activeQuestion}
           updateProgress={this.updateProgress}
           updateScore={this.updateScore}
           endpoint={endpoint}
           country={this.state.country}
+          questionsLength={this.state.questions.length - 2}
         />
       );
-    const results = this.state.complete ?
-      (<div>
-        <p>Your score: {this.state.score}</p>
-      </div>)
-      : null;
-    const chooseQuestions = this.state.chooseQuestions ?
-      <Overlay setQuestions={this.setQuestions} />
-      : null;
+    let feedback;
+
+    switch (true) {
+      case this.state.score >= 70:
+        feedback = ' – definite native!';
+        break;
+      default:
+        feedback = '';
+    }
+
+    const results = this.state.complete && (
+      <div
+        className="results"
+      >
+        <h2>Your overall rating: {Math.round(this.state.score)}&#37;{feedback}</h2>
+
+        <a
+          href={`https://twitter.com/intent/tweet?text=How%20well%20do%20you%20really%20know%20your%20country%3F%20My%20${this.state.country}%20rating%20was%20${Math.round(this.state.score)}%25%3B%20see%20how%20you%20compare%3A&url=https%3A%2F%2Fig.ft.com%2Fsites%2Fquiz%2Fperils-of-perception%2F2016%2F&via=FT`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button
+            className="o-buttons o-buttons--big o-buttons--standout"
+          >
+            Tweet Your Rating
+          </button>
+        </a>
+      </div>
+    );
 
     return (
       <div>
         <link rel="stylesheet" href="https://build.origami.ft.com/v2/bundles/css?modules=o-buttons@^4.4.1" />
+
+        {chooseQuestions}
 
         {loadStatus}
 
         {questions}
 
         {results}
-
-        {chooseQuestions}
       </div>
     );
   }
@@ -114,4 +136,4 @@ App.propTypes = {
   questions: React.PropTypes.array,
 };
 
-ReactDOM.render(<App />, document.querySelector('#react-container'));
+ReactDOM.render(<App />, document.getElementById('react-container'));
