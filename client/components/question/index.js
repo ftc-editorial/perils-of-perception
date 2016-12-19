@@ -8,7 +8,7 @@ class Question extends Component {
 
     this.state = {
       answered: false,
-      correct: false,
+      // correct: false,
       value: null,
     };
     this.markQuestion = this.markQuestion.bind(this);
@@ -16,9 +16,11 @@ class Question extends Component {
 
   markQuestion(event, value) {
     // Check if user answered correctly
-    const correct = value === this.props.answer;
+    // const correct = value === this.props.answer;
+
     // Points awarded for this question (use for weighting etc.)
-    const questionValue = 1;
+    const difference = Math.abs(this.props.answer - value);
+    let questionValue;
 
     if (event) {
       event.preventDefault();
@@ -29,10 +31,20 @@ class Question extends Component {
       value,
     });
 
-    if (correct) {
-      this.setState({ correct });
-      this.props.updateScore(questionValue);
+    if (difference < 15) {
+      questionValue = difference === 0 ?
+        questionValue = 100 / this.props.questionsLength :
+        questionValue = (100 / this.props.questionsLength) * (1 - (difference / 15));
+    } else {
+      questionValue = 0;
     }
+
+    // if (correct) {
+    //   this.setState({ correct });
+    //   this.props.updateScore(questionValue);
+    // }
+
+    this.props.updateScore(questionValue);
 
     // POST response to server
     fetch(`${this.props.endpoint}/response/`, {
@@ -168,6 +180,7 @@ Question.propTypes = {
   updateScore: React.PropTypes.func,
   endpoint: React.PropTypes.string,
   country: React.PropTypes.string,
+  questionsLength: React.PropTypes.number,
 };
 
 export default Question;

@@ -1,7 +1,17 @@
 div.question {
-  h2.o-typography-subhead--crosshead {
+  opacity: 0.62;
+  pointer-events: none;
+  transition: opacity linear 200ms;
+  &.active,
+  &.answered {
+    opacity: 1;
+    pointer-events: auto;
   }
-  div.output-container {
-    // margin: 46px 0 0; // TODO: uncomment if you're not having a chart output
+  .o-typography-lead--small {
+    font-family: MetricWeb, sans-serif;
+    line-height: 24px;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0;
   }
 }
