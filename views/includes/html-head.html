@@ -65,7 +65,7 @@
 
 {{ data | jsonScriptElement('data') }} {# 不存在data也不存在jsonScriptElement,故该板块不存在 #}
 
-<title>{{ title | default(headline, true) }} &mdash; ftchinese.com</title> {# 疑问：这里的过滤器后面的defautl是怎么回事？ 反正先把title和headline都汉化了 #}
+<title>{{ title | default(headline, true) }} &mdash; ftchinese.com</title> {# 疑问：这里的过滤器后面的default是什么东西？ 反正先把title和headline都汉化了 #}
 <meta name="twitter:title" content="{{ twitterHeadline | default(socialHeadline) | default(headline, true) }}">
 <meta property="og:title" content="{{ facebookHeadline | default (socialHeadline) | default(headline, true) }}">
 
@@ -73,15 +73,16 @@
 <meta name="twitter:description" content="{{ description }}">
 <meta property="og:description" content="{{ description }}">
 
-<link rel="canonical" href="{{ url }}">
+<link rel="canonical" href="{{ url }}">{# 这个url来自于article.js的数据，确有其值：url: 'https://ig.ft.com/sites/quiz/perils-of-perception/2016/',
+ #}
 <meta name="twitter:url" content="{{ url }}">
 <meta property="og:url" content="{{ url }}">
 
-<link rel="image_src" href="{{ mainImage.url }}">
+<link rel="image_src" href="{{ mainImage.url }}">{# mainImage.url确有其值 #}
 <meta name="twitter:image" content="{{ twitterImage | default(socialImage) | default(mainImage.url) }}">
 <meta property="og:image" content="{{ facebookImage | default(socialImage) | default(mainImage.url) }}">
 
-<meta name="twitter:card" content="{{ twitterCard }}">
+<meta name="twitter:card" content="{{ twitterCard }}">{# twitterCard确有其值 #}
 <meta name="twitter:site" content="@ft">
 
 {%- if twitterCreator %}{# 无此数据，故无此版块 #}

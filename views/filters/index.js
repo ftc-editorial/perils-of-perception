@@ -1,6 +1,6 @@
 import markdownIt from 'markdown-it';
 import removeMarkdown from 'remove-markdown';
-import { utcFormat } from 'd3-time-format';
+import { utcFormat } from 'd3-time-format';//一个JavaScript格式化时间的工具
 import nunjucks from 'nunjucks';
 
 const SafeString = nunjucks.runtime.SafeString;

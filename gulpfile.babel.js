@@ -213,14 +213,16 @@ gulp.task('build-pages', () => {
     .pipe(plumber())//防止管道因为来自gulp插件的错误而导致的中断
     //.pipe(gulpdata(async(d) => await require('./config').default(d)))
     .pipe(gulpdata(async(d) => await config(d)))
-    /* 知识补充：
+    /* 即数据资源来自：'./config/index.js'中返回的对象
+
+     * 知识补充：
      * async function 声明了一个异步函数，并返回了一个 AsyncFunction 对象。
      * 异步函数可能会包括  await 表达式，这将会使异步函数暂停执行并等待 promise 解析传值后，继续执行异步函数并返回解析值。
-     * 此处数据资源就是config/index.js中返回的对象
     */
     //.pipe(gulpdata(config()))
     .pipe(gulpnunjucks.compile(null, { env: views.configure() }))
-    /* gulp-nunjucks: Compile/precompile Nunjucks templates
+    /* 即nunjucks的env配置资源来自：'./views/index.js'
+     *gulp-nunjucks: Compile/precompile Nunjucks templates
     */
     .pipe(gulp.dest('dist'));
 });

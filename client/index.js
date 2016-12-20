@@ -62,7 +62,7 @@ class App extends Component {
   render() {
     const loadStatus = this.state.questionsLoaded ?
       null :
-      <p><strong>Loading quiz…</strong></p>;
+      <p><strong>问卷加载中...</strong></p>;
 
     const questions = this.state.questions
       .filter(question => question.answer !== '')
@@ -99,7 +99,7 @@ class App extends Component {
 
     return (
       <div>
-        <link rel="stylesheet" href="https://build.origami.ft.com/v2/bundles/css?modules=o-buttons@^4.4.1" />
+        <link rel="stylesheet" href="https://build.origami.ft.com/v2/bundles/css?modules=o-buttons@^4.4.1" /> 
 
         {loadStatus}
 

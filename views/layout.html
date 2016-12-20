@@ -4,18 +4,18 @@
     data-buildtime="{{ now() | isotime }}"
     data-content-id="{{ id if id else test_comments_uuid }}">
   <head>
-    {% block prependhead %}{% endblock -%}
-    {% include "includes/html-head.html" %}
+    {% block prependhead %}{% endblock -%} {# 子模板无此prependhead区块覆盖 #}
+    {% include "includes/html-head.html" %} {# 引入区块 includes/html-head.html #}
     {% block appendhead %}{% endblock -%}
   </head>
   <body>
 
-    {% if flags.analytics %}
+    {% if flags.analytics %} {# 此时为开发环境，由flags.js可知，prod为false,故flags.analytics为false #}
       {% include "includes/analytics.html" %}
     {% endif %}
 
-    {% if flags.header %}
-      {% include "includes/header.html" %}
+    {% if flags.header %} {# 由flags.js, flags.header为true #}
+      {% include "includes/header.html" %} {# 该部分为最上部“FT中文网”长方条部分 #}
     {% endif %}
 
     <main role="main">
@@ -26,11 +26,11 @@
 
               {% block article_head %}
 
-              {% if flags.shareButtons %}
+              {% if flags.shareButtons %}{# 由flags.js,flags.shareButtons为true #}
                 {% include "includes/share.html" %}
               {% endif %}
 
-              {% include "includes/article-head.html" %}
+              {% include "includes/article-head.html" %} {# 导入局部区块"includes/article-head.html" #}
               {% endblock %}
 
             </header>
@@ -38,7 +38,7 @@
         </div>
         <div class="article-body o-typography-body-wrapper" itemprop="articleBody">
 
-          {% block article_body %}{% endblock %}
+          {% block article_body %}{% endblock %} {# article_body在子模板index.html中被重写 #}
 
           <footer class="o-typography-footer" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
             <small>Figures lower than 0.5% have been rounded to 0.</small><br />

@@ -4,7 +4,7 @@ import getOnwardJourney from './onward-journey';
 // import data from './data';
 
 export default async function() {
-  const d = await article();
+  const d = await article();//疑问：为什么这里要用await呢，article()并不需要异步执行啊
   const flags = await getFlags();
   const onwardJourney = await getOnwardJourney();
   /*

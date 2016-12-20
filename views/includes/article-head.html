@@ -1,25 +1,26 @@
 <div>
-  <a href="{{ topic.url }}" class="o-typography-link-topic o-typography-link-topic--medium">{{ topic.name }}</a>
+  <a href="{{ topic.url }}" class="o-typography-link-topic o-typography-link-topic--medium">{{ topic.name }}</a> {# 由article.js, topic.url为'https://www.ft.com/ft-data',topic.name原为'FT data' #}
 </div>
 
-<h1 class="o-typography-heading1" itemprop="headline">{{ headline | md(true) }}</h1>
+<h1 class="o-typography-heading1" itemprop="headline">{{ headline | md(true) }}</h1> {# headline 为你真的了解你的国家吗？#}
 
 <p class="o-typography-lead">
-  {{ summary | md(true) }}
-  {% if relatedArticle %}
+  {{ summary | md(true) }} {# summary 确有其值 #}
+  {% if relatedArticle %} {# relatedArticle存在 #}
   <a href="{{ relatedArticle.url }}" class="o-typography-link">{{ relatedArticle.text }}</a>
   {% endif %}
 </p>
-<meta itemprop="dateModified" content="{{ publishedDate | isotime }}">
+<meta itemprop="dateModified" content="{{ publishedDate | isotime }}">{#  publishedDate: new Date('2016-12-16T17:00:00Z')，待看是否需要修改
+#}
 
 <p>
   {%- if publishedDate -%}
   <time class="article__timestamp o-date o-typography-timestamp"
           data-o-component="o-date" datetime="{{ publishedDate | isotime }}"
           itemprop="datePublished" content="{{ publishedDate | isotime }}"
-          data-o-date-js>{{ publishedDate | ftdate }}</time>
+          data-o-date-js>{{ publishedDate | ftdate }}</time>{# ftdate在filter/index.js里面#}
   {%- endif -%}
-  {%- if byline -%}
+  {%- if byline -%} {# byline确实存在 #}
   &#32;<span class="article__byline">by&nbsp;
   {%- if byline.push -%}
     {%- for author in byline -%}

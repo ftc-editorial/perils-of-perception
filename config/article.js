@@ -17,7 +17,7 @@ export default () => ({ // eslint-disable-line
   summary: '一项新的民意调查表明鲜有人了解他们的国家。做一做我们的题目吧，然后比较一下你自己和其他读者的答案。',
 
   topic: {
-    name: 'FT Data',
+    name: 'FTC Data',
     url: 'https://www.ft.com/ft-data',
   },
 
