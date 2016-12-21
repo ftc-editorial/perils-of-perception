@@ -1,5 +1,5 @@
 [{
-    "text": "What do you think the current population of [country] is?",
+    "text": "你觉得[country]的现有人口是多少？",
     "answer": 0,
     "options": [0, 99999, null, null, null],
     "meta": {
@@ -7,7 +7,7 @@
         "type": "range"
     }
 }, {
-    "text": "And what do you think the population of [country] is projected to be in 2050 by the United Nations?",
+    "text": "你认为联合国预计2050年[country]的人口将会是多少？",
     "answer": 99999,
     "options": [0, 99999, null, null, null],
     "meta": {
@@ -15,7 +15,7 @@
         "type": "range"
     }
 }, {
-    "text": "Out of every 100 people in [country], about how many do you think are Muslim?",
+    "text": "每100个[country]人当中，你认为有多少个穆斯林？",
     "answer": null,
     "options": [0, 100, null, null, null],
     "meta": {
@@ -23,7 +23,7 @@
         "type": "range"
     }
 }, {
-    "text": "Now thinking about 2020, out of every 100 people in [country], about how many do you think will be Muslim?",
+    "text": "试想一下到2020年，每100个[country]人中，有多少个穆斯林？",
     "answer": null,
     "options": [0, 100, null, null, null],
     "meta": {
