@@ -7,7 +7,7 @@ class Overlay extends Component {
     this.state = {
       inputsDisabled: false,
       visibility: '',
-      value: 'United Kingdom',
+      value: 'China',
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
