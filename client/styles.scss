@@ -1,4 +1,5 @@
 @import 'o-colors/main';
+
 @import 'components/core/main';
 @import 'components/question/main';
 @import 'components/question-inputs/range/main';
@@ -7,8 +8,13 @@
 @import 'components/question-outputs/column-chart/main';
 @import 'components/overlay/main';
 
+
 $o-share-is-silent: false;
 @import 'ftc-share/main';
+
+$o-footer-is-silent: false;
+@import 'ftc-footer/main';
+
 .o-share {
   float:right;
 }

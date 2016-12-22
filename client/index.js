@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import Question from './components/question';
 import Overlay from './components/overlay';
 import Share from 'ftc-share';
-
+//const ftcFooter = require('ftc-footer');
+//const fullData = ftcFooter.full();
 
 const shareInstance = new Share(document.querySelector('[data-o-component=o-share]'));//产生社交网络分享按钮
 
@@ -150,3 +151,5 @@ App.propTypes = {
 
 
 ReactDOM.render(<App />, document.querySelector('#react-container')); //对'#react-container'处元素内部进行填充
+
+

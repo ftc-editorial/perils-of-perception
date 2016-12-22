@@ -7,6 +7,8 @@ export default async function() {
   const d = await article();//疑问：为什么这里要用await呢，article()并不需要异步执行啊
   const flags = await getFlags();
   const onwardJourney = await getOnwardJourney();
+  const footer = require('../bower_components/ftc-footer');
+
   /*
   An experimental demo that gets content from the API
   and overwrites some model values. This requires the Link File
@@ -33,6 +35,7 @@ export default async function() {
     ...d,//把d这个对象拆开
     flags,
     onwardJourney,
+    footer
     // data,
   };
 }
