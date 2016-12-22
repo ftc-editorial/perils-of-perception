@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Question from './components/question';
 import Overlay from './components/overlay';
 import Share from 'ftc-share';
-import {data} from '../config/data/china.js';//import只能放在最外层
+
 
 const shareInstance = new Share(document.querySelector('[data-o-component=o-share]'));//产生社交网络分享按钮
 
@@ -34,38 +34,36 @@ class App extends Component {//类App继承了react的类Component
     console.log(`Country selected: ${value}`);
     const key = value.toLowerCase().replace(/\s/g, '-');//将value值都化为小写，并将其中的空白符都替换为'-'
 
-    //const data = `https://ft-ig-content-prod.s3.amazonaws.com/v1/ft-interactive/answer-api/2/2__perils-of-perception-survey-2016__${key}.json`;//这里是下数据的地址
+    const data = `https://ft-ig-content-prod.s3.amazonaws.com/v1/ft-interactive/answer-api/2/2__perils-of-perception-survey-2016__${key}.json`;//这里是下数据的地址
 
-    //fetch(data)
+    //const data = require('./questiondata/argentina.js');
+
+    fetch(data)
     /* 知识补充：
      fetch() 方法用于发起获取资源的请求，默认方法是GET。参数data是请求的URL。它返回一个 promise，这个 promise 会在请求响应后被 resolve，并传回 Response 对象。
      */
-      //.then(res => res.json())
+      .then(res => res.json())
       /* 知识补充：
         response对象的方法.json():返回一个promise,resolve得到一个包含json数据的对象字面量
       */
-     // .then(({ questions }) => this.setState({
+      .then(({ questions }) => this.setState({
         /* 知识补充：
          * 此处then()的链式调用，这里的参数{questions}就是前一个then的return结果??待确认
          * setState(nextState, callback)：React.Component类的方法，
         */
 
-        //questionsLoaded: true,
-        //questions,
-        //country: value,
-      //}));
-      /*
-      ({questions}) => this.setState({
         questionsLoaded: true,
-        data,
+        questions,
         country: value,
-      });
-      */
+      }));
+      
+     /*
       this.setState({
         questionsLoaded: true,
         ...data,
         country: value,
       })
+      */
   }
 
   updateProgress(n) {

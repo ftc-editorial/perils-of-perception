@@ -100,10 +100,10 @@ class Overlay extends Component {
           <div className="o-grid-row">
             <div data-o-grid-colspan="12">
               <header className="overlay-header">
-                How well do you really know your country?
+                你真的了解你的国家吗？
               </header>
               <section className="overlay-content">
-                <p>Which country would you like to answer questions about?</p>
+                <p>你想做关于哪个国家的问卷？</p>
 
                 <form
                   onSubmit={(event, value) => {
@@ -120,7 +120,7 @@ class Overlay extends Component {
 
                   <input
                     type="submit"
-                    value="START THE QUIZ"
+                    value="开始答题"
                     className="o-buttons o-buttons--big o-buttons--standout"
                     disabled={this.state.inputsDisabled}
                   />

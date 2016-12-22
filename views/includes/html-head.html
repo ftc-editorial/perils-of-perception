@@ -56,12 +56,6 @@
 </script>
 {%- endif -%}
 
-{%- if flags.errorReporting -%} {# 数据flags不存在，故该板块不存在 #}
-<script type="application/json" data-o-errors-config>
-{"sentryEndpoint": "https://ddbd80489ff549538250bbe37fa52bbd@app.getsentry.com/71130"}
-</script>
-<script async src="https://origami-build.ft.com/v2/bundles/js?export=oErrors&modules=o-errors@^3.4.0"></script>
-{%- endif -%}
 
 {{ data | jsonScriptElement('data') }} {# 不存在data也不存在jsonScriptElement,故该板块不存在 #}
 
@@ -85,17 +79,4 @@
 <meta name="twitter:card" content="{{ twitterCard }}">{# twitterCard确有其值 #}
 <meta name="twitter:site" content="@ft">
 
-{%- if twitterCreator %}{# 无此数据，故无此版块 #}
-<meta name="twitter:creator" content="{{ twitterCreator }}">
-{% endif -%}
 
-{%- if flags.analytics %}{# 无此数据，故无此版块 #}
-  <link rel="preconnect" href="https://spoor-api.ft.com">
-  <meta property="ft.track:is_live" content="true"/>
-  {% if tracking.product %}
-  <meta property="ft.track:product" content="{{ tracking.product }}"/>
-  {% endif %}
-  {% if tracking.micrositeName %}
-  <meta property="ft.track:microsite_name" content="{{ tracking.micrositeName }}"/>
-  {% endif %}
-{% endif -%}
