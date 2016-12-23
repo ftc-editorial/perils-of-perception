@@ -1,10 +1,10 @@
-/node_modules/
-/bower_components/
-/dist/
-/.tmp/
-/.sass-cache/
+node_modules
+bower_components
+dist
+.tmp
 *.log
 npm-debug.log*
 .env
 .DS_Store
-/config/data.json
+config/data.json
+node_modules
