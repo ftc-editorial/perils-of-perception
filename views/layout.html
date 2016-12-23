@@ -1,23 +1,27 @@
-{% set test_comments_uuid = "3a499586-b2e0-11e4-a058-00144feab7de" if not flags.prod and flags.comments else "" %}
+{# {% set test_comments_uuid = "3a499586-b2e0-11e4-a058-00144feab7de" if not flags.prod and flags.comments else "" %} #}
 <!doctype html>
-<html lang="en-GB" class="core"
+<html lang="zh-Hans" class="core"
     data-buildtime="{{ now() | isotime }}"
     data-content-id="{{ id if id else test_comments_uuid }}">
   <head>
-    {% block prependhead %}{% endblock -%}
+{#     {% block prependhead %}{% endblock -%}
     {% include "includes/html-head.html" %}
-    {% block appendhead %}{% endblock -%}
+    {% block appendhead %}{% endblock -%} #}
+    {% include "partials/meta.html" %}
+    {% if production %}
+      {% include "partials/analytics.html" %}
+    {% endif %}    
   </head>
   <body>
 
-    {% if flags.analytics %}
+{#     {% if flags.analytics %}
       {% include "includes/analytics.html" %}
-    {% endif %}
+    {% endif %} #}
 
-    {% if flags.header %}
+{#     {% if flags.header %}
       {% include "includes/header.html" %}
-    {% endif %}
-
+    {% endif %} #}
+    {% include "partials/header.html" %}
     <main role="main">
       <article class="article" itemscope itemtype="http://schema.org/Article">
         <div class="article-head o-grid-container">
@@ -49,20 +53,20 @@
       </article>
     </main>
 
-    {% if flags.onwardjourney %}
+{#     {% if flags.onwardjourney %} #}
       {% include "includes/onwardjourney.html" %}
-    {% endif %}
+{#     {% endif %} #}
 
-    {% if flags.comments %}
+{#     {% if flags.comments %}
       {% include "includes/comments.html" %}
-    {% endif %}
+    {% endif %} #}
 
-    {% if flags.footer %}
+{#     {% if flags.footer %}
       {% include "includes/footer.html" %}
-    {% endif %}
-    <script async>queue('https://origami-build.ft.com/v2/bundles/js?export=oFooter&modules=o-footer@^5.0.1', null, true)</script>
+    {% endif %} #}
+ {#    <script async>queue('https://origami-build.ft.com/v2/bundles/js?export=oFooter&modules=o-footer@^5.0.1', null, true)</script> #}
 
-    <script async>
+{#     <script async>
     queue([
       'index.js',
       'https://origami-build.ft.com/v2/bundles/js?export=oDate&modules=o-date@^2.6.0',
@@ -70,7 +74,10 @@
       ,'{{ script | safe }}'
       {% endfor %}{% endif %}
     ]);
-    </script>
-
+    </script> #}
+  <script type="text/javascript" src="scripts/index.js"></script>
+{% if production %}
+  <script src="http://static.ftchinese.com/js/log.js?v=6"></script>
+{% endif %}
   </body>
 </html>

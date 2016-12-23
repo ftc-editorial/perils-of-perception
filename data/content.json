@@ -1,0 +1,27 @@
+{
+	"id": null,
+	"url": "",
+	"description": "A new poll shows how little many people know about their home countries. Take our quiz to see how you and other FT readers compare.",
+	"headline": "How well do you really know your country?",
+	 "mainImage": {
+	    "title": "FT Perils of Perception quiz",
+	    "description": "Faces in a crowd",
+	    "url": "http://ig.ft.com/static/perilsofperception.jpg",
+	    "width": 2048, 
+	    "height": 1152
+	  },
+	"twitterCard": "summary_large_image",
+	"title": "How well do you really know your country?",
+	"byline": [
+	    { 
+	    	"name": "David Blood", 
+	    	"url": "https://www.ft.com/stream/authorsId/NTBmY2Q1M2ItNjVhOC00ZGRhLWE5MGEtNzgxMTc0ZDlhOWQ3-QXV0aG9ycw=="
+	    },
+    	{ 
+    		"name": "Ændrew Rininsland", 
+	    	"url": "https://www.ft.com/topics/authors/%C3%86ndrew_Rininsland" 
+	    },
+	],
+	"publishedDate": "2016-12-14T17:00:00Z",
+	"relatedArticle": ""
+}
