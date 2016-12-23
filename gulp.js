@@ -44,14 +44,22 @@ gulp.task('build-pages', () => {
     
     try {
       yield fs.access(destDir, fs.constants.R_OK | fs.constants.W_OK);
-    } catch (err) {
-  // If not, create it.    
+    } catch (err) {    
       yield fs.mkdir(destDir);
     }
+    const prod = process.env.NODE_ENV === 'prod';
+    const flags = {
+      prod,
+      analytics: prod
+    };
+    const article = yield fs.readFile('./data/article.json', 'utf8');
+    const context = Object.assign(article, {
+      flags
+    });
 
-    const html = yield render('index.html');
+    // const html = yield render('index.html');
 
-    yield fs.writeFile(`${destDir}/index.html`, html, 'utf8');     
+    // yield fs.writeFile(`${destDir}/index.html`, html, 'utf8');     
   })
   .then(function(){
     browserSync.reload('*.html');
@@ -98,5 +106,31 @@ gulp.task('webpack', function(done) {
     }))
     browserSync.reload('main.js');
     done();
+  });
+});
+
+gulp.task('serve', 
+  gulp.parallel(
+    'html', 'styles', 'webpack',
+
+    function serve() {
+    browserSync.init({
+      server: {
+        baseDir: ['.tmp'],
+        index: 'index.html',
+        routes: {
+          '/bower_components': 'bower_components'
+        }
+      }
+    });
+
+    gulp.watch('client/**/**/*.scss', gulp.parallel('styles'));
+    gulp.watch('views/**/*.html', gulp.parallel('build-pages'));
+  })
+);
+
+gulp.task('clean', function() {
+  return del(['.tmp/**', 'dist']).then(()=>{
+    console.log('dir .tmp and dist deleted');
   });
 });
