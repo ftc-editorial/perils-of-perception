@@ -1,0 +1,420 @@
+{
+    "title": "Perils of Perception survey 2016",
+    "Country": "South Korea",
+    "questions": [
+        {
+            "id": 19,
+            "text": "Out of every 100 people in South Korea, about how many do you think are Muslim?",
+            "answer": "0.2",
+            "options": [
+                0,
+                100
+            ],
+            "meta": {
+                "qid": "q3",
+                "perceived": "7"
+            },
+            "responses": {
+                "0": 8,
+                "1": 20,
+                "3": 5,
+                "4": 2,
+                "5": 7,
+                "6": 1,
+                "10": 7,
+                "11": 1,
+                "13": 1,
+                "15": 3,
+                "18": 1
+            }
+        },
+        {
+            "id": 28,
+            "text": "In a survey in South Korea, what percentage of people do you think said they personally believe that sex between unmarried adults is morally unacceptable?",
+            "answer": "35",
+            "options": [
+                0,
+                100
+            ],
+            "meta": {
+                "qid": "q16",
+                "perceived": "38"
+            },
+            "responses": {
+                "10": 3,
+                "11": 1,
+                "14": 1,
+                "15": 2,
+                "20": 3,
+                "21": 1,
+                "24": 2,
+                "25": 3,
+                "26": 1,
+                "30": 3,
+                "33": 1,
+                "35": 2,
+                "36": 2,
+                "39": 1,
+                "40": 4,
+                "41": 2,
+                "42": 2,
+                "45": 3,
+                "46": 1,
+                "48": 1,
+                "51": 1,
+                "54": 2,
+                "58": 1,
+                "61": 1,
+                "75": 2,
+                "77": 1,
+                "84": 1,
+                "95": 1,
+                "96": 1
+            }
+        },
+        {
+            "id": 24,
+            "text": "In a survey in South Korea, what percentage of people do you think said that, taking all things together, they are very happy or rather happy?",
+            "answer": "90",
+            "options": [
+                0,
+                100
+            ],
+            "meta": {
+                "qid": "q10",
+                "perceived": "24"
+            },
+            "responses": {
+                "5": 1,
+                "9": 2,
+                "10": 5,
+                "11": 1,
+                "14": 1,
+                "15": 2,
+                "18": 2,
+                "20": 3,
+                "22": 2,
+                "25": 1,
+                "27": 1,
+                "29": 1,
+                "30": 1,
+                "32": 1,
+                "39": 1,
+                "40": 1,
+                "45": 1,
+                "49": 1,
+                "50": 3,
+                "56": 1,
+                "60": 2,
+                "61": 1,
+                "65": 2,
+                "67": 1,
+                "70": 3,
+                "73": 1,
+                "75": 1,
+                "77": 1,
+                "80": 2,
+                "81": 1,
+                "85": 2,
+                "86": 2,
+                "89": 1,
+                "91": 1
+            }
+        },
+        {
+            "id": 21,
+            "text": "What percentage of South Korea's Gross Domestic Product do you think is spent on health care provision each year?",
+            "answer": "7",
+            "options": [
+                0,
+                100
+            ],
+            "meta": {
+                "qid": "q5",
+                "perceived": "17"
+            },
+            "responses": {
+                "4": 2,
+                "5": 3,
+                "6": 3,
+                "7": 2,
+                "8": 1,
+                "9": 3,
+                "10": 8,
+                "11": 1,
+                "12": 8,
+                "15": 6,
+                "16": 1,
+                "19": 1,
+                "20": 3,
+                "21": 1,
+                "25": 1,
+                "28": 1,
+                "30": 4,
+                "35": 1,
+                "45": 1,
+                "48": 1,
+                "50": 1,
+                "61": 1,
+                "63": 1
+            }
+        },
+        {
+            "id": 20,
+            "text": "Now thinking about 2020, out of every 100 people in South Korea, about how many do you think will be Muslim?",
+            "answer": "0.3",
+            "options": [
+                0,
+                100
+            ],
+            "meta": {
+                "qid": "q4",
+                "perceived": "11"
+            },
+            "responses": {
+                "0": 9,
+                "1": 23,
+                "2": 3,
+                "3": 3,
+                "4": 2,
+                "5": 1,
+                "7": 1,
+                "8": 2,
+                "10": 5,
+                "11": 1,
+                "13": 1,
+                "15": 1,
+                "19": 1,
+                "20": 2
+            }
+        },
+        {
+            "id": 22,
+            "text": "Out of every 100 homes in South Korea, how many are owned (outright or with a mortgage) by someone who lives there?",
+            "answer": "54",
+            "options": [
+                0,
+                100
+            ],
+            "meta": {
+                "qid": "q6",
+                "perceived": "44"
+            },
+            "responses": {
+                "15": 1,
+                "16": 1,
+                "18": 1,
+                "20": 3,
+                "21": 1,
+                "25": 1,
+                "27": 1,
+                "30": 2,
+                "31": 1,
+                "32": 1,
+                "35": 2,
+                "36": 1,
+                "39": 1,
+                "40": 7,
+                "41": 1,
+                "45": 1,
+                "50": 4,
+                "51": 2,
+                "52": 1,
+                "53": 1,
+                "57": 1,
+                "60": 3,
+                "62": 1,
+                "63": 1,
+                "65": 2,
+                "67": 1,
+                "68": 1,
+                "69": 1,
+                "70": 3,
+                "72": 1,
+                "77": 2,
+                "79": 1,
+                "80": 3
+            }
+        },
+        {
+            "id": 27,
+            "text": "In a survey in South Korea, what percentage of people do you think said they personally believe that homosexuality is morally unacceptable?",
+            "answer": "57",
+            "options": [
+                0,
+                100
+            ],
+            "meta": {
+                "qid": "q14",
+                "perceived": "50"
+            },
+            "responses": {
+                "13": 1,
+                "15": 1,
+                "20": 2,
+                "24": 1,
+                "30": 1,
+                "35": 1,
+                "38": 1,
+                "40": 3,
+                "41": 2,
+                "46": 1,
+                "50": 5,
+                "55": 1,
+                "56": 1,
+                "58": 1,
+                "60": 4,
+                "61": 2,
+                "62": 1,
+                "63": 1,
+                "69": 2,
+                "70": 5,
+                "72": 2,
+                "73": 1,
+                "75": 1,
+                "79": 1,
+                "80": 3,
+                "82": 1,
+                "83": 1,
+                "85": 1,
+                "90": 2
+            }
+        },
+        {
+            "id": 26,
+            "text": "In a survey in South Korea, what percentage of people do you think said they personally believe that having an abortion is morally unacceptable?",
+            "answer": "58",
+            "options": [
+                0,
+                100
+            ],
+            "meta": {
+                "qid": "q12",
+                "perceived": "44"
+            },
+            "responses": {
+                "10": 3,
+                "12": 1,
+                "15": 3,
+                "16": 1,
+                "19": 2,
+                "22": 1,
+                "24": 1,
+                "25": 2,
+                "26": 1,
+                "30": 3,
+                "31": 1,
+                "35": 1,
+                "36": 1,
+                "37": 1,
+                "40": 2,
+                "44": 1,
+                "49": 1,
+                "50": 2,
+                "51": 1,
+                "58": 1,
+                "59": 2,
+                "60": 5,
+                "63": 1,
+                "65": 2,
+                "66": 1,
+                "69": 1,
+                "71": 1,
+                "74": 1,
+                "75": 2,
+                "77": 1,
+                "78": 1,
+                "80": 3,
+                "83": 1
+            }
+        },
+        {
+            "id": 17,
+            "text": "What do you think the current population of South Korea is? By ‘population’, we mean all residents of South Korea regardless of legal status or citizenship. Please give your answer to the nearest million.",
+            "answer": "50.62",
+            "options": [
+                0,
+                99999
+            ],
+            "meta": {
+                "qid": "q1",
+                "perceived": "50"
+            },
+            "responses": {
+                "7": 1,
+                "16": 1,
+                "20": 1,
+                "30": 1,
+                "55": 1,
+                "60": 1,
+                "70": 1,
+                "150": 1,
+                "99999": 1
+            }
+        },
+        {
+            "id": 23,
+            "text": "What percentage of South Korea's total household wealth do you think the least wealthy 70% in South Korea own? By ‘wealth’, we mean the total value of everything the household owns minus any debts that they owe (like loans and mortgages).",
+            "answer": "17",
+            "options": [
+                0,
+                100
+            ],
+            "meta": {
+                "qid": "q7",
+                "perceived": "26"
+            },
+            "responses": {
+                "3": 1,
+                "5": 1,
+                "8": 1,
+                "10": 7,
+                "11": 2,
+                "12": 2,
+                "13": 3,
+                "14": 2,
+                "15": 3,
+                "17": 1,
+                "18": 3,
+                "19": 1,
+                "20": 4,
+                "23": 3,
+                "25": 3,
+                "28": 1,
+                "29": 1,
+                "30": 4,
+                "35": 1,
+                "40": 3,
+                "50": 2,
+                "53": 1,
+                "54": 1,
+                "60": 1,
+                "72": 1,
+                "90": 1
+            }
+        },
+        {
+            "id": 18,
+            "text": "What do you think the population of South Korea is projected to be in 2050 by the United Nations? Please give your answer to the nearest 1 million.",
+            "answer": "50.59",
+            "options": [
+                0,
+                99999
+            ],
+            "meta": {
+                "qid": "q2",
+                "perceived": "50"
+            },
+            "responses": {
+                "9": 1,
+                "20": 2,
+                "45": 1,
+                "65": 1,
+                "79": 1,
+                "100": 1,
+                "200": 1,
+                "99999": 1
+            }
+        }
+    ]
+}

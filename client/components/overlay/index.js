@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+countries = require('../../../data/countries.js')
 
 class Overlay extends Component {
   constructor(props) {
@@ -34,56 +35,14 @@ class Overlay extends Component {
   }
 
   render() {
-    const options = [
-      'Argentina',
-      'Australia',
-      'Belgium',
-      'Brazil',
-      'Canada',
-      'Chile',
-      'China',
-      'Colombia',
-      'Czech Republic',
-      'Denmark',
-      'France',
-      'Germany',
-      'Great Britain',
-      'Hong Kong',
-      'Hungary',
-      'India',
-      'Indonesia',
-      'Israel',
-      'Italy',
-      'Japan',
-      'Malaysia',
-      'Mexico',
-      'Montenegro',
-      'Netherlands',
-      'Norway',
-      'Peru',
-      'Philippines',
-      'Poland',
-      'Russia',
-      'Serbia',
-      'Singapore',
-      'South Africa',
-      'South Korea',
-      'Spain',
-      'Sweden',
-      'Taiwan',
-      'Thailand',
-      'Turkey',
-      'United Kingdom',
-      'United States',
-      'Vietnam',
-    ];
+    const options = countries;
 
     const selectOptions = options.map((option, i) =>
       <option
         key={`o${i}`}
-        value={option}
+        value={option.en}
       >
-        {option}
+        {option.cn}
       </option>
     );
 

@@ -1,0 +1,377 @@
+{
+    "title": "Perils of Perception survey 2016",
+    "Country": "Thailand",
+    "questions": [
+        {
+            "id": 28,
+            "text": "In a survey in Thailand, what percentage of people do you think said they personally believe that sex between unmarried adults is morally unacceptable?",
+            "answer": "",
+            "options": [
+                0,
+                100
+            ],
+            "meta": {
+                "qid": "q16",
+                "perceived": ""
+            },
+            "responses": {
+                "0": 1,
+                "1": 1,
+                "10": 1,
+                "15": 1,
+                "20": 1,
+                "30": 1,
+                "40": 1,
+                "60": 2
+            }
+        },
+        {
+            "id": 19,
+            "text": "Out of every 100 people in Thailand, about how many do you think are Muslim?",
+            "answer": "4.9",
+            "options": [
+                0,
+                100
+            ],
+            "meta": {
+                "qid": "q3",
+                "perceived": "16"
+            },
+            "responses": {
+                "0": 3,
+                "2": 1,
+                "4": 3,
+                "5": 10,
+                "6": 4,
+                "7": 2,
+                "8": 5,
+                "9": 2,
+                "10": 5,
+                "11": 2,
+                "12": 1,
+                "14": 1,
+                "15": 2,
+                "17": 1,
+                "18": 1,
+                "20": 2,
+                "22": 1,
+                "23": 1,
+                "25": 2,
+                "26": 1,
+                "28": 1,
+                "30": 3,
+                "31": 1,
+                "35": 1,
+                "38": 1,
+                "40": 1,
+                "75": 1,
+                "80": 1
+            }
+        },
+        {
+            "id": 22,
+            "text": "Out of every 100 homes in Thailand, how many are owned (outright or with a mortgage) by someone who lives there?",
+            "answer": "70",
+            "options": [
+                0,
+                100
+            ],
+            "meta": {
+                "qid": "q6",
+                "perceived": "51"
+            },
+            "responses": {
+                "7": 1,
+                "15": 1,
+                "17": 1,
+                "20": 3,
+                "24": 2,
+                "25": 2,
+                "28": 1,
+                "30": 1,
+                "32": 1,
+                "33": 2,
+                "40": 2,
+                "44": 1,
+                "45": 3,
+                "46": 1,
+                "50": 2,
+                "53": 1,
+                "55": 2,
+                "56": 1,
+                "57": 1,
+                "58": 1,
+                "59": 1,
+                "60": 4,
+                "61": 1,
+                "63": 2,
+                "65": 1,
+                "68": 1,
+                "70": 5,
+                "75": 1,
+                "80": 3,
+                "81": 1,
+                "86": 1,
+                "89": 1,
+                "90": 1,
+                "92": 1,
+                "95": 1
+            }
+        },
+        {
+            "id": 24,
+            "text": "In a survey in Thailand, what percentage of people do you think said that, taking all things together, they are very happy or rather happy?",
+            "answer": "93",
+            "options": [
+                0,
+                100
+            ],
+            "meta": {
+                "qid": "q10",
+                "perceived": "51"
+            },
+            "responses": {
+                "9": 1,
+                "12": 1,
+                "25": 1,
+                "30": 2,
+                "32": 1,
+                "40": 2,
+                "45": 1,
+                "50": 2,
+                "56": 1,
+                "57": 1,
+                "59": 1,
+                "60": 4,
+                "62": 1,
+                "63": 1,
+                "67": 1,
+                "69": 2,
+                "70": 3,
+                "71": 1,
+                "75": 2,
+                "76": 1,
+                "78": 2,
+                "80": 4,
+                "81": 1,
+                "82": 2,
+                "85": 1,
+                "86": 1,
+                "88": 1,
+                "90": 2,
+                "91": 2,
+                "92": 2,
+                "94": 1,
+                "97": 1,
+                "98": 1,
+                "99": 1,
+                "100": 1
+            }
+        },
+        {
+            "id": 20,
+            "text": "Now thinking about 2020, out of every 100 people in Thailand, about how many do you think will be Muslim?",
+            "answer": "6.0",
+            "options": [
+                0,
+                100
+            ],
+            "meta": {
+                "qid": "q4",
+                "perceived": "21"
+            },
+            "responses": {
+                "0": 1,
+                "5": 9,
+                "6": 15,
+                "7": 5,
+                "8": 9,
+                "9": 3,
+                "10": 3,
+                "11": 2,
+                "12": 3,
+                "19": 1,
+                "20": 1,
+                "24": 1,
+                "30": 1,
+                "45": 1,
+                "75": 1,
+                "82": 1
+            }
+        },
+        {
+            "id": 23,
+            "text": "What percentage of Thailand's total household wealth do you think the least wealthy 70% in Thailand own? By ‘wealth’, we mean the total value of everything the household owns minus any debts that they owe (like loans and mortgages).",
+            "answer": "9",
+            "options": [
+                0,
+                100
+            ],
+            "meta": {
+                "qid": "q7",
+                "perceived": "33"
+            },
+            "responses": {
+                "3": 2,
+                "5": 6,
+                "6": 2,
+                "7": 1,
+                "8": 1,
+                "9": 2,
+                "10": 9,
+                "12": 2,
+                "13": 1,
+                "15": 4,
+                "17": 2,
+                "18": 1,
+                "19": 1,
+                "20": 4,
+                "22": 1,
+                "25": 1,
+                "30": 2,
+                "33": 1,
+                "35": 1,
+                "40": 1,
+                "42": 1,
+                "44": 1,
+                "50": 2,
+                "70": 1,
+                "75": 1,
+                "76": 1,
+                "86": 1,
+                "90": 1
+            }
+        },
+        {
+            "id": 21,
+            "text": "What percentage of Thailand's Gross Domestic Product do you think is spent on health care provision each year?",
+            "answer": "7",
+            "options": [
+                0,
+                100
+            ],
+            "meta": {
+                "qid": "q5",
+                "perceived": "30"
+            },
+            "responses": {
+                "4": 1,
+                "5": 4,
+                "6": 7,
+                "7": 5,
+                "8": 5,
+                "9": 1,
+                "10": 6,
+                "11": 1,
+                "12": 2,
+                "13": 3,
+                "15": 3,
+                "16": 1,
+                "17": 1,
+                "19": 1,
+                "20": 5,
+                "21": 1,
+                "22": 1,
+                "25": 2,
+                "28": 1,
+                "30": 2,
+                "40": 1,
+                "50": 1,
+                "70": 1,
+                "82": 1
+            }
+        },
+        {
+            "id": 18,
+            "text": "What do you think the population of Thailand is projected to be in 2050 by the United Nations? Please give your answer to the nearest 1 million.",
+            "answer": "62.45",
+            "options": [
+                0,
+                99999
+            ],
+            "meta": {
+                "qid": "q2",
+                "perceived": "80"
+            },
+            "responses": {
+                "2": 1,
+                "3": 1,
+                "23": 1,
+                "69": 1,
+                "72": 1,
+                "75": 1,
+                "95": 1,
+                "99": 1,
+                "600": 1
+            }
+        },
+        {
+            "id": 17,
+            "text": "What do you think the current population of Thailand is? By ‘population’, we mean all residents of Thailand regardless of legal status or citizenship. Please give your answer to the nearest million.",
+            "answer": "67.96",
+            "options": [
+                0,
+                99999
+            ],
+            "meta": {
+                "qid": "q1",
+                "perceived": "70"
+            },
+            "responses": {
+                "1": 1,
+                "2": 1,
+                "17": 1,
+                "59": 1,
+                "60": 1,
+                "65": 1,
+                "67": 1,
+                "70": 1,
+                "450": 1
+            }
+        },
+        {
+            "id": 27,
+            "text": "In a survey in Thailand, what percentage of people do you think said they personally believe that homosexuality is morally unacceptable?",
+            "answer": "",
+            "options": [
+                0,
+                100
+            ],
+            "meta": {
+                "qid": "q14",
+                "perceived": ""
+            },
+            "responses": {
+                "3": 1,
+                "30": 1,
+                "45": 1,
+                "50": 1,
+                "65": 1,
+                "80": 2,
+                "90": 2
+            }
+        },
+        {
+            "id": 26,
+            "text": "In a survey in Thailand, what percentage of people do you think said they personally believe that having an abortion is morally unacceptable?",
+            "answer": "",
+            "options": [
+                0,
+                100
+            ],
+            "meta": {
+                "qid": "q12",
+                "perceived": ""
+            },
+            "responses": {
+                "0": 1,
+                "1": 1,
+                "20": 1,
+                "30": 1,
+                "40": 1,
+                "50": 1,
+                "80": 3
+            }
+        }
+    ]
+}
