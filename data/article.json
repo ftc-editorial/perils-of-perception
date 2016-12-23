@@ -3,13 +3,13 @@
 	"url": "",
 	"description": "A new poll shows how little many people know about their home countries. Take our quiz to see how you and other FT readers compare.",
 	"headline": "How well do you really know your country?",
-	 "mainImage": {
+	"mainImage": {
 	    "title": "FT Perils of Perception quiz",
 	    "description": "Faces in a crowd",
 	    "url": "http://ig.ft.com/static/perilsofperception.jpg",
 	    "width": 2048, 
 	    "height": 1152
-	  },
+	},
 	"twitterCard": "summary_large_image",
 	"title": "How well do you really know your country?",
 	"byline": [
@@ -23,5 +23,12 @@
 	    },
 	],
 	"publishedDate": "2016-12-14T17:00:00Z",
-	"relatedArticle": ""
+	"relatedArticle": "",
+	"flags": {
+		"prod": false,
+		"analytics": false
+	},
+	"onwardJourney": {
+
+	}
 }
