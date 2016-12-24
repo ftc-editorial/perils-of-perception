@@ -11,6 +11,8 @@ const webpackConfig = require('./webpack.config.js');
 const browserSync = require('browser-sync').create();
 const cssnext = require('postcss-cssnext');
 
+const footer = require('./bower_components/ftc-footer');
+
 process.env.NODE_ENV = 'dev';
 
 // change NODE_ENV between tasks.
@@ -39,8 +41,10 @@ gulp.task('build-pages', () => {
       analytics: prod
     };
     const article = yield fs.readFile('./data/article.json', 'utf8');
+
     const context = Object.assign(JSON.parse(article), {
-      flags
+      flags,
+      footer
     });
 
     const html = yield render('index.html', context);

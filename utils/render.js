@@ -1,4 +1,5 @@
 const fs = require('mz/fs');
+const path = require('path');
 const nunjucks = require('nunjucks');
 const makrdownTag = require('nunjucks-markdown');
 const markdownIt = require('markdown-it')({
@@ -10,7 +11,10 @@ const markdownIt = require('markdown-it')({
 
 const env = new nunjucks.Environment(
 	new nunjucks.FileSystemLoader(
-		'views',
+		[
+      path.resolve(process.cwd(), 'views'),
+      path.resolve(process.cwd(), 'bower_components/ftc-footer')
+    ],
 		{
 			watch: false,
 			noCache: true

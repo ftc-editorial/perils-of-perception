@@ -1,4 +1,51 @@
 @import 'o-colors/main';
+@import 'o-header/main';
+@include oHeaderBase;
+.o-header__top-wrapper {
+	display: table;
+	width: 100%;
+}
+
+.o-header__top-column {
+	display: table-cell;
+	vertical-align: middle;
+}
+.o-header__top-column--center {
+	text-align: center;
+}
+.o-header__top-logo {
+	// @include oHeaderBrandImage('brand-ft-masthead', oColorsGetColorFor('o-header-icon'), 500);
+	img {
+		height: 100%;
+		object-fit: contain;
+	}
+	@include oHeaderLogoSize('XS');
+
+	display: block;
+	border: 0;
+	margin: 16px auto;
+	background-size: contain;
+	background-position: 50%;
+	background-repeat: no-repeat;
+
+	@include oGridRespondTo('S') {
+		@include oHeaderLogoSize('S');
+	}
+
+	@include oGridRespondTo('M') {
+		@include oHeaderLogoSize('M');
+		margin-top: 24px;
+		margin-bottom: 24px;
+	}
+
+	@include oGridRespondTo('L') {
+		@include oHeaderLogoSize('L');
+		margin-top: 30px;
+		margin-bottom: 30px;
+	}
+}
+@include oHeaderSimple;
+
 @import 'components/core/main';
 @import 'components/question/main';
 @import 'components/question-inputs/range/main';
@@ -18,3 +65,6 @@ div.results {
     margin: 38px auto 0;
   }
 }
+
+$o-footer-is-silent: false;
+@import 'ftc-footer/main'
