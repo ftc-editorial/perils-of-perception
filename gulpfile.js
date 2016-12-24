@@ -1,27 +1,13 @@
 const fs = require('mz/fs');
 const path = require('path');
 const co = require('co');
-const nunjucks = require('nunjucks');
-nunjucks.configure('views', {
-  noCache: true,
-  watch: false,
-  autoescape: false
-});
-function render(view, context) {
-  return new Promise(function(resolve, reject) {
-    nunjucks.render(view, context, function(err, result) {
-      if (err) {
-        reject(err);
-      } else {
-        resolve(result);
-      }
-    });
-  });
-}
+const render = require('./utils/render.js');
 
 const del = require('del');
 const gulp = require('gulp');
 const $ = require('gulp-load-plugins')();
+const webpack = require('webpack');
+const webpackConfig = require('./webpack.config.js');
 const browserSync = require('browser-sync').create();
 const cssnext = require('postcss-cssnext');
 
@@ -53,13 +39,13 @@ gulp.task('build-pages', () => {
       analytics: prod
     };
     const article = yield fs.readFile('./data/article.json', 'utf8');
-    const context = Object.assign(article, {
+    const context = Object.assign(JSON.parse(article), {
       flags
     });
 
-    // const html = yield render('index.html');
+    const html = yield render('index.html', context);
 
-    // yield fs.writeFile(`${destDir}/index.html`, html, 'utf8');     
+    yield fs.writeFile(`${destDir}/index.html`, html, 'utf8');     
   })
   .then(function(){
     browserSync.reload('*.html');
@@ -71,8 +57,7 @@ gulp.task('build-pages', () => {
 gulp.task('styles', function styles() {
   const DEST = '.tmp/styles';
 
-  return gulp.src('client/scss/styles.scss')
-    .pipe($.changed(DEST))
+  return gulp.src('client/styles.scss')
     .pipe($.plumber())
     .pipe($.sourcemaps.init({loadMaps:true}))
     .pipe($.sass({
@@ -109,14 +94,20 @@ gulp.task('webpack', function(done) {
   });
 });
 
+gulp.task('copy', () => {
+  return gulp.src('client/components/core/top.*')
+    .pipe(gulp.dest('.tmp/components/core'));
+});
+
+
 gulp.task('serve', 
   gulp.parallel(
-    'html', 'styles', 'webpack',
+    'copy', 'build-pages', 'styles', 'webpack',
 
     function serve() {
     browserSync.init({
       server: {
-        baseDir: ['.tmp'],
+        baseDir: ['.tmp', 'data'],
         index: 'index.html',
         routes: {
           '/bower_components': 'bower_components'
@@ -125,7 +116,7 @@ gulp.task('serve',
     });
 
     gulp.watch('client/**/**/*.scss', gulp.parallel('styles'));
-    gulp.watch('views/**/*.html', gulp.parallel('build-pages'));
+    gulp.watch(['views/**/*.html', 'data/*.json'], gulp.parallel('build-pages'));
   })
 );
 

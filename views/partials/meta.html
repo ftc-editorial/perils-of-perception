@@ -17,7 +17,7 @@
 <link inline rel="stylesheet" href="components/core/top.css">
 <link rel="stylesheet" href="https://origami-build.ft.com/v2/bundles/css?modules=n-normalize@^1,o-fonts@^2">
 <link rel="stylesheet" href="https://origami-build.ft.com/v2/bundles/css?modules=o-grid@^4.2.1,o-typography@^4.3.1,o-card@^2.1.8">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles/styles.css">
 {%- if stylesheets %}{% for stylesheet in stylesheets %}
 <link rel="stylesheet" href="{{ stylesheet | safe }}">
 {% endfor %}{% endif -%}
@@ -62,7 +62,7 @@
 </script>
 <script async src="https://origami-build.ft.com/v2/bundles/js?export=oErrors&modules=o-errors@^3.4.0"></script>
 {%- endif -%} #}
-{{ data | jsonScriptElement('data') }}
+{# {{ data | jsonScriptElement('data') }} #}
 
 <title>{{ title | default(headline, true) }} &mdash; - FT中文网</title>
 

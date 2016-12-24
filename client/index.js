@@ -29,7 +29,7 @@ class App extends Component {
 
   setQuestions(value) {
     const key = value.toLowerCase().replace(/\s/g, '-');
-    const data = `https://ft-ig-content-prod.s3.amazonaws.com/v1/ft-interactive/answer-api/2/2__perils-of-perception-survey-2016__${key}.json`;
+    const data = `en/${key}.json`;
 
     fetch(data)
       .then(res => res.json())
