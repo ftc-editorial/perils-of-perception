@@ -33,6 +33,66 @@
    		"url": "https://www.ft.com/content/bed2e788-c154-11e6-9bca-2b93a6856354"
 	},
 	"onwardJourney": {
-
+		"relatedContent": [
+			{
+				"title": "FT Data",
+				"cards": [
+					{
+						"heading": "Star quality: Broadway’s $1m club scales new heights",
+						"date": "MONDAY, 26 DECEMBER 2016",
+						"link": "http://www.ft.com/cms/s/c7e5f004-c889-11e6-8f29-9445cac8966f.html",
+						"image": "https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fprod-upp-image-read.ft.com%2F088ff1d4-bba8-11e6-8b45-b8b81dd5d080?source=ig&width=390"
+					},
+					{
+						"heading": "US social mobility gap continues to widen",
+						"date": "FRIDAY, 16 DECEMBER 2016",
+						"link": "http://www.ft.com/cms/s/7de9165e-c3d2-11e6-9bca-2b93a6856354.html",
+						"image": "https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fprod-upp-image-read.ft.com%2F4048da6a-c381-11e6-81c2-f57d90f6741a?source=ig&width=390"
+					},
+					{
+						"heading": "How austerity is crippling schools in southern Europe",
+						"date": "SUNDAY, 11 DECEMBER 2016",
+						"link": "http://www.ft.com/cms/s/62952f26-be20-11e6-8b45-b8b81dd5d080.html",
+						"image": "https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fprod-upp-image-read.ft.com%2F09d5afa6-be24-11e6-8b45-b8b81dd5d080?source=ig&width=390"
+					},
+					{
+						"heading": "Intercountry adoption of children falls sharply",
+						"date": "TUESDAY, 6 DECEMBER 2016",
+						"link": "http://www.ft.com/cms/s/eb32208a-b625-11e6-ba85-95d1533d9a62.html",
+						"image": "https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fprod-upp-image-read.ft.com%2F15a30d40-b629-11e6-961e-a1acd97f622d?source=ig&width=390"
+					}
+				]
+				
+			},
+			{
+				"title": "Highlights",
+				"cards": [
+					{
+						"heading": "China shakes up 2,000-year-old salt monopoly",
+						"date": "MONDAY, 2 JANUARY 2017",
+						"link": "http://www.ft.com/cms/s/78762494-d0c7-11e6-9341-7393bb2e1b51.html",
+						"image": "https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fprod-upp-image-read.ft.com%2F009a6432-d0d9-11e6-b06b-680c49b4b4c0?source=ig&width=390"
+					},
+					{
+						"heading": "Sir Tony Atkinson, economist and campaigner, 1944-2017",
+						"date": "MONDAY, 2 JANUARY 2017",
+						"link": "http://www.ft.com/cms/s/cbda844a-d0ea-11e6-9341-7393bb2e1b51.html",
+						"image": "https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fprod-upp-image-read.ft.com%2Ff385f96c-d0f8-11e6-b06b-680c49b4b4c0?source=ig&width=390"
+					},
+					{
+						"heading": "How to have a productive new year",
+						"date": "MONDAY, 2 JANUARY 2017",
+						"link": "http://www.ft.com/cms/s/32a22090-b19a-11e6-9c37-5787335499a0.html",
+						"image": "https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fprod-upp-image-read.ft.com%2F865d89d4-cd21-11e6-b8ce-b9c03770f8b1?source=ig&width=390"
+					},
+					{
+						"heading": "Tech’s latest innovations struggle to live up to the hype",
+						"date": "MONDAY, 2 JANUARY 2017",
+						"link": "http://www.ft.com/cms/s/7c90bf2e-c971-11e6-9043-7e34c07b46ef.html",
+						"image": "https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fprod-upp-image-read.ft.com%2Fd9f8f252-ceb8-11e6-864f-20dcb35cede2?source=ig&width=390"
+					}
+				]
+			}
+		]
 	}
 }
