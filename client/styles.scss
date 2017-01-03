@@ -1,6 +1,15 @@
 @import 'o-colors/main';
 @import 'o-header/main';
 @include oHeaderBase;
+
+@mixin oLogoSize($breakpoint) {
+	$image-aspect-ratio: 4.7;
+	$logo-heights: ('XS': 16, 'S': 20, 'M': 24, 'L': 40, 'XL': 40);
+
+	width: map-get($logo-heights, $breakpoint) * $image-aspect-ratio + 0px;
+	height: map-get($logo-heights, $breakpoint) + 0px;
+}
+
 .o-header__top-wrapper {
 	display: table;
 	width: 100%;
@@ -19,7 +28,7 @@
 		height: 100%;
 		object-fit: contain;
 	}
-	@include oHeaderLogoSize('XS');
+	@include oLogoSize('XS');
 
 	display: block;
 	border: 0;
@@ -29,22 +38,35 @@
 	background-repeat: no-repeat;
 
 	@include oGridRespondTo('S') {
-		@include oHeaderLogoSize('S');
+		@include oLogoSize('S');
 	}
 
 	@include oGridRespondTo('M') {
-		@include oHeaderLogoSize('M');
+		@include oLogoSize('M');
 		margin-top: 24px;
 		margin-bottom: 24px;
 	}
+}
+// @include oHeaderSimple;
+.o-header--simple {
+	.o-header__top-wrapper {
+		height: 55px;
+	}
 
-	@include oGridRespondTo('L') {
-		@include oHeaderLogoSize('L');
-		margin-top: 30px;
-		margin-bottom: 30px;
+	.o-header__top-link {
+		margin-top: 4px;
+		margin-bottom: 4px;
+	}
+
+	.o-header__top-logo {
+		margin-top: 0;
+		margin-bottom: 0;
+
+		@include oGridRespondTo('L') {
+			@include oLogoSize('M');
+		}
 	}
 }
-@include oHeaderSimple;
 
 @import 'components/core/main';
 @import 'components/question/main';
