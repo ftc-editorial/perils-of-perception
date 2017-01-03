@@ -1,8 +1,10 @@
+import Share from 'ftc-share';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Question from './components/question';
 import Overlay from './components/overlay';
 
+Share.init();
 const endpoint = 'https://ft-ig-answer-api.herokuapp.com/api/v1';
 
 class App extends Component {
@@ -29,7 +31,7 @@ class App extends Component {
 
   setQuestions(value) {
     const key = value.toLowerCase().replace(/\s/g, '-');
-    const data = `en/${key}.json`;
+    const data = `cn/${key}.json`;
 
     fetch(data)
       .then(res => res.json())

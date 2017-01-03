@@ -2,6 +2,7 @@ const fs = require('mz/fs');
 const path = require('path');
 const co = require('co');
 const render = require('./utils/render.js');
+const mkdir = require('./utils/mkdir.js');
 
 const del = require('del');
 const gulp = require('gulp');
@@ -31,10 +32,11 @@ gulp.task('build-pages', () => {
     const destDir = '.tmp';
     
     try {
-      yield fs.access(destDir, fs.constants.R_OK | fs.constants.W_OK);
-    } catch (err) {    
-      yield fs.mkdir(destDir);
+      yield mkdir(destDir);
+    } catch (e) {
+      console.log(e);
     }
+    
     const prod = process.env.NODE_ENV === 'prod';
     const flags = {
       prod,

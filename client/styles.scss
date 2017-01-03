@@ -67,4 +67,10 @@ div.results {
 }
 
 $o-footer-is-silent: false;
-@import 'ftc-footer/main'
+@import 'ftc-footer/main';
+@import 'ftc-share/main';
+@include oShare(('light'));
+.o-share {
+	display: block;
+	text-align: right;
+}
