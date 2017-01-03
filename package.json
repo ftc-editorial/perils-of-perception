@@ -45,6 +45,7 @@
     "inline-source": "github:aendrew/inline-source",
     "markdown-it": "^8.2.2",
     "merge-stream": "^1.0.0",
+    "mkdirp": "^0.5.1",
     "mz": "^2.6.0",
     "node-fetch": "^1.6.3",
     "nodemon": "^1.10.2",
