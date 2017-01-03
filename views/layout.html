@@ -43,7 +43,8 @@
         <div class="article-body o-typography-body-wrapper" itemprop="articleBody">
 
           {% block article_body %}{% endblock %}
-
+          
+          {% include "partials/share.html" %}
           <footer class="o-typography-footer" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
             <small>Figures lower than 0.5% have been rounded to 0.</small><br />
             <small><a href="http://www.ft.com/servicestools/help/copyright" data-trackable="link-copyright">Copyright</a>
@@ -53,9 +54,10 @@
       </article>
     </main>
 
-{#     {% if flags.onwardjourney %} #}
+{#     {% if flags.onwardjourney %}
       {% include "includes/onwardjourney.html" %}
-{#     {% endif %} #}
+    {% endif %} #}
+    {% include "partials/onwardjourney.html" %}
 
 {#     {% if flags.comments %}
       {% include "includes/comments.html" %}
