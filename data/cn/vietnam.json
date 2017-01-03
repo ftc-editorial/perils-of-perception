@@ -1,0 +1,331 @@
+{
+    "title": "Perils of Perception survey 2016",
+    "Country": "Vietnam",
+    "questions": [
+        {
+            "id": 20,
+            "text": "Now thinking about 2020, out of every 100 people in Vietnam, about how many do you think will be Muslim?",
+            "answer": "0",
+            "options": [
+                0,
+                100
+            ],
+            "meta": {
+                "qid": "q4",
+                "perceived": "8"
+            },
+            "responses": {
+                "0": 19,
+                "1": 27,
+                "2": 9,
+                "3": 6,
+                "4": 5,
+                "5": 2,
+                "6": 2,
+                "7": 1,
+                "9": 1,
+                "10": 3,
+                "12": 1,
+                "15": 1,
+                "20": 2,
+                "30": 1,
+                "31": 1,
+                "40": 1
+            }
+        },
+        {
+            "id": 27,
+            "text": "In a survey in Vietnam, what percentage of people do you think said they personally believe that homosexuality is morally unacceptable?",
+            "answer": "",
+            "options": [
+                0,
+                100
+            ],
+            "meta": {
+                "qid": "q14",
+                "perceived": ""
+            },
+            "responses": {
+                "10": 1,
+                "20": 1,
+                "24": 2,
+                "45": 1,
+                "50": 1,
+                "59": 1,
+                "80": 1,
+                "95": 1
+            }
+        },
+        {
+            "id": 22,
+            "text": "Out of every 100 homes in Vietnam, how many are owned (outright or with a mortgage) by someone who lives there?",
+            "answer": "91",
+            "options": [
+                0,
+                100
+            ],
+            "meta": {
+                "qid": "q6",
+                "perceived": "62"
+            },
+            "responses": {
+                "5": 1,
+                "8": 2,
+                "10": 1,
+                "20": 2,
+                "25": 1,
+                "26": 1,
+                "28": 1,
+                "34": 2,
+                "35": 1,
+                "37": 1,
+                "40": 3,
+                "41": 1,
+                "45": 1,
+                "56": 1,
+                "58": 1,
+                "60": 2,
+                "63": 1,
+                "67": 1,
+                "68": 3,
+                "70": 4,
+                "71": 1,
+                "73": 1,
+                "75": 2,
+                "76": 1,
+                "78": 1,
+                "80": 9,
+                "81": 1,
+                "82": 1,
+                "84": 1,
+                "85": 3,
+                "86": 1,
+                "87": 1,
+                "88": 2,
+                "89": 1,
+                "90": 6,
+                "91": 5,
+                "92": 4,
+                "93": 3,
+                "94": 1,
+                "95": 1,
+                "97": 1,
+                "100": 1
+            }
+        },
+        {
+            "id": 19,
+            "text": "Out of every 100 people in Vietnam, about how many do you think are Muslim?",
+            "answer": "0.2",
+            "options": [
+                0,
+                100
+            ],
+            "meta": {
+                "qid": "q3",
+                "perceived": "6"
+            },
+            "responses": {
+                "0": 15,
+                "1": 10,
+                "2": 19,
+                "3": 6,
+                "4": 4,
+                "5": 5,
+                "6": 1,
+                "7": 2,
+                "8": 3,
+                "9": 3,
+                "10": 4,
+                "11": 2,
+                "13": 1,
+                "15": 2,
+                "20": 4,
+                "23": 1,
+                "25": 1,
+                "26": 1,
+                "30": 1,
+                "58": 1
+            }
+        },
+        {
+            "id": 24,
+            "text": "In a survey in Vietnam, what percentage of people do you think said that, taking all things together, they are very happy or rather happy?",
+            "answer": "",
+            "options": [
+                0,
+                100
+            ],
+            "meta": {
+                "qid": "q10",
+                "perceived": ""
+            },
+            "responses": {
+                "20": 1,
+                "30": 1,
+                "40": 3,
+                "60": 2,
+                "75": 1,
+                "80": 1
+            }
+        },
+        {
+            "id": 21,
+            "text": "What percentage of Vietnam's Gross Domestic Product do you think is spent on health care provision each year?",
+            "answer": "7",
+            "options": [
+                0,
+                100
+            ],
+            "meta": {
+                "qid": "q5",
+                "perceived": "16"
+            },
+            "responses": {
+                "0": 1,
+                "1": 2,
+                "2": 2,
+                "3": 1,
+                "4": 2,
+                "5": 7,
+                "6": 4,
+                "7": 4,
+                "8": 2,
+                "9": 2,
+                "10": 11,
+                "11": 3,
+                "12": 4,
+                "15": 10,
+                "16": 1,
+                "17": 1,
+                "20": 3,
+                "23": 1,
+                "25": 3,
+                "26": 1,
+                "28": 1,
+                "30": 7,
+                "31": 1,
+                "32": 1,
+                "33": 1,
+                "36": 1,
+                "37": 1,
+                "40": 1,
+                "47": 1,
+                "60": 1
+            }
+        },
+        {
+            "id": 18,
+            "text": "What do you think the population of Vietnam is projected to be in 2050 by the United Nations? Please give your answer to the nearest 1 million.",
+            "answer": "112.78",
+            "options": [
+                0,
+                99999
+            ],
+            "meta": {
+                "qid": "q2",
+                "perceived": "110"
+            },
+            "responses": {
+                "2": 1,
+                "75": 1,
+                "95": 1,
+                "100": 3,
+                "125": 1,
+                "160": 1,
+                "750": 1
+            }
+        },
+        {
+            "id": 23,
+            "text": "What percentage of Vietnam's total household wealth do you think the least wealthy 70% in Vietnam own? By ‘wealth’, we mean the total value of everything the household owns minus any debts that they owe (like loans and mortgages).",
+            "answer": "",
+            "options": [
+                0,
+                100
+            ],
+            "meta": {
+                "qid": "q7",
+                "perceived": ""
+            },
+            "responses": {
+                "5": 1,
+                "6": 1,
+                "10": 1,
+                "12": 1,
+                "40": 1,
+                "44": 1,
+                "50": 2,
+                "70": 1
+            }
+        },
+        {
+            "id": 26,
+            "text": "In a survey in Vietnam, what percentage of people do you think said they personally believe that having an abortion is morally unacceptable?",
+            "answer": "",
+            "options": [
+                0,
+                100
+            ],
+            "meta": {
+                "qid": "q12",
+                "perceived": ""
+            },
+            "responses": {
+                "5": 1,
+                "10": 1,
+                "25": 1,
+                "35": 1,
+                "60": 3,
+                "65": 1,
+                "80": 1
+            }
+        },
+        {
+            "id": 17,
+            "text": "What do you think the current population of Vietnam is? By ‘population’, we mean all residents of Vietnam regardless of legal status or citizenship. Please give your answer to the nearest million.",
+            "answer": "91.70",
+            "options": [
+                0,
+                99999
+            ],
+            "meta": {
+                "qid": "q1",
+                "perceived": "90"
+            },
+            "responses": {
+                "2": 1,
+                "55": 1,
+                "80": 1,
+                "85": 1,
+                "89": 1,
+                "90": 3,
+                "500": 1
+            }
+        },
+        {
+            "id": 28,
+            "text": "In a survey in Vietnam, what percentage of people do you think said they personally believe that sex between unmarried adults is morally unacceptable?",
+            "answer": "",
+            "options": [
+                0,
+                100
+            ],
+            "meta": {
+                "qid": "q16",
+                "perceived": ""
+            },
+            "responses": {
+                "10": 1,
+                "15": 1,
+                "20": 1,
+                "40": 1,
+                "45": 1,
+                "60": 1,
+                "65": 1,
+                "73": 1,
+                "90": 1
+            }
+        }
+    ]
+}
