@@ -11,7 +11,7 @@ const webpack = require('webpack');
 const webpackConfig = require('./webpack.config.js');
 const browserSync = require('browser-sync').create();
 const cssnext = require('postcss-cssnext');
-
+const merge = require('merge-stream');
 const footer = require('./bower_components/ftc-footer');
 
 process.env.NODE_ENV = 'dev';
@@ -36,7 +36,7 @@ gulp.task('build-pages', () => {
     } catch (e) {
       console.log(e);
     }
-    
+
     const prod = process.env.NODE_ENV === 'prod';
     const flags = {
       prod,
@@ -63,11 +63,21 @@ gulp.task('build-pages', () => {
 gulp.task('styles', function styles() {
   const DEST = '.tmp/styles';
 
+  const sassOptions = {
+    outputStyle: 'expanded',
+    precision: 10,
+    includePaths: ['bower_components']
+  };
+
+  if (process.env.NODE_ENV === 'prod') {
+    sassOptions.outputStyle = 'compressed';
+  }
+
   return gulp.src('client/styles.scss')
     .pipe($.plumber())
     .pipe($.sourcemaps.init({loadMaps:true}))
     .pipe($.sass({
-      outputStyle: 'expanded',
+      outputStyle: 'compressed',
       precision: 10,
       includePaths: ['bower_components']
     }).on('error', $.sass.logError))
@@ -86,7 +96,9 @@ gulp.task('styles', function styles() {
 gulp.task('webpack', function(done) {
   if (process.env.NODE_ENV === 'prod') {
     delete webpackConfig.watch;
+    webpackConfig.plugins.push(new webpack.optimize.UglifyJsPlugin());
   }
+
   webpack(webpackConfig, function(err, stats) {
     if (err) throw new $.util.PluginError('webpack', err);
     $.util.log('[webpack]', stats.toString({
@@ -101,10 +113,13 @@ gulp.task('webpack', function(done) {
 });
 
 gulp.task('copy', () => {
-  return gulp.src('client/components/core/top.*')
+  const core = gulp.src('client/components/core/top.*')
     .pipe(gulp.dest('.tmp/components/core'));
-});
+  const data = gulp.src('data/cn/*')
+    .pipe(gulp.dest('.tmp/data'));
 
+  return merge(core, data);
+});
 
 gulp.task('serve', 
   gulp.parallel(
@@ -113,7 +128,7 @@ gulp.task('serve',
     function serve() {
     browserSync.init({
       server: {
-        baseDir: ['.tmp', 'data'],
+        baseDir: ['.tmp'],
         index: 'index.html',
         routes: {
           '/bower_components': 'bower_components'
@@ -131,3 +146,27 @@ gulp.task('clean', function() {
     console.log('dir .tmp and dist deleted');
   });
 });
+
+gulp.task('build', gulp.series('clean', 'prod', gulp.parallel(
+    'copy', 'build-pages', 'styles', 'webpack'), 'dev'));
+
+gulp.task('html', () => {
+  return gulp.src('.tmp/*.html')
+    .pipe($.inlineSource())
+    .pipe($.htmlmin({
+      collapseWhitespace: true,
+      processConditionalComments: true,
+      minifyJS: true,
+      minifyCSS: true
+    }))
+    .pipe(gulp.dest('.tmp'));
+});
+
+gulp.task('deploy-copy', () => {
+  const dest = path.resolve(__dirname, '../ft-interact/', path.basename(__dirname));
+
+  return gulp.src(['.tmp/**/*', '!.tmp/components'])
+    .pipe(gulp.dest(dest));
+});
+
+gulp.task('deploy', gulp.series('build', 'html', 'deploy-copy'));

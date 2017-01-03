@@ -28,6 +28,6 @@ module.exports = {
 	plugins: [
 		new BowerWebpackPlugin({
 			includes: /\.js$/
-		})
+		}),
 	]
 };
