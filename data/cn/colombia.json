@@ -1,0 +1,383 @@
+{
+    "title": "Perils of Perception survey 2016",
+    "Country": "Colombia",
+    "questions": [
+        {
+            "id": 21,
+            "text": "What percentage of Colombia's Gross Domestic Product do you think is spent on health care provision each year?",
+            "answer": "7",
+            "options": [
+                0,
+                100
+            ],
+            "meta": {
+                "qid": "q5",
+                "perceived": "17"
+            },
+            "responses": {
+                "1": 2,
+                "2": 1,
+                "3": 2,
+                "4": 4,
+                "5": 8,
+                "6": 6,
+                "7": 3,
+                "8": 3,
+                "9": 4,
+                "10": 11,
+                "11": 1,
+                "12": 2,
+                "13": 3,
+                "14": 1,
+                "15": 10,
+                "16": 1,
+                "17": 1,
+                "18": 1,
+                "19": 2,
+                "20": 8,
+                "24": 1,
+                "29": 1,
+                "30": 1,
+                "31": 2,
+                "35": 1,
+                "40": 1,
+                "41": 1,
+                "44": 1,
+                "47": 1,
+                "60": 1,
+                "62": 1,
+                "65": 1
+            }
+        },
+        {
+            "id": 19,
+            "text": "Out of every 100 people in Colombia, about how many do you think are Muslim?",
+            "answer": "0",
+            "options": [
+                0,
+                100
+            ],
+            "meta": {
+                "qid": "q3",
+                "perceived": "7"
+            },
+            "responses": {
+                "0": 10,
+                "1": 20,
+                "2": 10,
+                "3": 6,
+                "4": 7,
+                "5": 17,
+                "7": 2,
+                "8": 2,
+                "10": 4,
+                "11": 1,
+                "12": 1,
+                "14": 1,
+                "15": 3,
+                "17": 1,
+                "20": 2,
+                "40": 1,
+                "60": 1
+            }
+        },
+        {
+            "id": 24,
+            "text": "In a survey in Colombia, what percentage of people do you think said that, taking all things together, they are very happy or rather happy?",
+            "answer": "92",
+            "options": [
+                0,
+                100
+            ],
+            "meta": {
+                "qid": "q10",
+                "perceived": "54"
+            },
+            "responses": {
+                "15": 1,
+                "20": 1,
+                "25": 1,
+                "30": 1,
+                "40": 1,
+                "46": 1,
+                "49": 1,
+                "51": 1,
+                "52": 1,
+                "53": 2,
+                "54": 1,
+                "55": 1,
+                "60": 2,
+                "61": 1,
+                "65": 1,
+                "69": 2,
+                "70": 7,
+                "72": 4,
+                "74": 3,
+                "75": 4,
+                "76": 2,
+                "77": 2,
+                "79": 2,
+                "80": 9,
+                "81": 2,
+                "82": 1,
+                "85": 5,
+                "87": 2,
+                "88": 2,
+                "89": 2,
+                "90": 5,
+                "92": 1,
+                "93": 1,
+                "94": 1,
+                "95": 1,
+                "97": 2,
+                "100": 2
+            }
+        },
+        {
+            "id": 20,
+            "text": "Now thinking about 2020, out of every 100 people in Colombia, about how many do you think will be Muslim?",
+            "answer": "0",
+            "options": [
+                0,
+                100
+            ],
+            "meta": {
+                "qid": "q4",
+                "perceived": "11"
+            },
+            "responses": {
+                "0": 23,
+                "1": 17,
+                "2": 14,
+                "3": 6,
+                "4": 5,
+                "5": 8,
+                "6": 3,
+                "8": 3,
+                "9": 1,
+                "10": 3,
+                "11": 1,
+                "14": 1,
+                "18": 1,
+                "20": 1,
+                "65": 1
+            }
+        },
+        {
+            "id": 22,
+            "text": "Out of every 100 homes in Colombia, how many are owned (outright or with a mortgage) by someone who lives there?",
+            "answer": "39",
+            "options": [
+                0,
+                100
+            ],
+            "meta": {
+                "qid": "q6",
+                "perceived": "38"
+            },
+            "responses": {
+                "2": 1,
+                "3": 1,
+                "4": 1,
+                "5": 1,
+                "6": 1,
+                "7": 1,
+                "10": 4,
+                "11": 2,
+                "12": 1,
+                "13": 1,
+                "14": 1,
+                "15": 3,
+                "17": 3,
+                "18": 1,
+                "19": 2,
+                "20": 7,
+                "23": 2,
+                "24": 1,
+                "25": 7,
+                "30": 7,
+                "33": 2,
+                "34": 2,
+                "35": 2,
+                "38": 2,
+                "39": 2,
+                "40": 6,
+                "41": 1,
+                "45": 2,
+                "47": 1,
+                "50": 4,
+                "51": 1,
+                "53": 1,
+                "55": 2,
+                "60": 2,
+                "61": 1,
+                "65": 1,
+                "68": 1,
+                "77": 1,
+                "80": 2,
+                "90": 2
+            }
+        },
+        {
+            "id": 26,
+            "text": "In a survey in Colombia, what percentage of people do you think said they personally believe that having an abortion is morally unacceptable?",
+            "answer": "",
+            "options": [
+                0,
+                100
+            ],
+            "meta": {
+                "qid": "q12",
+                "perceived": ""
+            },
+            "responses": {
+                "10": 1,
+                "40": 1,
+                "50": 2,
+                "60": 2,
+                "70": 1,
+                "75": 1,
+                "90": 1
+            }
+        },
+        {
+            "id": 23,
+            "text": "What percentage of Colombia's total household wealth do you think the least wealthy 70% in Colombia own? By ‘wealth’, we mean the total value of everything the household owns minus any debts that they owe (like loans and mortgages).",
+            "answer": "13",
+            "options": [
+                0,
+                100
+            ],
+            "meta": {
+                "qid": "q7",
+                "perceived": "28"
+            },
+            "responses": {
+                "2": 1,
+                "3": 1,
+                "4": 3,
+                "5": 7,
+                "6": 2,
+                "7": 1,
+                "8": 2,
+                "9": 4,
+                "10": 6,
+                "11": 5,
+                "13": 1,
+                "14": 2,
+                "15": 7,
+                "16": 3,
+                "17": 3,
+                "18": 2,
+                "20": 7,
+                "21": 2,
+                "25": 4,
+                "30": 6,
+                "31": 1,
+                "35": 1,
+                "36": 1,
+                "40": 1,
+                "42": 1,
+                "43": 1,
+                "45": 1,
+                "48": 1,
+                "55": 1,
+                "70": 1,
+                "75": 1,
+                "80": 1
+            }
+        },
+        {
+            "id": 27,
+            "text": "In a survey in Colombia, what percentage of people do you think said they personally believe that homosexuality is morally unacceptable?",
+            "answer": "",
+            "options": [
+                0,
+                100
+            ],
+            "meta": {
+                "qid": "q14",
+                "perceived": ""
+            },
+            "responses": {
+                "10": 1,
+                "30": 1,
+                "39": 1,
+                "50": 2,
+                "62": 1,
+                "80": 1,
+                "81": 1,
+                "90": 1
+            }
+        },
+        {
+            "id": 17,
+            "text": "What do you think the current population of Colombia is? By ‘population’, we mean all residents of Colombia regardless of legal status or citizenship. Please give your answer to the nearest million.",
+            "answer": "48.23",
+            "options": [
+                0,
+                99999
+            ],
+            "meta": {
+                "qid": "q1",
+                "perceived": "47"
+            },
+            "responses": {
+                "3": 1,
+                "30": 1,
+                "35": 1,
+                "47": 2,
+                "50": 1,
+                "120": 1,
+                "160": 1,
+                "99999": 1
+            }
+        },
+        {
+            "id": 28,
+            "text": "In a survey in Colombia, what percentage of people do you think said they personally believe that sex between unmarried adults is morally unacceptable?",
+            "answer": "",
+            "options": [
+                0,
+                100
+            ],
+            "meta": {
+                "qid": "q16",
+                "perceived": ""
+            },
+            "responses": {
+                "15": 1,
+                "20": 1,
+                "25": 2,
+                "50": 2,
+                "60": 1,
+                "70": 1,
+                "90": 1
+            }
+        },
+        {
+            "id": 18,
+            "text": "What do you think the population of Colombia is projected to be in 2050 by the United Nations? Please give your answer to the nearest 1 million.",
+            "answer": "54.93",
+            "options": [
+                0,
+                99999
+            ],
+            "meta": {
+                "qid": "q2",
+                "perceived": "60"
+            },
+            "responses": {
+                "3": 1,
+                "35": 1,
+                "40": 1,
+                "56": 1,
+                "75": 1,
+                "90": 1,
+                "150": 1,
+                "175": 1,
+                "99999": 1
+            }
+        }
+    ]
+}
