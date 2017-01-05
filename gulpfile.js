@@ -120,12 +120,20 @@ gulp.task('copy', () => {
   const data = gulp.src('data/cn/*')
     .pipe(gulp.dest('.tmp/data'));
 
+
   return merge(core, data);
 });
 
+gulp.task('copyad',()=>{
+  const adjs = gulp.src('client/components/ad/ad.js')
+    .pipe(gulp.dest('.tmp/scripts'));
+  const adhtml = gulp.src('m/marketing/*.html')
+    .pipe(gulp.dest('.tmp/m/marketing'));
+  return merge(adjs,adhtml);
+})
 gulp.task('serve', 
   gulp.parallel(
-    'copy', 'build-pages', 'styles', 'webpack',
+    'copy', 'copyad','build-pages', 'styles', 'webpack',
 
     function serve() {
     browserSync.init({

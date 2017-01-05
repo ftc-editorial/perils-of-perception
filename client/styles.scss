@@ -2,6 +2,7 @@
 @import 'o-header/main';
 @include oHeaderBase;
 
+
 @mixin oLogoSize($breakpoint) {
 	$image-aspect-ratio: 4.7;
 	$logo-heights: ('XS': 16, 'S': 20, 'M': 24, 'L': 40, 'XL': 40);
@@ -75,6 +76,7 @@
 @import 'components/question-outputs/area-chart/main';
 @import 'components/question-outputs/column-chart/main';
 @import 'components/overlay/main';
+@import 'components/ad/banner';
 
 div.results {
   h2 {
