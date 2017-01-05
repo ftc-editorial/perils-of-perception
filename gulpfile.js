@@ -97,6 +97,8 @@ gulp.task('webpack', function(done) {
   if (process.env.NODE_ENV === 'prod') {
     delete webpackConfig.watch;
     webpackConfig.plugins.push(new webpack.optimize.UglifyJsPlugin());
+    webpackConfig.plugins.push(new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('production')}));
   }
 
   webpack(webpackConfig, function(err, stats) {
