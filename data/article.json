@@ -1,10 +1,10 @@
 {
 	"id": null,
 	"url": "",
-	"description": "A new poll shows how little many people know about their home countries. Take our quiz to see how you and other FT readers compare.",
-	"headline": "How well do you really know your country?",
+	"description": "一个最新的调查显示，人们并不太理解他自己的国家。请参与以下测验，看看你和其他的FT读者相比，谁最了解自己的国家",
+	"headline": "测验：你有多了解你的国家？",
 	"mainImage": {
-	    "title": "FT Perils of Perception quiz",
+	    "title": "FT中文网：国家认知测验",
 	    "description": "Faces in a crowd",
 	    "url": "http://ig.ft.com/static/perilsofperception.jpg",
 	    "width": 2048, 
@@ -12,11 +12,11 @@
 	},
 	"twitterCard": "summary_large_image",
 	"topic": {
-	    "name": "FT Data",
-	    "url": "https://www.ft.com/ft-data"
+	    "name": "FT中文网数据新闻",
+	    "url": "http://www.ftchinese.com/channel/datanews.html"
 	},
-	"title": "How well do you really know your country?",
-	"summary": "A new poll shows how little many people know about their home countries. Take our quiz to see how you and other FT readers compare.",
+	"title": "测验：你到底有多了解你的国家？",
+	"summary": "一个最新的调查显示，人们并不太理解他自己的国家。请参与以下测验，看看你和其他的FT读者相比，谁最了解自己的国家",
 	"byline": [
 	    { 
 	    	"name": "David Blood", 
@@ -25,6 +25,16 @@
     	{ 
     		"name": "Ændrew Rininsland", 
 	    	"url": "https://www.ft.com/topics/authors/%C3%86ndrew_Rininsland" 
+	    }
+	    ,
+    	{ 
+    		"name": "史书华", 
+	    	"url": "http://www.ftchinese.com/search/%E5%8F%B2%E4%B9%A6%E5%8D%8E/relative_byline" 
+	    }
+	    ,
+    	{ 
+    		"name": "倪卫国", 
+	    	"url": "http://www.ftchinese.com" 
 	    }
 	],
 	"publishedDate": "2016-12-14T17:00:00Z",
