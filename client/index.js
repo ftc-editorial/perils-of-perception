@@ -108,7 +108,8 @@ class App extends Component {
       <div
         className="results"
       >
-        <h2>你的总分: {Math.round(this.state.score)}&#37;{feedback}</h2>
+        <h2></h2>
+        <h2>测验结果:你的熟悉程度达 {Math.round(this.state.score)}&#37;{feedback}</h2>
       </div>
     );
 
