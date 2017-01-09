@@ -11,14 +11,14 @@ export default () => ({ // eslint-disable-line
   //       new Date('2016-05-17T17:11:22Z')
   publishedDate: new Date('2017-1'),
 
-  headline: '测验：你有多认识全球？',
+  headline: '测验：你有多了解你的国家？',
 
   // summary === standfirst (Summary is what the content API calls it)
-  summary: '一个最新的调查显示，人们并不太理解他自己的国家。请参与以下测验，看看你和其他的FT读者相比，谁最了解自己的国家',
+  summary: '一个最新的跨国调查显示，人们并不太理解他自己所处的社会状态。通过以下测验，看看你和其他的FT读者相比，谁最了解自己的国家',
 
   topic: {
-    name: 'FT Data',
-    url: 'https://www.ft.com/ft-data',
+    name: 'FT数据新闻',
+    url: 'http://www.ftchinese.com/tag/%E6%95%B0%E6%8D%AE%E6%96%B0%E9%97%BB',
   },
 
   relatedArticle: {
@@ -27,7 +27,7 @@ export default () => ({ // eslint-disable-line
   },
 
   mainImage: {
-    title: 'FT Perils of Perception quiz',
+    title: 'FT中文网测验：你有多了解你的国家？',
     description: 'Faces in a crowd',
     url: 'http://ig.ft.com/static/perilsofperception.jpg',
     width: 2048, // ensure correct width
@@ -39,13 +39,15 @@ export default () => ({ // eslint-disable-line
   byline: [
     { name: 'David Blood', url: 'https://www.ft.com/stream/authorsId/NTBmY2Q1M2ItNjVhOC00ZGRhLWE5MGEtNzgxMTc0ZDlhOWQ3-QXV0aG9ycw==' },
     { name: 'Ændrew Rininsland', url: 'https://www.ft.com/topics/authors/%C3%86ndrew_Rininsland' },
+    { name: '史书华', url: 'http://www.ftchinese.com/search/%E5%8F%B2%E4%B9%A6%E5%8D%8E/relative_byline' },
+    { name: '倪卫国', url: 'http://www.ftchinese.com/'},
   ],
 
   // Appears in the HTML <title>
-  title: 'How well do you really know your country?',
+  title: '测验：你有多了解你的国家？-FT中文网',
 
   // meta data
-  description: 'A new poll shows how little many people know about their home countries. Take our quiz to see how you and other FT readers compare.',
+  description: '一个最新的跨国调查显示，人们并不太理解他自己所处的社会状态。通过以下测验，看看你和其他的FT读者相比，谁最了解自己的国家。',
 
   /*
   TODO: Select Twitter card type -
