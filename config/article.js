@@ -5,16 +5,16 @@ export default () => ({ // eslint-disable-line
 
   // canonical URL of the published page
   // "$url" get filled in by the ./configure script
-  url: 'https://ig.ft.com/sites/quiz/perils-of-perception/2016/',
+  url: 'interactive.ftchinese.com/perils-of-perception/index.html',
 
   // To set an exact publish date do this:
   //       new Date('2016-05-17T17:11:22Z')
-  publishedDate: new Date('2016-12-14T17:00:00Z'),
+  publishedDate: new Date('2017-1'),
 
-  headline: 'How well do you really know your country?',
+  headline: '测验：你有多认识全球？',
 
   // summary === standfirst (Summary is what the content API calls it)
-  summary: 'A new poll shows how little many people know about their home countries. Take our quiz to see how you and other FT readers compare.',
+  summary: '一个最新的调查显示，人们并不太理解他自己的国家。请参与以下测验，看看你和其他的FT读者相比，谁最了解自己的国家',
 
   topic: {
     name: 'FT Data',
