@@ -110,7 +110,7 @@ class ColumnChart extends Component {
         .attr('x', width)
         .attr('y', -4)
         .style('text-anchor', 'end')
-        .text('Per cent of FT users');
+        .text('FT读者答案的分布占比');
 
     const bar = svg.selectAll('.bar')
         .data(data)

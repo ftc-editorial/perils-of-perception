@@ -110,7 +110,7 @@ class Range extends Component {
           <input
             ref={node => { this.submitButton = node; }}
             type="submit"
-            value="CHECK YOUR ANSWER"
+            value="看答案"
             disabled={this.state.submitDisabled}
             className="o-buttons o-buttons--big o-buttons--standout"
           />

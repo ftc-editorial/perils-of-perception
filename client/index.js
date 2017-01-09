@@ -68,7 +68,7 @@ class App extends Component {
     const chooseQuestions = this.state.chooseQuestions && (
       <Overlay setQuestions={this.setQuestions} />
     );
-    const loadStatus = !this.state.questionsLoaded && <p><strong>Loading quiz…</strong></p>;
+    const loadStatus = !this.state.questionsLoaded && <p><strong>测验加载中…</strong></p>;
     const questions = this.state.questions
       .filter(question => question.answer !== '')
       .sort((a, b) => Number(a.meta.qid.slice(1)) - Number(b.meta.qid.slice(1)))
@@ -108,7 +108,7 @@ class App extends Component {
       <div
         className="results"
       >
-        <h2>Your overall rating: {Math.round(this.state.score)}&#37;{feedback}</h2>
+        <h2>你的总分: {Math.round(this.state.score)}&#37;{feedback}</h2>
       </div>
     );
 

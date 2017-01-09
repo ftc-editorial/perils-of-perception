@@ -2,7 +2,7 @@
 	"id": null,
 	"url": "",
 	"description": "一个最新的调查显示，人们并不太理解他自己的国家。请参与以下测验，看看你和其他的FT读者相比，谁最了解自己的国家",
-	"headline": "测验：你有多了解你的国家？",
+	"headline": "测验：你有多了解全球？",
 	"mainImage": {
 	    "title": "FT中文网：国家认知测验",
 	    "description": "Faces in a crowd",
@@ -12,11 +12,11 @@
 	},
 	"twitterCard": "summary_large_image",
 	"topic": {
-	    "name": "FT中文网数据新闻",
+	    "name": "数据新闻",
 	    "url": "http://www.ftchinese.com/channel/datanews.html"
 	},
 	"title": "测验：你到底有多了解你的国家？",
-	"summary": "一个最新的调查显示，人们并不太理解他自己的国家。请参与以下测验，看看你和其他的FT读者相比，谁最了解自己的国家",
+	"summary": "一个最新的调查显示，人们并不太理解的国家。请参与以下测验，看看你和其他的FT读者相比，你真得更了解自己的国家吗？",
 	"byline": [
 	    { 
 	    	"name": "David Blood", 
@@ -37,7 +37,7 @@
 	    	"url": "http://www.ftchinese.com" 
 	    }
 	],
-	"publishedDate": "2016-12-14T17:00:00Z",
+	"publishedDate": "2017年1月18日",
 	"relatedArticle": {
 		"text": "",
    		"url": "https://www.ft.com/content/bed2e788-c154-11e6-9bca-2b93a6856354"
@@ -45,7 +45,7 @@
 	"onwardJourney": {
 		"relatedContent": [
 			{
-				"title": "FT Data",
+				"title": "数据新闻",
 				"cards": [
 					{
 						"heading": "Star quality: Broadway’s $1m club scales new heights",
