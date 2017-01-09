@@ -4,7 +4,7 @@
     "questions": [
         {
             "id": 20,
-            "text": "Now thinking about 2020, out of every 100 people in Mexico, about how many do you think will be Muslim?",
+            "text": "现在展望2020年，你认为在墨西哥每100个人有多少人是穆斯林？",
             "answer": "0",
             "options": [
                 0,
@@ -31,7 +31,7 @@
         },
         {
             "id": 27,
-            "text": "In a survey in Mexico, what percentage of people do you think said they personally believe that homosexuality is morally unacceptable?",
+            "text": "在墨西哥的一项调查中，你觉得有多少百分比的人认为同性恋在道德上是不可接受的？",
             "answer": "40",
             "options": [
                 0,
@@ -87,7 +87,7 @@
         },
         {
             "id": 21,
-            "text": "What percentage of Mexico's Gross Domestic Product do you think is spent on health care provision each year?",
+            "text": "你认为墨西哥有多少百分比的国内生产总值（GDP）花在医疗保健支出上？",
             "answer": "6",
             "options": [
                 0,
@@ -128,7 +128,7 @@
         },
         {
             "id": 19,
-            "text": "Out of every 100 people in Mexico, about how many do you think are Muslim?",
+            "text": "你认为在墨西哥每100个人当中有多少人是穆斯林？",
             "answer": "0",
             "options": [
                 0,
@@ -156,7 +156,7 @@
         },
         {
             "id": 24,
-            "text": "In a survey in Mexico, what percentage of people do you think said that, taking all things together, they are very happy or rather happy?",
+            "text": "在墨西哥的一项调查中，你觉得百分之多少的人表示，总体而言他们非常幸福或相对幸福？",
             "answer": "94",
             "options": [
                 0,
@@ -217,7 +217,7 @@
         },
         {
             "id": 22,
-            "text": "Out of every 100 homes in Mexico, how many are owned (outright or with a mortgage) by someone who lives there?",
+            "text": "在墨西哥，每100个住宅中有多少是归住户所有的（拥有全部房产权或进行了房屋抵押）？",
             "answer": "76",
             "options": [
                 0,
@@ -268,7 +268,7 @@
         },
         {
             "id": 23,
-            "text": "What percentage of Mexico's total household wealth do you think the least wealthy 70% in Mexico own? By ‘wealth’, we mean the total value of everything the household owns minus any debts that they owe (like loans and mortgages).",
+            "text": "你认为，墨西哥最不富裕的70%人们，其所拥有的家庭财富，占墨西哥全体家庭财富的百分比是多少？这边说的‘财富’，指是一个家庭所拥有的总价值减去该家庭欠下的所有债务（例如贷款和抵押）。",
             "answer": "15",
             "options": [
                 0,
@@ -315,7 +315,7 @@
         },
         {
             "id": 26,
-            "text": "In a survey in Mexico, what percentage of people do you think said they personally believe that having an abortion is morally unacceptable?",
+            "text": "在墨西哥的一项调查中，你觉得有多少百分比的人认为堕胎在道德上是不可接受的？",
             "answer": "63",
             "options": [
                 0,
@@ -368,7 +368,7 @@
         },
         {
             "id": 28,
-            "text": "In a survey in Mexico, what percentage of people do you think said they personally believe that sex between unmarried adults is morally unacceptable?",
+            "text": "在墨西哥的一项调查中，你觉得有多少百分比的人认为未婚成年人进行性行为在道德上是不可接受的？",
             "answer": "44",
             "options": [
                 0,
@@ -427,7 +427,7 @@
         },
         {
             "id": 17,
-            "text": "What do you think the current population of Mexico is? By ‘population’, we mean all residents of Mexico regardless of legal status or citizenship. Please give your answer to the nearest million.",
+            "text": "你认为墨西哥现在的人口是多少？这里的‘人口’指所有墨西哥全体居民，不考虑法律地位或公民身份。你的答案请以百万为单位。",
             "answer": "119.53",
             "options": [
                 0,
@@ -451,7 +451,7 @@
         },
         {
             "id": 18,
-            "text": "What do you think the population of Mexico is projected to be in 2050 by the United Nations? Please give your answer to the nearest 1 million.",
+            "text": "你认为联合国预计的2050年墨西哥人口是多少？你的答案请以百万为单位。",
             "answer": "163.75",
             "options": [
                 0,
