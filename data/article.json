@@ -1,11 +1,11 @@
 {
 	"id": null,
-	"url": "",
-	"description": "一个最新的调查显示，人们并不太理解他自己的国家。请参与以下测验，看看你和其他的FT读者相比，谁最了解自己的国家",
-	"headline": "测验：你有多了解全球？",
+	"url": "http://interactive.ftchinese.com/perils-of-perception/index.html",
+	"description": "一个最新跨国调查显示，人们并不太理解他自己所处的社会状态。通过以下测验，看看你和其他的FT读者相比，谁最了解自己的国家",
+	"headline": "测验：你有多了解你的国家？",
 	"mainImage": {
-	    "title": "FT中文网：国家认知测验",
-	    "description": "Faces in a crowd",
+	    "title": "测验：你有多了解你的国家？- FT中文网",
+	    "description": "测验：你有多了解你的国家？- FT中文网",
 	    "url": "http://ig.ft.com/static/perilsofperception.jpg",
 	    "width": 2048, 
 	    "height": 1152
@@ -16,7 +16,7 @@
 	    "url": "http://www.ftchinese.com/channel/datanews.html"
 	},
 	"title": "测验：你到底有多了解你的国家？",
-	"summary": "一个最新的调查显示，人们并不太理解的国家。请参与以下测验，看看你和其他的FT读者相比，你真得更了解自己的国家吗？",
+	"summary": "一个最新的跨国调查显示，人们并不太理解他自己所处的社会状态。通过以下测验，看看你和其他的FT读者相比，谁最了解自己的国家",
 	"byline": [
 	    { 
 	    	"name": "David Blood", 
@@ -38,68 +38,68 @@
 	    }
 	],
 	"publishedDate": "2017年1月18日",
-	"relatedArticle": {
-		"text": "",
-   		"url": "https://www.ft.com/content/bed2e788-c154-11e6-9bca-2b93a6856354"
-	},
+	//"relatedArticle": {
+	//	"text": "",
+   	//	"url": "https://www.ft.com/content/bed2e788-c154-11e6-9bca-2b93a6856354"
+	//},
 	"onwardJourney": {
 		"relatedContent": [
 			{
 				"title": "数据新闻",
 				"cards": [
 					{
-						"heading": "Star quality: Broadway’s $1m club scales new heights",
-						"date": "MONDAY, 26 DECEMBER 2016",
-						"link": "http://www.ft.com/cms/s/c7e5f004-c889-11e6-8f29-9445cac8966f.html",
-						"image": "https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fprod-upp-image-read.ft.com%2F088ff1d4-bba8-11e6-8b45-b8b81dd5d080?source=ig&width=390"
+						"heading": " 数据：北京雾霾“超标”持续时间增加",
+						"date": "2016年12月22日 ",
+						"link": "http://www.ftchinese.com/story/001070666",
+						"image": "http://i.ftimg.net/picture/9/000063879_piclink.jpg"
 					},
 					{
-						"heading": "US social mobility gap continues to widen",
-						"date": "FRIDAY, 16 DECEMBER 2016",
-						"link": "http://www.ft.com/cms/s/7de9165e-c3d2-11e6-9bca-2b93a6856354.html",
-						"image": "https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fprod-upp-image-read.ft.com%2F4048da6a-c381-11e6-81c2-f57d90f6741a?source=ig&width=390"
+						"heading": "特朗普为什么胜选？图解美国大选结果",
+						"date": "2016年11月10日",
+						"link": "http://www.ftchinese.com/story/001070073",
+						"image": "http://image.webservices.ft.com/v1/images/raw/http%3A%2F%2Fi.ftimg.net%2Fpicture%2F2%2F000067052_piclink.jpg?source=ftchinese&width=390&fit=cover"
 					},
 					{
-						"heading": "How austerity is crippling schools in southern Europe",
-						"date": "SUNDAY, 11 DECEMBER 2016",
-						"link": "http://www.ft.com/cms/s/62952f26-be20-11e6-8b45-b8b81dd5d080.html",
-						"image": "https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fprod-upp-image-read.ft.com%2F09d5afa6-be24-11e6-8b45-b8b81dd5d080?source=ig&width=390"
+						"heading": "中国和罗马尼亚为高收入国家的主要移民来源",
+						"date": "2016年9月28日",
+						"link": "http://www.ftchinese.com/story/001069527",
+						"image": "http://i.ftimg.net/picture/2/000065342_piclink.jpg?source=ftchinese&width=390&fit=cover"
 					},
 					{
-						"heading": "Intercountry adoption of children falls sharply",
-						"date": "TUESDAY, 6 DECEMBER 2016",
-						"link": "http://www.ft.com/cms/s/eb32208a-b625-11e6-ba85-95d1533d9a62.html",
-						"image": "https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fprod-upp-image-read.ft.com%2F15a30d40-b629-11e6-961e-a1acd97f622d?source=ig&width=390"
+						"heading": "地图：盘点中国在新丝路上的关键建设",
+						"date": "2016年8月5日",
+						"link": "http://www.ftchinese.com/story/001068758",
+						"image": "http://i.ftimg.net/picture/6/000064196_piclink.jpg?source=ftchinese&width=390&fit=cover"
 					}
 				]
 				
 			},
 			{
-				"title": "Highlights",
+				"title": "2017年前瞻",
 				"cards": [
 					{
-						"heading": "China shakes up 2,000-year-old salt monopoly",
-						"date": "MONDAY, 2 JANUARY 2017",
-						"link": "http://www.ft.com/cms/s/78762494-d0c7-11e6-9341-7393bb2e1b51.html",
-						"image": "https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fprod-upp-image-read.ft.com%2F009a6432-d0d9-11e6-b06b-680c49b4b4c0?source=ig&width=390"
+						"heading": "2017年全球大事预测（上）",
+						"date": "2017年1月9日",
+						"link": "http://www.ftchinese.com/story/001070891",
+						"image": "http://image.webservices.ft.com/v1/images/raw/http%3A%2F%2Fi.ftimg.net%2Fpicture%2F2%2F000067382_piclink.jpg?source=ftchinese&width=390&fit=cover"
 					},
 					{
-						"heading": "Sir Tony Atkinson, economist and campaigner, 1944-2017",
-						"date": "MONDAY, 2 JANUARY 2017",
-						"link": "http://www.ft.com/cms/s/cbda844a-d0ea-11e6-9341-7393bb2e1b51.html",
-						"image": "https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fprod-upp-image-read.ft.com%2Ff385f96c-d0f8-11e6-b06b-680c49b4b4c0?source=ig&width=390"
+						"heading": "中国房地产市场回顾与展望",
+						"date": "2017年1月4日 ",
+						"link": "http://www.ftchinese.com/story/001070833",
+						"image": "http://image.webservices.ft.com/v1/images/raw/http%3A%2F%2Fi.ftimg.net%2Fpicture%2F3%2F000066403_piclink.jpg?source=ftchinese&width=390&fit=cover"
 					},
 					{
-						"heading": "How to have a productive new year",
-						"date": "MONDAY, 2 JANUARY 2017",
-						"link": "http://www.ft.com/cms/s/32a22090-b19a-11e6-9c37-5787335499a0.html",
-						"image": "https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fprod-upp-image-read.ft.com%2F865d89d4-cd21-11e6-b8ce-b9c03770f8b1?source=ig&width=390"
+						"heading": "2017年投资者需关注的重大问题",
+						"date": "2017年1月4日",
+						"link": "http://www.ftchinese.com/story/001070835",
+						"image": "http://image.webservices.ft.com/v1/images/raw/http%3A%2F%2Fi.ftimg.net%2Fpicture%2F8%2F000067308_piclink.jpg?source=ftchinese&width=390&fit=cover"
 					},
 					{
-						"heading": "Tech’s latest innovations struggle to live up to the hype",
-						"date": "MONDAY, 2 JANUARY 2017",
-						"link": "http://www.ft.com/cms/s/7c90bf2e-c971-11e6-9043-7e34c07b46ef.html",
-						"image": "https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fprod-upp-image-read.ft.com%2Fd9f8f252-ceb8-11e6-864f-20dcb35cede2?source=ig&width=390"
+						"heading": "2017：中国经济的两朵乌云",
+						"date": "2016年12月27日",
+						"link": "http://www.ftchinese.com/story/001070743",
+						"image": "http://image.webservices.ft.com/v1/images/raw/http%3A%2F%2Fi.ftimg.net%2Fpicture%2F7%2F000060707_piclink.jpg?source=ftchinese&width=390&fit=cover"
 					}
 				]
 			}
