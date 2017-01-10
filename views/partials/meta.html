@@ -34,9 +34,9 @@
 {
   "@context": "http://schema.org",
   "@type": "WebSite",
-  "name": "Financial Times",
-  "alternateName": "FT.com",
-  "url": "http://www.ft.com"
+  "name": "FT中文网",
+  "alternateName": "FTChinese.com",
+  "url": "http://www.ftchinese.com"
 }
 </script>
 {%- if topic.name and topic.url -%}
@@ -64,11 +64,11 @@
 {%- endif -%} #}
 {# {{ data | jsonScriptElement('data') }} #}
 
-<title>{{ title | default(headline, true) }} &mdash; - FT中文网</title>
+<title>{{ title | default(headline, true) }}- FT中文网</title>
 
 <meta name="description" content="{{ description }}">
 
-<meta property="og:title" content="{{ facebookHeadline | default (socialHeadline) | default(headline, true) }}">
+<meta property="og:title" content="测验：你有多了解你的国家？- FT中文网">
 
 <meta property="og:description" content="{{ description }}">
 
@@ -82,7 +82,7 @@
 
 <meta name="twitter:card" content="{{ twitterCard }}">
 <meta name="twitter:site" content="@FTChinese">
-<meta name="twitter:title" content="{{ twitterHeadline | default(socialHeadline) | default(headline, true) }}">
+<meta name="twitter:title" content="测验：你有多了解你的国家？- FT中文网">
 <meta name="twitter:description" content="{{ description }}">
 <meta name="twitter:image" content="{{ twitterImage | default(socialImage) | default(mainImage.url) }}">
 <meta name="twitter:url" content="{{ url }}">

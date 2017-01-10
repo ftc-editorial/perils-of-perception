@@ -11,7 +11,7 @@ export default () => ({ // eslint-disable-line
   //       new Date('2016-05-17T17:11:22Z')
   publishedDate: new Date('2017-1'),
 
-  headline: '测验：你有多了解你的国家？',
+  headline: '测验：你有多了解你的国家？-FT中文网',
 
   // summary === standfirst (Summary is what the content API calls it)
   summary: '一个最新的跨国调查显示，人们并不太理解他所处的社会状态。通过以下测验，看看你和其他的FT读者相比，谁最了解自己的国家',
