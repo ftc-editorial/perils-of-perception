@@ -20,7 +20,7 @@
           data-o-date-js>{{ publishedDate | ftdate }}</time>
   {%- endif -%}
   {%- if byline -%}
-  &#32;<span class="article__byline">by&nbsp;
+  &#32;<span class="article__byline">作者&nbsp;
   {%- if byline.push -%}
     {%- for author in byline -%}
       {{ " and " if not loop.first and loop.last else (", " if not loop.first else "") }}

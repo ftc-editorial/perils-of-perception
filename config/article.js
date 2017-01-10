@@ -14,7 +14,7 @@ export default () => ({ // eslint-disable-line
   headline: '测验：你有多了解你的国家？',
 
   // summary === standfirst (Summary is what the content API calls it)
-  summary: '一个最新的跨国调查显示，人们并不太理解他自己所处的社会状态。通过以下测验，看看你和其他的FT读者相比，谁最了解自己的国家',
+  summary: '一个最新的跨国调查显示，人们并不太理解他所处的社会状态。通过以下测验，看看你和其他的FT读者相比，谁最了解自己的国家',
 
   topic: {
     name: 'FT数据新闻',
@@ -47,7 +47,7 @@ export default () => ({ // eslint-disable-line
   title: '测验：你有多了解你的国家？-FT中文网',
 
   // meta data
-  description: '一个最新的跨国调查显示，人们并不太理解他自己所处的社会状态。通过以下测验，看看你和其他的FT读者相比，谁最了解自己的国家。',
+  description: '一个最新的跨国调查显示，人们并不太理解他所处的社会状态。通过以下测验，看看你和其他的FT读者相比，谁最了解自己的国家。',
 
   /*
   TODO: Select Twitter card type -

@@ -120,7 +120,7 @@ class Question extends Component {
               <svg width="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="5" cy="5" r="5" className="legend-country" />
               </svg>
-              <p className="o-typography-lead--small">{this.props.country} 问卷结果</p>
+              <p className="o-typography-lead--small">问卷调查结果</p>
             </div>
             <p>
               调查民众答案 <strong>{this.props.countryAnswer}&#37;</strong>.
