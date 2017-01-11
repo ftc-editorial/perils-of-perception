@@ -68,7 +68,7 @@ class App extends Component {
     const chooseQuestions = this.state.chooseQuestions && (
       <Overlay setQuestions={this.setQuestions} />
     );
-    const loadStatus = !this.state.questionsLoaded && <p><strong>测验正在快速加载中…</strong></p>;
+    const loadStatus = !this.state.questionsLoaded && <p><strong>测验正在快速加载…</strong></p>;
     const questions = this.state.questions
       .filter(question => question.answer !== '')
       .sort((a, b) => Number(a.meta.qid.slice(1)) - Number(b.meta.qid.slice(1)))
