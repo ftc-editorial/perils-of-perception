@@ -55,11 +55,11 @@ class Overlay extends Component {
           <div className="o-grid-row">
             <div data-o-grid-colspan="12">
               <header className="overlay-header">
-                测验：你有多了解你的国家?
+               测验：你有多了解你的国家?- FT中文网
               </header>
 
               <section className="overlay-content">
-                <p>请选择你想测验的国家或地区</p>
+                <p>请先选择你想测验的国家或地区</p>
 
                 <form
                   onSubmit={(event, value) => {
