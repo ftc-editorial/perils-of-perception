@@ -98,7 +98,7 @@ class App extends Component {
 
     switch (true) {
       case this.state.score >= 70:
-        feedback = ' – definite native!';
+        feedback = ' – 你果然是达人';
         break;
       default:
         feedback = '';
@@ -109,7 +109,7 @@ class App extends Component {
         className="results"
       >
         <h2></h2>
-        <h2>测验结果:你的熟悉程度达 {Math.round(this.state.score)}&#37;{feedback}</h2>
+        <h2>测验结束:你的正确率达 {Math.round(this.state.score)}&#37;{feedback}</h2>
       </div>
     );
 

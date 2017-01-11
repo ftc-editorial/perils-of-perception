@@ -1,12 +1,12 @@
 {
 	"id": null,
 	"url": "http://interactive.ftchinese.com/perils-of-perception/index.html",
-	"description": "一个最新的跨国调查显示，人们并不太理解他所处的社会状态。通过以下测验，看看你和其他的FT读者相比，谁最了解自己的国家",
+	"description": "一份最新的跨国调查显示，中国民众并不太了解社会当前的状态，在全球认知排名上与印度名列倒数。我们把这份跨国调查制作成以下测验，通过7个题目看看你是否真实认识自己所处的社会。",
 	"headline": "测验：你有多了解你的国家？",
 	"mainImage": {
 	    "title": "测验：你有多了解你的国家？- FT中文网",
 	    "description": "测验：你有多了解你的国家？- FT中文网",
-	    "url": "http://ig.ft.com/static/perilsofperception.jpg",
+	    "url": "http://i.ftimg.net/picture/4/000067484_piclink.jpg",
 	    "width": 2048, 
 	    "height": 1152
 	},
@@ -16,7 +16,7 @@
 	    "url": "http://www.ftchinese.com/channel/datanews.html"
 	},
 	"title": "测验：你有多了解你的国家？",
-	"summary": "一个最新的跨国调查显示，人们并不太理解他所处的社会状态。通过以下测验，看看你和其他的FT读者相比，谁最了解自己的国家",
+	"summary": "一份最新的跨国调查显示，中国民众并不太了解社会当前的状态，在全球认知排名上与印度名列倒数。我们把这份跨国调查制作成以下测验，通过7个题目看看你是否真实认识自己所处的社会。",
 	"byline": [
 	    { 
 	    	"name": "David Blood", 
@@ -37,7 +37,7 @@
 	    	"url": "http://www.ftchinese.com" 
 	    }
 	],
-	"publishedDate": "2017年1月18日",
+	"publishedDate": "2017年1月27日",
 	"relatedArticle": {
 		"text": "",
    		"url": "https://www.ft.com/content/bed2e788-c154-11e6-9bca-2b93a6856354"
@@ -57,7 +57,7 @@
 						"heading": "特朗普为什么胜选？图解美国大选结果",
 						"date": "2016年11月10日",
 						"link": "http://www.ftchinese.com/story/001070073",
-						"image": "http://image.webservices.ft.com/v1/images/raw/http%3A%2F%2Fi.ftimg.net%2Fpicture%2F2%2F000067052_piclink.jpg?source=ftchinese&width=390&fit=cover"
+						"image": "http://image.webservices.ft.com/v1/images/raw/http%3A%2F%2Fi.ftimg.net%2Fpicture%2F2%2F000066142_piclink.jpg?source=ftchinese&width=390&fit=cover"
 					},
 					{
 						"heading": "中国和罗马尼亚为高收入国家的主要移民来源",

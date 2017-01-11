@@ -27,8 +27,8 @@ export default () => ({ // eslint-disable-line
   },
 
   mainImage: {
-    title: 'FT中文网测验：你有多了解你的国家？',
-    description: 'Faces in a crowd',
+    title: 'FT中文网-测验：你有多了解你的国家？',
+    description: 'FT中文网-测验：你有多了解你的国家？',
     url: 'http://ig.ft.com/static/perilsofperception.jpg',
     width: 2048, // ensure correct width
     height: 1152, // ensure correct height
