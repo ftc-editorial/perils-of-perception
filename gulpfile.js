@@ -172,11 +172,25 @@ gulp.task('html', () => {
     .pipe(gulp.dest('.tmp'));
 });
 
-gulp.task('deploy-copy', () => {
+gulp.task('demo-copy', () => {
   const dest = path.resolve(__dirname, '../ft-interact/', path.basename(__dirname));
 
-  return gulp.src(['.tmp/**/*', '!.tmp/components'])
+  return gulp.src(['.tmp/*.html', '.tmp/**/*.json'])
     .pipe(gulp.dest(dest));
 });
 
-gulp.task('deploy', gulp.series('build', 'html', 'deploy-copy'));
+gulp.task('demo', gulp.series('build', 'html', 'demo-copy'));
+
+gulp.task('deploy-html', () => {
+  const dest = path.resolve(__dirname, '../special/', path.basename(__dirname));
+
+  return gulp.src('.tmp/*.html')
+    .pipe(gulp.dest(dest));
+});
+
+gulp.task('deploy-json', () => {
+  return gulp.src('.tmp/**/*.json')
+    .pipe(gulp.dest('../'))
+});
+
+gulp.task('deploy', gulp.series('build', 'html', 'deploy-html', 'deploy-json'));

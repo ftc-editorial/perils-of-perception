@@ -17,14 +17,6 @@
 
 <img src=http://i.ftimg.net/picture/6/000067486_piclink.jpg style=display:block;width:0;height:0;overflow:hidden>
 
-
-{#     {% if flags.analytics %}
-      {% include "includes/analytics.html" %}
-    {% endif %} #}
-
-{#     {% if flags.header %}
-      {% include "includes/header.html" %}
-    {% endif %} #}
     {% include "partials/header.html" %}
 
     {% include "partials/ad-banner.html" %}
@@ -34,14 +26,8 @@
           <div class="o-grid-row">
             <header data-o-grid-colspan="12 S11 Scenter M9 L8 XL7">
 
-              {# {% block article_head %} #}
-
-{#               {% if flags.shareButtons %}
-                {% include "includes/share.html" %}
-              {% endif %} #}
               {% include "partials/share.html" %}
               {% include "partials/article-head.html" %}
-              {# {% endblock %} #}
 
             </header>
           </div>
@@ -88,7 +74,7 @@
       {% endfor %}{% endif %}
     ]);
     </script> #}
-  <script type="text/javascript" src="scripts/index.js"></script>
+  <script inline type="text/javascript" src="scripts/index.js"></script>
 {% if production %}
   <script src="http://static.ftchinese.com/js/log.js?v=6"></script>
 {% endif %}

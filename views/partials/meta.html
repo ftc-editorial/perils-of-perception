@@ -2,9 +2,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-{# resource hints #}
-<!-- <link rel="preconnect" href="https://origami-build.ft.com">
-<link rel="preconnect" href="https://build.origami.ft.com" crossorigin> -->
 <link rel="preconnect" href="https://cdn.polyfill.io">
 
 {# Critical JS and CSS #}
@@ -17,15 +14,14 @@
 <link inline rel="stylesheet" href="components/core/top.css">
 <link rel="stylesheet" href="https://origami-build.ft.com/v2/bundles/css?modules=n-normalize@^1,o-fonts@^2">
 <link rel="stylesheet" href="https://origami-build.ft.com/v2/bundles/css?modules=o-grid@^4.2.1,o-typography@^4.3.1,o-card@^2.1.8">
-<link rel="stylesheet" href="styles/styles.css">
+
+{# This project's style #}
+<link inline rel="stylesheet" href="styles/styles.css">
+
 {%- if stylesheets %}{% for stylesheet in stylesheets %}
 <link rel="stylesheet" href="{{ stylesheet | safe }}">
 {% endfor %}{% endif -%}
 
-{# <link href="https://plus.google.com/113457471429583444041/" rel="publisher" /> #}
-{# <meta property="fb:app_id" content="429755910551755" /> #}
-{# <link rel="shortcut icon" href="https://ig.ft.com/favicon.ico" type="image/x-icon"> #}
-{# <link rel="apple-touch-icon" href="https://ig.ft.com/apple-touch-icon.png"> #}
 <meta name="format-detection" content="telephone=no">
 <meta name="robots" content="index,follow">
 <meta name="copyright" content="FT中文网">
@@ -56,13 +52,6 @@
 }
 </script>
 {%- endif -%}
-{# {%- if flags.errorReporting -%}
-<script type="application/json" data-o-errors-config>
-{"sentryEndpoint": "https://ddbd80489ff549538250bbe37fa52bbd@app.getsentry.com/71130"}
-</script>
-<script async src="https://origami-build.ft.com/v2/bundles/js?export=oErrors&modules=o-errors@^3.4.0"></script>
-{%- endif -%} #}
-{# {{ data | jsonScriptElement('data') }} #}
 
 <title>{{ title | default(headline, true) }}- FT中文网</title>
 
@@ -87,20 +76,6 @@
 <meta name="twitter:image" content="{{ twitterImage | default(socialImage) | default(mainImage.url) }}">
 <meta name="twitter:url" content="{{ url }}">
 
-{# {%- if twitterCreator %}
-<meta name="twitter:creator" content="{{ twitterCreator }}">
-{% endif -%} #}
-
-{# {%- if flags.analytics %}
-  <link rel="preconnect" href="https://spoor-api.ft.com">
-  <meta property="ft.track:is_live" content="true"/>
-  {% if tracking.product %}
-  <meta property="ft.track:product" content="{{ tracking.product }}"/>
-  {% endif %}
-  {% if tracking.micrositeName %}
-  <meta property="ft.track:microsite_name" content="{{ tracking.micrositeName }}"/>
-  {% endif %}
-{% endif -%} #}
 {% if production %}
   {% set iconsPath = "http://interactive.ftchinese.com/bower_components/ftc-logos/static" %}
 {% else %}
