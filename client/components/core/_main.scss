@@ -50,21 +50,38 @@ $share-button-size: 38px;
   }
 }
 
-.o-typography-link-topic:hover {
-    color: #4f1828;
+.o-typography-timestamp {
+    line-height: 12px;
+    font-size: 12px;
+    font-weight: 400;
+    color: #8b572a;
+    text-transform: uppercase;
 }
 
 .o-typography-link-topic:hover {
     color: #4f1828;
 }
 
+.o-typography-link-topic:hover {
+    color: #4f1828;
+}
+.article-byline {
+  line-height: 17px;
+  font-size: 15px;
+}
 .o-typography-link-topic {
     color: #9e2f50;
     text-decoration: none;
-    line-height: 22px;
-    font-size: 20px;
+    line-height: 17px;
+    font-size: 15px;
     font-weight: 600;
 }
+.o-typography-link-topic--medium {
+  line-height: 22px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
 .graphic {
 
   display: block;
