@@ -13,7 +13,7 @@
 </script><![endif]-->
 <link inline rel="stylesheet" href="components/core/top.css">
 <link rel="stylesheet" href="https://origami-build.ft.com/v2/bundles/css?modules=n-normalize@^1,o-fonts@^2">
-<link rel="stylesheet" href="https://origami-build.ft.com/v2/bundles/css?modules=o-grid@^4.2.1,o-typography@^4.3.1,o-card@^2.1.8">
+<link rel="stylesheet" href="https://origami-build.ft.com/v2/bundles/css?modules=o-grid@^4.2.1,o-card@^2.1.8">
 
 {# This project's style #}
 <link inline rel="stylesheet" href="styles/styles.css">
@@ -76,13 +76,8 @@
 <meta name="twitter:image" content="{{ twitterImage | default(socialImage) | default(mainImage.url) }}">
 <meta name="twitter:url" content="{{ url }}">
 
-{% if production %}
-  {% set iconsPath = "http://interactive.ftchinese.com/bower_components/ftc-logos/static" %}
-{% else %}
-  {% set iconsPath = "/bower_components/ftc-logos/static" %}
-{% endif %}
-<link rel="apple-touch-icon" sizes="180x180" href="{{iconsPath}}/favicons/apple-touch-icon-180x180.png">
-<link rel="apple-touch-icon" sizes="152x152" href="{{iconsPath}}/favicons/apple-touch-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="120x120" href="{{iconsPath}}/favicons/apple-touch-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="76x76" href="{{iconsPath}}/favicons/apple-touch-icon-76x76.png">
-<link href="{{iconsPath}}/favicons/favicon.ico" type="image/x-icon" rel="shortcut icon" />
+<link rel="apple-touch-icon" sizes="180x180" href="{{logoPath}}/favicons/apple-touch-icon-180x180.png">
+<link rel="apple-touch-icon" sizes="152x152" href="{{logoPath}}/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="120x120" href="{{logoPath}}/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="76x76" href="{{logoPath}}/favicons/apple-touch-icon-76x76.png">
+<link href="{{logoPath}}/favicons/favicon.ico" type="image/x-icon" rel="shortcut icon" />

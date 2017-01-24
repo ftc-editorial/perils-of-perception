@@ -92,6 +92,8 @@ div.results {
 
 $o-footer-is-silent: false;
 @import 'ftc-footer/main';
+
+$social-images-base-url: "http://interactive.ftchinese.com/bower_components/ftc-social-images/dist";
 @import 'ftc-share/main';
 @include oShare(('light'));
 .o-share {

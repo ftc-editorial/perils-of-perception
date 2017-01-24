@@ -37,11 +37,10 @@ gulp.task('build-pages', () => {
       console.log(e);
     }
 
-    const prod = process.env.NODE_ENV === 'prod';
     const flags = {
-      prod,
-      analytics: prod
+      production: process.env.NODE_ENV === 'prod',
     };
+
     const article = yield fs.readFile('./data/article.json', 'utf8');
 
     const context = Object.assign(JSON.parse(article), {
@@ -51,7 +50,9 @@ gulp.task('build-pages', () => {
 
     const html = yield render('index.html', context);
 
-    yield fs.writeFile(`${destDir}/index.html`, html, 'utf8');     
+    const outputFile = (process.env.NODE_ENV === 'prod') ? `${path.basename(__dirname)}.html` : 'index.html';
+
+    yield fs.writeFile(`${destDir}/${outputFile}`, html, 'utf8');     
   })
   .then(function(){
     browserSync.reload('*.html');
@@ -115,33 +116,28 @@ gulp.task('webpack', function(done) {
 });
 
 gulp.task('copy', () => {
+
   const core = gulp.src('client/components/core/top.*')
     .pipe(gulp.dest('.tmp/components/core'));
-  const data = gulp.src('data/cn/*')
-    .pipe(gulp.dest('.tmp/data'));
-
-
-  return merge(core, data);
-});
-
-gulp.task('copyad',()=>{
   const adjs = gulp.src('client/components/ad/ad.js')
     .pipe(gulp.dest('.tmp/scripts'));
-  const adhtml = gulp.src('m/marketing/*.html')
-    .pipe(gulp.dest('.tmp/m/marketing'));
-  return merge(adjs,adhtml);
-})
+
+  return merge(core, adjs);
+
+});
+
 gulp.task('serve', 
   gulp.parallel(
-    'copy', 'copyad','build-pages', 'styles', 'webpack',
+    'copy','build-pages', 'styles', 'webpack',
 
     function serve() {
     browserSync.init({
       server: {
-        baseDir: ['.tmp'],
+        baseDir: ['.tmp', 'data'],
         index: 'index.html',
         routes: {
-          '/bower_components': 'bower_components'
+          '/bower_components': 'bower_components',
+          '/ig/perils-of-perception': 'data/cn'
         }
       }
     });
@@ -175,22 +171,26 @@ gulp.task('html', () => {
 gulp.task('demo-copy', () => {
   const dest = path.resolve(__dirname, '../ft-interact/', path.basename(__dirname));
 
-  return gulp.src(['.tmp/*.html', '.tmp/**/*.json'])
+  const html = gulp.src('.tmp/*.html')
     .pipe(gulp.dest(dest));
+  const data = gulp.src('data/cn/*.json')
+    .pipe(gulp.dest(`${dest}/data`))
+
+  return merge(html, data);
 });
 
 gulp.task('demo', gulp.series('build', 'html', 'demo-copy'));
 
-gulp.task('deploy-html', () => {
-  const dest = path.resolve(__dirname, '../special/', path.basename(__dirname));
+gulp.task('deploy-copy', () => {
 
-  return gulp.src('.tmp/*.html')
-    .pipe(gulp.dest(dest));
+  const html = gulp.src('.tmp/*.html')
+    .pipe(gulp.dest(path.resolve(__dirname, '../special')));
+
+  const data = gulp.src('data/cn/*.json')
+    .pipe($.jsonminify())
+    .pipe(gulp.dest(path.resolve(__dirname, '../ig/perils-of-perception')))
+
+  return merge(html, data);
 });
 
-gulp.task('deploy-json', () => {
-  return gulp.src('.tmp/**/*.json')
-    .pipe(gulp.dest('../'))
-});
-
-gulp.task('deploy', gulp.series('build', 'html', 'deploy-html', 'deploy-json'));
+gulp.task('deploy', gulp.series('build', 'html', 'deploy-copy'));

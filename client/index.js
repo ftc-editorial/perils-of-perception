@@ -31,7 +31,7 @@ class App extends Component {
 
   setQuestions(value) {
     const key = value.toLowerCase().replace(/\s/g, '-');
-    const data = `data/${key}.json`;
+    const data = `/ig/perils-of-perception/${key}.json`;
 
     fetch(data)
       .then(res => res.json())
