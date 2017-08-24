@@ -77,11 +77,9 @@ gulp.task('styles', function styles() {
   return gulp.src('client/styles.scss')
     .pipe($.plumber())
     .pipe($.sourcemaps.init({loadMaps:true}))
-    .pipe($.sass({
-      outputStyle: 'compressed',
-      precision: 10,
-      includePaths: ['bower_components']
-    }).on('error', $.sass.logError))
+    .pipe($.sass(
+      sassOptions
+    ).on('error', $.sass.logError))
     .pipe($.postcss([
       cssnext({
         features: {
